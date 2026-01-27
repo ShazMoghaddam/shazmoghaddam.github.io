@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaz Moghaddam - Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .location-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #e5e5e5;
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+        .weather-icon {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .temp {
+            color: #00ff9d;
+            font-weight: 400;
+        }
+
+        .time-display {
+            color: #999;
+            font-size: 0.85rem;
+            font-weight: 400;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.25rem;
+        }
+
+        .coordinates {
+            font-size: 0.85rem;
+            color: #999;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 5;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #999;
+            font-weight: 400;
+            letter-spacing: 0.03em;
+            margin-bottom: 3rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 30px;
+            height: 30px;
+            stroke: rgba(255,255,255,0.4);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        .floating-lines {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            height: 1px;
+        }
+
+        .line:nth-child(1) {
+            width: 300px;
+            top: 20%;
+            left: -300px;
+            animation: floatLine1 15s ease-in-out infinite;
+        }
+
+        .line:nth-child(2) {
+            width: 200px;
+            top: 40%;
+            right: -200px;
+            animation: floatLine2 12s ease-in-out infinite 2s;
+        }
+
+        .line:nth-child(3) {
+            width: 250px;
+            top: 60%;
+            left: -250px;
+            animation: floatLine3 18s ease-in-out infinite 4s;
+        }
+
+        .line:nth-child(4) {
+            width: 180px;
+            top: 80%;
+            right: -180px;
+            animation: floatLine4 14s ease-in-out infinite 1s;
+        }
+
+        .line:nth-child(5) {
+            width: 220px;
+            top: 30%;
+            left: -220px;
+            animation: floatLine5 16s ease-in-out infinite 3s;
+        }
+
+        .neon-accent {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 157, 0.15) 0%, transparent 70%);
+            filter: blur(40px);
+            pointer-events: none;
+            z-index: 1;
+            animation: floatNeon 20s ease-in-out infinite;
+        }
+
+        @keyframes floatNeon {
+            0%, 100% { 
+                top: 20%;
+                right: 10%;
+                opacity: 0.6;
+            }
+            25% {
+                top: 60%;
+                right: 80%;
+                opacity: 0.8;
+            }
+            50% {
+                top: 80%;
+                right: 20%;
+                opacity: 0.5;
+            }
+            75% {
+                top: 40%;
+                right: 70%;
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes floatLine1 {
+            0%, 100% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateX(calc(100vw + 300px)) translateY(-30px); opacity: 1; }
+            90% { opacity: 0; }
+        }
+
+        @keyframes floatLine2 {
+            0%, 100% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateX(calc(-100vw - 200px)) translateY(40px); opacity: 1; }
+            90% { opacity: 0; }
+        }
+
+        @keyframes floatLine3 {
+            0%, 100% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateX(calc(100vw + 250px)) translateY(-20px); opacity: 1; }
+            90% { opacity: 0; }
+        }
+
+        @keyframes floatLine4 {
+            0%, 100% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateX(calc(-100vw - 180px)) translateY(25px); opacity: 1; }
+            90% { opacity: 0; }
+        }
+
+        @keyframes floatLine5 {
+            0%, 100% { transform: translateX(0) translateY(0); opacity: 0; }
+            10% { opacity: 1; }
+            50% { transform: translateX(calc(100vw + 220px)) translateY(-35px); opacity: 1; }
+            90% { opacity: 0; }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            padding: 6rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
+            color: #e5e5e5;
+        }
+
+        .about p, .contact p {
+            color: #999;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-pill {
+            padding: 0.7rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            color: #e5e5e5;
+            font-size: 0.95rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .skill-pill:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card, .project-card {
+            padding: 2rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .skill-card:hover, .project-card:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
+
+        .skill-card h3, .project-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #e5e5e5;
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p, .project-card p {
+            color: #999;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .project-card p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #00ff9d;
+            gap: 0.7rem;
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact {
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1rem 2.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-links a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .contact-links a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-links a:hover {
+            color: #fff;
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #e5e5e5;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 1.2rem 3rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .cv-download:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+        }
+
+        .cv-download svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #555;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+        }
+
+        .made-with-love {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            color: #999;
+            font-size: 0.85rem;
+            font-weight: 400;
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .made-with-love .text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .made-with-love svg {
+            width: 18px;
+            height: 18px;
+            stroke: #00ff9d;
+            fill: none;
+            stroke-width: 2;
+            transform: rotate(0deg);
+        }
+
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+            
+            .about-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-links a {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .made-with-love {
+                position: static;
+                margin-top: 1rem;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="location-info">
+            <span>LONDON</span>
+            <svg class="weather-icon" id="weather-icon" viewBox="0 0 24 24">
+                <!-- Icon will be updated by JavaScript -->
+            </svg>
+            <span class="temp" id="temp">--°</span>
+        </div>
+        <div class="time-display">
+            <span id="time">--:--:--</span>
+            <span class="coordinates">51.5074° N, 0.1278° W</span>
+        </div>
+    </div>
+
+    <div class="neon-accent"></div>
+    <div class="floating-lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    
+    <header>
+        <div class="hero-content">
+            <h1>Shaz Moghaddam</h1>
+            <p class="tagline">Python Developer • Data Scientist • Photography & Design Enthusiast</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24">
+                <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="skills">
+            <h2>Skills & Tools</h2>
+            <div class="skills-container">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">pandas</span>
+                <span class="skill-pill">NumPy</span>
+                <span class="skill-pill">scikit-learn</span>
+                <span class="skill-pill">Matplotlib</span>
+                <span class="skill-pill">Seaborn</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">Git & GitHub</span>
+                <span class="skill-pill">Tableau</span>
+                <span class="skill-pill">Excel</span>
+                <span class="skill-pill">Machine Learning</span>
+                <span class="skill-pill">EDA</span>
+                <span class="skill-pill">NLP</span>
+                <span class="skill-pill">spaCy</span>
+            </div>
+        </section>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p style="color: #999; font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; max-width: 800px;">
+                I am a London-based Data Scientist and Python Developer with a strong focus on transforming data into clear, practical insights. I work across the full data workflow—from data cleaning and exploratory analysis to visualisation and model development—with an emphasis on well-structured, reliable solutions.
+            </p>
+            <p style="color: #999; font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; max-width: 800px;">
+                I have practical experience using Python for data analysis, automation, and problem-solving, supported by a solid foundation in statistics and data science principles developed through formal training, including an online Data Science programme with Imperial College London. I am particularly interested in applying data-driven thinking to real-world problems, uncovering meaningful patterns, and communicating findings in a clear and accessible way.
+            </p>
+            <p style="color: #999; font-size: 1.05rem; line-height: 1.8; margin-bottom: 3rem; max-width: 800px;">
+                Alongside my technical work, I bring a thoughtful design mindset and a background in photography, which influences how I approach data visualisation and presentation. I value clarity, simplicity, and usability, whether I am writing code, analysing data, or presenting results.
+            </p>
+            <h2 style="margin-top: 4rem;">What I Do</h2>
+            <div class="about-grid">
+                <div class="skill-card">
+                    <h3>Development & Data Science</h3>
+                    <p>I build clear, reliable Python-based solutions, with experience in exploratory data analysis, basic modelling, and simple automation to support data-driven tasks.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Photography</h3>
+                    <p>I enjoy capturing London's architecture and urban life through my lens. I'm drawn to how light and structure reveal the character of a place—small moments that tell a bigger story.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design</h3>
+                    <p>I am inspired by minimalist architecture and purposeful design, where form supports function and every detail has intent. I carry this approach into my work, aiming for clear, simple, and thoughtful design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Stock Tracker Dashboard</h3>
+                    <p>A real-time interactive dashboard built with Python that tracks and visualises stock market data. It integrates live price updates, key performance metrics, and dynamic charts to help users monitor market movements and make informed investment decisions.</p>
+                    <a href="https://github.com/ShazMoghaddam/Stock_Tracker_Dashboard" target="_blank" class="project-link">
+                        View on GitHub
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>FAO & FDI Data Analysis</h3>
+                    <p>A data science project analysing global agricultural and foreign direct investment trends using open datasets from the FAO and World Bank. The project includes data cleaning, exploratory analysis, and visual insights to uncover patterns and relationships in international development data.</p>
+                    <a href="https://github.com/ShazMoghaddam/FAO-FDI-Analysis-World-Bank-Open-Data" target="_blank" class="project-link">
+                        View on GitHub
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>Instagram Data Analysis</h3>
+                    <p>A comprehensive analysis of Instagram engagement and usage patterns. Using Python and data analytics techniques, this project explores user interactions, content performance, and trend insights, providing actionable metrics for social media strategy optimisation.</p>
+                    <a href="https://github.com/ShazMoghaddam/Instagram-Analysis" target="_blank" class="project-link">
+                        View on GitHub
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3>London Housing Sales Analysis</h3>
+                    <p>An analytical exploration of London's housing market using real transaction data. This project involves data preprocessing, statistical analysis, and visualisation to reveal sales trends, price distributions, and neighbourhood-level insights across Greater London.</p>
+                    <a href="https://github.com/ShazMoghaddam/London-Housing-Sales-Analysis" target="_blank" class="project-link">
+                        View on GitHub
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p style="color: #999; font-size: 1.05rem; line-height: 1.8; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                I'm open to new opportunities and collaborations. Whether you'd like to discuss a project, explore ideas, or simply connect, feel free to reach out.
+            </p>
+            <div class="contact-links">
+                <a href="mailto:shaz.moghaddam@gmail.com">Email</a>
+                <a href="tel:+447519109433">Phone</a>
+                <a href="https://github.com/ShazMoghaddam" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/shazmoghaddam/" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/shaz.0098" target="_blank">Instagram</a>
+            </div>
+            <a href="Ethan_Shahrooz_Moghaddam.CV.docx" class="cv-download" download>
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                Download CV
+            </a>
+        </section>
+    </div>
+
+    <div class="made-with-love">
+        <span class="text">MADE WITH LOVE</span>
+        <svg viewBox="0 0 24 24">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+    </div>
+
+    <footer>
+        <p>© 2026</p>
+    </footer>
+
+    <script>
+        // Weather icon SVG paths
+        const weatherIcons = {
+            sunny: '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>',
+            cloudy: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>',
+            rainy: '<line x1="8" y1="19" x2="8" y2="21"/><line x1="8" y1="13" x2="8" y2="15"/><line x1="16" y1="19" x2="16" y2="21"/><line x1="16" y1="13" x2="16" y2="15"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="12" y1="15" x2="12" y2="17"/><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"/>',
+            snowy: '<path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/><line x1="8" y1="16" x2="8.01" y2="16"/><line x1="8" y1="20" x2="8.01" y2="20"/><line x1="12" y1="18" x2="12.01" y2="18"/><line x1="12" y1="22" x2="12.01" y2="22"/><line x1="16" y1="16" x2="16.01" y2="16"/><line x1="16" y1="20" x2="16.01" y2="20"/>',
+            partlyCloudy: '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/><line x1="15" y1="2" x2="15" y2="4"/><line x1="22" y1="9" x2="20" y2="9"/><line x1="19.5" y1="4.5" x2="18" y2="6"/>'
+        };
+
+        // Update London time
+        function updateTime() {
+            const now = new Date();
+            const londonTime = now.toLocaleTimeString('en-GB', { 
+                timeZone: 'Europe/London',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            });
+            document.getElementById('time').textContent = londonTime;
+        }
+
+        // Get weather icon based on condition
+        function getWeatherIcon(condition) {
+            const lower = condition.toLowerCase();
+            if (lower.includes('sun') || lower.includes('clear')) return 'sunny';
+            if (lower.includes('rain') || lower.includes('drizzle')) return 'rainy';
+            if (lower.includes('snow') || lower.includes('sleet')) return 'snowy';
+            if (lower.includes('partly') || lower.includes('partial')) return 'partlyCloudy';
+            if (lower.includes('cloud') || lower.includes('overcast')) return 'cloudy';
+            return 'sunny'; // default
+        }
+
+        // Fetch London weather
+        async function updateWeather() {
+            try {
+                const response = await fetch('https://wttr.in/London?format=j1');
+                const data = await response.json();
+                const temp = data.current_condition[0].temp_C;
+                const condition = data.current_condition[0].weatherDesc[0].value;
+                
+                document.getElementById('temp').textContent = `${temp}°C`;
+                
+                const iconType = getWeatherIcon(condition);
+                document.getElementById('weather-icon').innerHTML = weatherIcons[iconType];
+            } catch (error) {
+                document.getElementById('temp').textContent = '12°C';
+                document.getElementById('weather-icon').innerHTML = weatherIcons.sunny;
+            }
+        }
+
+        updateTime();
+        updateWeather();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
