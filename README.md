@@ -1,87 +1,71 @@
-# 📌 shazmoghaddam.github.io
+shazmoghaddam.github.io
+Personal website and landing page for Shaz Moghaddam — Data Scientist, Python Developer & App Developer.
 
-Welcome to the official repository for my personal website and landing page.
+About
+This repository contains the source code for my personal website, hosted on GitHub Pages.
+The site showcases my work across data science, Python development, Android apps, digital products, photography, and design — built as a modern, responsive, single-page experience.
 
-This site is built to showcase my skills, projects, and experience in **Python programming, data science, and AI**.
+Live Site
+➡️ https://shazmoghaddam.github.io
 
----
+Built With
 
-## 🔹 About
-
-This repository contains the code for my personal website hosted on **GitHub Pages**.
-
-The website is designed as a modern, clean, and responsive landing page that highlights:
-
-- **My background and skills**
-- **Projects and portfolio**
-- **Contact information**
-- **Links to GitHub and other professional profiles**
-
----
-
-## 🧰 Built With
-
-- **HTML5**
-- **CSS3**
-- **JavaScript**
-- **GitHub Pages**
-
----
-
-## 🚀 Live Demo
-
-You can view the live website here:  
-➡️ **https://shazmoghaddam.github.io**
-
----
-
-## 🛠️ Installation
-
-To run the website locally:
-
-1. Clone the repository:
+HTML5
+CSS3
+JavaScript
+GitHub Pages
 
 
-git clone https://github.com/shazmoghaddam/shazmoghaddam.github.io.git
+Features
 
----
+Responsive, clean single-page layout with smooth scrolling
+Skills & Tools section covering data, frameworks, and design
+Projects section — 23 projects including ML, NLP, and data analysis work
+Apps section — 6 Android apps published on the Google Play Store
+Digital Products section — 6 products across Gumroad, Lemon Squeezy, and Envato
+Certifications — 5 credentials including Imperial College London and Udemy
+Contact section with email, phone, GitHub, LinkedIn, Instagram, and CV download
+Light/dark mode toggle
+Live location, clock, and weather display
 
-## 🧩 Usage
 
-You can customize the website by editing:
+Structure
+index.html          # Main content and structure
+assets/css/         # Styling
+assets/js/          # Interactions and animations
 
-index.html – content and structure
+Projects Highlighted
 
-assets/css/style.css – styling
+Lending Club Loan Project — Loan data analysis & ML prediction (Python, scikit-learn, pandas)
+CVLens — AI CV reader & analyser using NLP and spaCy
+Stock Tracker Dashboard — Real-time stock dashboard with Streamlit and Plotly
+FAO & FDI Data Analysis — Global agricultural and investment trend analysis
 
-assets/js/script.js – interactions and animations
 
----
+Android Apps
+AppPlatformBingo MathsGoogle Play StoreMath Adventure — Maths for KidsGoogle Play StoreAnimated Month WallpaperGoogle Play StoreAnimated Weekday WallpaperGoogle Play StoreSplit Flap World ClockGoogle Play StoreWorld Builders (coming soon)Google Play Store
 
-## 📌 Features
+Digital Products
+ProductPlatformMarket Pulse — Minimal Economic CalendarGumroadTradeHours Pro — Live Global Market HoursGumroadAnimated Live Wallpapers — Months & WeekdaysLemon SqueezyAero Atlas — Terminal Time ScreensaverEnvato
 
-Fully responsive design
+Certifications
 
-Smooth scrolling
+Google Play Store Listing Certificate — Google Play Academy (2026)
+The Data Science Course: Complete Data Science Bootcamp 2025 — Udemy
+Data Science Online Bootcamp — Imperial College London / HyperionDev (96% average)
+iOS & Swift: The Complete iOS App Development Bootcamp — Udemy
+100 Days of Code: The Complete Python Pro Bootcamp — Udemy
 
-Portfolio section
 
-Contact form (optional)
+Contact
 
-Clean and modern layout
+Email: shaz.moghaddam@gmail.com
+GitHub: ShazMoghaddam
+LinkedIn: shazmoghaddam
+Instagram: @shaz.0098
 
----
 
-## 📫 Contact
+Availability
+Open to freelance, contract, and full-time opportunities in data science, Python development, and digital product work.
 
-If you want to reach out:
-
-Email: (your email here)
-
-GitHub: shazmoghaddam
-
----
-
-## ⭐ Support
-
-If you like this project, feel free to ⭐ the repository.
+⭐ If you find this project useful or interesting, feel free to star the repository.
