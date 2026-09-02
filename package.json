@@ -1,0 +1,13 @@
+{
+  "name": "shazmoghaddam-i18n",
+  "version": "1.0.0",
+  "description": "Auto-translation build for shazmoghaddam.github.io. English is the source of truth.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node build.mjs",
+    "emit": "node build.mjs --emit-only",
+    "force": "node build.mjs --force"
+  },
+  "engines": { "node": ">=18" }
+}
