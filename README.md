@@ -1,81 +1,76 @@
-# i18n build
+# shazmoghaddam.github.io
 
-English is the single source of truth. You edit English once, run one command, and
-the French, German, Spanish, and Dutch versions regenerate automatically. You never
-hand-edit a translation again unless you want to.
+Personal website and portfolio for Shaz Moghaddam, a London-based Data Scientist, Python Developer, and App & Automation Developer, trained at Imperial College London.
 
-## How it works
+Live site: https://shazmoghaddam.github.io
 
-```
-i18n/
-  locales/
-    en.json      <-- YOU EDIT THIS. English copy, keyed by data-i18n name.
-    fr.json      <-- generated. Your existing translations are preserved.
-    de.json      <-- generated.
-    es.json      <-- generated.
-    nl.json      <-- generated.
-  config.json    <-- languages + the glossary of terms that must never translate.
-  runtime.js     <-- your i18next runtime logic (unchanged).
-  build.mjs      <-- the build script.
-  .cache.json    <-- tracks which English text each translation was built from.
-../i18n.js       <-- GENERATED output that the site loads. Do not hand-edit.
-```
+## About
 
-The site still loads `../i18n.js` exactly as before. That file is now produced by the
-build instead of maintained by hand. Everything stays baked into the page, so it loads
-instantly, works offline, and never depends on a live translation service at view time.
+This repository holds the source for my personal site, hosted on GitHub Pages. It's a single-page, responsive portfolio covering my work across data science, Python development, Android apps, digital products, photography, and design.
 
-## One-time setup
+## Built with
 
-1. Get a free DeepL API key at https://www.deepl.com/pro-api (the free tier covers
-   500,000 characters a month; this whole site is a few thousand, so it is effectively free).
-2. Node 18 or newer. No packages to install.
+- HTML5, CSS3, and vanilla JavaScript
+- i18next for multi-language support (English, French, German, Spanish, Dutch)
+- GitHub Pages
 
-## The everyday workflow
+## Features
 
-1. Change your English wording, or add a new key, in `locales/en.json`.
-   If you add a key, also add the matching `data-i18n="your_key"` in `index.html`.
-2. Run:
+- Responsive single-page layout with smooth scrolling and light/dark mode
+- Skills and tools spanning data, frameworks, cloud, and design
+- Projects, apps, digital products, certifications, and writing sections
+- Live location, clock, and weather in the header
+- Five-language switcher, with translations generated from a single English source (see below)
 
-   ```bash
-   DEEPL_API_KEY=your-key-here node i18n/build.mjs
-   ```
+## Multi-language setup
 
-3. Commit and push. Done.
+English is the single source of truth. Copy lives in `i18n/locales/en.json`, and the French, German, Spanish, and Dutch versions are generated from it by a build script rather than maintained by hand. Everything stays baked into the page, so the site loads instantly and works offline with no live translation service at view time.
 
-Only the keys whose English actually changed get sent for translation. Everything else
-is left alone, so a typo fix in one sentence costs one tiny translation, not 73.
-
-## Useful variations
+To update any text on the site, edit `i18n/locales/en.json` and run:
 
 ```bash
-# Rebuild i18n.js from the JSON files without calling the API at all:
-node i18n/build.mjs --emit-only
-
-# Re-translate a single language:
-DEEPL_API_KEY=xxx node i18n/build.mjs --lang fr
-
-# Force a full re-translation of everything (ignores the cache):
-DEEPL_API_KEY=xxx node i18n/build.mjs --force
+DEEPL_API_KEY=your-key node i18n/build.mjs
 ```
 
-## Glossary (protecting your names)
+Only the strings that changed get re-translated, and `i18n.js` regenerates automatically. Full details in [`i18n/README.md`](i18n/README.md).
 
-`config.json` has a `glossary` list. Any term in it is wrapped so DeepL leaves it
-untouched: product names (VoltEdge, ClinIQ, SalaryAxis...), proper nouns, and tech
-stack (Python, FastAPI, React...). Add or remove terms freely. This is why your project
-names never come back mangled.
+## Structure
 
-## Adding a new language
+```
+index.html          # Main content and structure
+styles.css          # Styling
+main.js             # Interactions and animations
+i18n.js             # Generated translation bundle (do not edit by hand)
+i18n/               # Translation source, build script, and locale files
+```
 
-1. Add its code to `targetLangs` in `config.json`, e.g. `"it"` for Italian.
-2. Add a button in `index.html`:
-   `<button class="lang-option" data-lang="it" role="menuitem">IT — Italiano</button>`
-3. Run the build. The new file `locales/it.json` is created and filled in.
+## Selected projects
 
-## Manual edits
+- **VoltEdge** — Enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
+- **ClinIQ** — B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
+- **SalaryAxis** — UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
+- **CVLens** — AI CV reader and analyser using NLP and spaCy
+- **Stock Tracker Dashboard** — Real-time stock dashboard with Streamlit and Plotly
 
-If you hand-tweak a translation in, say, `fr.json`, it survives future builds as long as
-the English for that key does not change. If you change the English, that key gets
-re-translated and your manual edit is replaced. To keep a manual edit permanently, just
-don't touch its English source.
+## Apps and digital products
+
+Android apps published on the Google Play Store, plus digital products across Gumroad, Envato, and Lemon Squeezy. Full list on the live site.
+
+## Certifications
+
+- Data Science Online Bootcamp — Imperial College London / HyperionDev (96% average)
+- The Data Science Course: Complete Data Science Bootcamp — Udemy
+- 100 Days of Code: The Complete Python Pro Bootcamp — Udemy
+- iOS & Swift: The Complete iOS App Development Bootcamp — Udemy
+- Google Play Store Listing Certificate — Google Play Academy
+
+## Contact
+
+- Email: shaz.moghaddam@gmail.com
+- GitHub: [ShazMoghaddam](https://github.com/ShazMoghaddam)
+- LinkedIn: [shazmoghaddam](https://www.linkedin.com/in/shazmoghaddam/)
+- Instagram: [@shaz.0098](https://instagram.com/shaz.0098)
+
+## Availability
+
+Open to freelance, contract, and full-time opportunities in data science, Python development, and digital product work, in London or internationally.
