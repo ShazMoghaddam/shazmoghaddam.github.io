@@ -32,7 +32,11 @@
   stroke:color-mix(in srgb, var(--text) 74%, transparent);
   stroke-width:1.4;stroke-linecap:round;transition:stroke .4s ease;}
 #world-clock .wc-num{fill:var(--text);font-family:'DM Mono',monospace;font-size:12px;
-  text-anchor:middle;dominant-baseline:central;transition:fill .4s ease;}
+  text-anchor:middle;dominant-baseline:central;transition:fill .4s ease,opacity .3s ease;}
+
+/* While the shape morphs, the numerals fade out, get swapped invisibly, then
+   fade back in — set by the click handler in world-clock.js via .nums-swapping. */
+#world-clock.nums-swapping .wc-num{opacity:0;}
 
 /* Roman numerals for the square face: serif (Playfair Display, already loaded on
    the page at weight 400), the classical counterpart to the circle's mono Arabic.

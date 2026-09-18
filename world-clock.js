@@ -133,7 +133,7 @@
 
     function morphRing(from,to,done){
       if(reduce){ drawRing(to); if(done) done(); return; }
-      var start=null, DUR=560;
+      var start=null, DUR=680;
       requestAnimationFrame(function step(ts){
         if(start===null) start=ts;
         var t=Math.min(1,(ts-start)/DUR),
@@ -156,10 +156,15 @@
       if(morphing) return;
       var from=SHAPES[shapeIdx].rad;
       shapeIdx=(shapeIdx+1)%SHAPES.length;
-      var to=SHAPES[shapeIdx].rad;
-      applyNumerals(SHAPES[shapeIdx].name);
+      var to=SHAPES[shapeIdx].rad, name=SHAPES[shapeIdx].name;
       morphing=true; morphRing(from,to,function(){ morphing=false; });
-      try{ localStorage.setItem(SHAPE_KEY,SHAPES[shapeIdx].name); }catch(e){}
+      if(reduce){                                   // no fade for reduced motion
+        applyNumerals(name);
+      } else {                                       // fade out, swap while dim, fade in
+        bar.classList.add('nums-swapping');
+        setTimeout(function(){ applyNumerals(name); bar.classList.remove('nums-swapping'); }, 300);
+      }
+      try{ localStorage.setItem(SHAPE_KEY,name); }catch(e){}
     });
 
     function partsOf(f,d){var o={};f.formatToParts(d).forEach(function(p){if(p.type!=='literal')o[p.type]=parseInt(p.value,10);});if(o.hour===24)o.hour=0;return o;}
