@@ -1,0 +1,82 @@
+/* ============================================================
+   World clock strip for shazmoghaddam.github.io
+   In-flow, first item inside .hero-content, above the tagline.
+   Consumes the site's theme tokens (--text, --muted, --accent, --bg);
+   inverts with [data-theme]. Mondaine second hand, tapered hands,
+   two-tone hub, day/night icon above each centred label,
+   hover reveals the digital time. Hidden below 768px.
+   ============================================================ */
+#world-clock{
+  display:flex;justify-content:center;align-items:flex-start;
+  gap:clamp(1.1rem,3.5vw,2.6rem);
+  margin:0 auto 2.4rem;
+  padding:0 1.5rem;
+  font-family:'DM Sans',sans-serif;user-select:none;
+}
+#world-clock .wc-clock{display:flex;flex-direction:column;align-items:center;width:clamp(82px,8.5vw,110px);cursor:pointer;}
+#world-clock .wc-facewrap{position:relative;width:100%;}
+#world-clock .wc-face{width:100%;height:auto;display:block;}
+
+/* ring + marks: brighter than --muted, still under the hands.
+   Fallback to --muted for browsers without color-mix.
+   The ring is a single <path>; its outline (circle / rounded square) and
+   the morph between the two shapes are built in world-clock.js. */
+#world-clock .wc-ring{fill:none;stroke:var(--muted);
+  stroke:color-mix(in srgb, var(--text) 66%, transparent);
+  stroke-width:2.2;stroke-linejoin:round;transition:stroke .4s ease;}
+
+/* hover cue: the ring brightens to signal the clock is clickable (toggles shape) */
+#world-clock .wc-clock:hover .wc-ring{stroke:var(--text);
+  stroke:color-mix(in srgb, var(--text) 92%, transparent);}
+#world-clock .wc-tick{stroke:var(--muted);
+  stroke:color-mix(in srgb, var(--text) 74%, transparent);
+  stroke-width:1.4;stroke-linecap:round;transition:stroke .4s ease,opacity .3s ease;}
+#world-clock .wc-num{fill:var(--text);font-family:'DM Mono',monospace;font-size:12px;
+  text-anchor:middle;dominant-baseline:central;transition:fill .4s ease,opacity .3s ease;}
+
+/* While the shape morphs, the numerals fade out, get swapped invisibly, then
+   fade back in — set by the click handler in world-clock.js via .nums-swapping. */
+#world-clock.nums-swapping .wc-num,#world-clock.nums-swapping .wc-tick{opacity:0;}
+
+/* Roman numerals for the square face: serif (Playfair Display, already loaded on
+   the page at weight 400), the classical counterpart to the circle's mono Arabic.
+   Applied/removed by applyNumerals() in world-clock.js as the shape morphs. */
+#world-clock .wc-num--roman{font-family:'Playfair Display',serif;font-weight:400;
+  font-size:12.5px;letter-spacing:.01em;}
+
+/* Farsi (Persian) numerals for the hexagon face: system Persian digits
+   (U+06Fx) rendered with a Persian-capable font stack, a touch larger so they
+   read clearly. Applied/removed by applyNumerals() as the shape morphs. */
+#world-clock .wc-num--farsi{font-family:"SF Arabic","Geeza Pro","Vazirmatn",Tahoma,"Segoe UI",sans-serif;
+  font-size:13px;}
+
+/* tapered hour + minute hands */
+#world-clock .wc-hour polygon,#world-clock .wc-min polygon{
+  fill:var(--text);stroke:var(--text);stroke-width:.5;stroke-linejoin:round;
+  transition:fill .4s ease,stroke .4s ease;}
+
+/* Mondaine second hand */
+#world-clock .wc-sec-stalk{stroke:var(--accent);stroke-width:1;stroke-linecap:round;}
+#world-clock .wc-sec-disc{fill:var(--accent);}
+
+/* two-tone centre hub */
+#world-clock .wc-hub-o{fill:var(--text);transition:fill .4s ease;}
+#world-clock .wc-hub-i{fill:var(--bg);transition:fill .4s ease;}
+
+/* hover digital time */
+#world-clock .wc-digital{position:absolute;left:50%;top:62%;transform:translate(-50%,-50%);
+  font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.04em;color:var(--text);
+  background:var(--bg);padding:1px 5px;border-radius:4px;opacity:0;pointer-events:none;
+  transition:opacity .18s ease;white-space:nowrap;}
+#world-clock .wc-clock:hover .wc-digital{opacity:1;}
+
+/* label: day/night icon centred above the centred name */
+#world-clock .wc-name{margin-top:9px;display:flex;flex-direction:column;align-items:center;gap:4px;
+  font-size:.6rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--text);
+  text-align:center;line-height:1.2;transition:color .4s ease;}
+#world-clock .wc-ic{width:14px;height:14px;display:block;}
+#world-clock .wc-moon{display:none;}
+#world-clock .wc-clock.is-night .wc-sun{display:none;}
+#world-clock .wc-clock.is-night .wc-moon{display:block;}
+
+@media (max-width:767px){ #world-clock{display:none;} }
