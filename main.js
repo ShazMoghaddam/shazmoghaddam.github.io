@@ -541,43 +541,53 @@ init();
         nodes.forEach(n => n.classList.remove('is-accent'));
     }
 
+    /* Index of the card lit by a first tap on a touch screen (-1 = none) */
+    let armed = -1;
+    document.addEventListener('touchstart', (e) => {
+        if (armed >= 0 && !e.target.closest('.mindmap-node')) { armed = -1; accentClearAll(); }
+    }, { passive: true });
+
     nodes.forEach((node, i) => {
         /* Desktop pointer + keyboard: lit while hovered or focused */
         node.addEventListener('mouseenter', () => accentOn(i));
-        node.addEventListener('mouseleave', () => accentOff(i));
+        node.addEventListener('mouseleave', () => { if (armed !== i) accentOff(i); });
         node.addEventListener('focus',  () => accentOn(i));
-        node.addEventListener('blur',   () => accentOff(i));
+        node.addEventListener('blur',   () => { if (armed !== i) accentOff(i); });
 
-        /* Touch: light up only on a real tap, never mid-scroll. A finger
-           that lands on a card and then drags is a scroll — glowing the
-           line in that case is exactly the inconsistency to avoid. So we
-           wait for touchend and skip it if the finger moved at all. */
-        let sx = 0, sy = 0, moved = false;
+        /* Touch: phones have no hover, so the first tap does what hovering
+           does on a desktop (card, line and hub light up together and stay
+           lit) and a second tap on the same card opens the article.
+           A finger that lands on a card and then drags is a scroll, so it
+           never lights anything. */
+        let sx = 0, sy = 0, moved = false, touched = false;
         node.addEventListener('touchstart', (e) => {
             const t = e.touches[0];
-            sx = t.clientX; sy = t.clientY; moved = false;
+            sx = t.clientX; sy = t.clientY; moved = false; touched = true;
         }, { passive: true });
         node.addEventListener('touchmove', (e) => {
             const t = e.touches[0];
-            if (Math.abs(t.clientX - sx) > 10 || Math.abs(t.clientY - sy) > 10) {
-                moved = true;
-                accentOff(i);
+            if (Math.abs(t.clientX - sx) > 10 || Math.abs(t.clientY - sy) > 10) moved = true;
+        }, { passive: true });
+        node.addEventListener('click', (e) => {
+            if (!touched) return;            // mouse or keyboard: open as normal
+            touched = false;
+            if (moved) { e.preventDefault(); return; }
+            if (armed !== i) {               // first tap: preview the path
+                e.preventDefault();
+                accentClearAll();
+                accentOn(i);
+                armed = i;
+            } else {                         // second tap: open, then reset
+                armed = -1;
+                setTimeout(accentClearAll, 300);
             }
-        }, { passive: true });
-        node.addEventListener('touchend', () => {
-            if (moved) return;
-            accentOn(i);
-            // Hold briefly so the tap registers, then release. The link
-            // opens in a new tab, so the card stays on screen.
-            setTimeout(() => accentOff(i), 900);
-        }, { passive: true });
-        node.addEventListener('touchcancel', () => accentOff(i), { passive: true });
+        });
     });
 
     /* Coming back to a backgrounded tab (after the Medium link opens)
        should never show a line still lit — clear on the way out. */
     document.addEventListener('visibilitychange', () => {
-        if (document.hidden) accentClearAll();
+        if (document.hidden) { armed = -1; accentClearAll(); }
     });
     window.addEventListener('pagehide', accentClearAll, { passive: true });
 
