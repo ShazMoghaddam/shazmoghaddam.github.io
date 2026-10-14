@@ -1,4 +1,5 @@
-    const savedLang = localStorage.getItem('lang') || 'en';
+    let savedLang = 'en';
+    try { savedLang = localStorage.getItem('lang') || 'en'; } catch (e) {}
 
     i18next.init({
         lng: savedLang,
@@ -8,6 +9,11 @@
     }, function() {
         applyTranslations(false);
         setLangActive(savedLang);
+        // Some content (the world clocks, the footer line) is built after this
+        // script runs, so translate once more when the page has finished building.
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => applyTranslations(false));
+        }
     });
 
     function applyTranslations(animate) {
@@ -35,7 +41,19 @@
                     el.textContent = val;
                 }
             });
+            // Attributes: data-i18n-attr="aria-label:key; data-label:key2"
+            document.querySelectorAll('[data-i18n-attr]').forEach(el => {
+                el.getAttribute('data-i18n-attr').split(';').forEach(pair => {
+                    const i = pair.indexOf(':');
+                    if (i < 0) return;
+                    const attr = pair.slice(0, i).trim();
+                    const key = pair.slice(i + 1).trim();
+                    const val = i18next.t(key);
+                    if (val && val !== key) el.setAttribute(attr, val);
+                });
+            });
             document.documentElement.lang = i18next.language;
+            document.dispatchEvent(new CustomEvent('i18n:applied', { detail: { lang: i18next.language } }));
         }
 
         if (animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -114,7 +132,7 @@
             i18next.changeLanguage(lang, function() {
                 applyTranslations(true);
                 setLangActive(lang);
-                localStorage.setItem('lang', lang);
+                try { localStorage.setItem('lang', lang); } catch (e) {}
                 // The theme toggle label is translated by applyTranslations
                 // above, which reads the data-i18n key that toggleTheme keeps in
                 // sync with the current theme. No manual re-apply is needed here.

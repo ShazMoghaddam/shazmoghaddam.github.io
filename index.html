@@ -68,23 +68,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;700;900;1000&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=chart2">
+    <link rel="stylesheet" href="styles.css?v=polish2">
     <link rel="stylesheet" href="world-clock.css?v=9">
 </head>
 <body data-theme="dark">
-    <a href="#main-content" class="skip-link">Skip to content</a>
+    <script>try { if (localStorage.getItem('theme') === 'light') document.body.setAttribute('data-theme', 'light'); } catch (e) {}</script>
+    <a href="#main-content" class="skip-link" data-i18n="skip_link">Skip to content</a>
     <div id="scroll-progress"></div>
 
     <!-- Section nav dots -->
-    <nav id="section-nav" aria-label="Page sections">
-        <button class="nav-dot" data-label="Skills" data-target=".skills"></button>
-        <button class="nav-dot" data-label="About" data-target=".about"></button>
-        <button class="nav-dot" data-label="Certifications" data-target=".certifications"></button>
-        <button class="nav-dot" data-label="Projects" data-target=".projects"></button>
-        <button class="nav-dot" data-label="Apps" data-target=".products:nth-of-type(1)"></button>
-        <button class="nav-dot" data-label="Digital Products" data-target=".products:nth-of-type(2)"></button>
-        <button class="nav-dot" data-label="Writing" data-target=".writing"></button>
-        <button class="nav-dot" data-label="Contact" data-target=".contact"></button>
+    <nav id="section-nav" aria-label="Page sections" data-i18n-attr="aria-label:aria_sections">
+        <button class="nav-dot" data-label="Projects" data-i18n-attr="data-label:nav_projects; aria-label:nav_projects" data-target="#projects" aria-label="Projects"></button>
+        <button class="nav-dot" data-label="Skills" data-i18n-attr="data-label:nav_skills; aria-label:nav_skills" data-target="#skills" aria-label="Skills"></button>
+        <button class="nav-dot" data-label="About" data-i18n-attr="data-label:nav_about; aria-label:nav_about" data-target="#about" aria-label="About"></button>
+        <button class="nav-dot" data-label="Certifications" data-i18n-attr="data-label:nav_certs; aria-label:nav_certs" data-target="#certifications" aria-label="Certifications"></button>
+        <button class="nav-dot" data-label="Apps" data-i18n-attr="data-label:nav_apps; aria-label:nav_apps" data-target="#apps" aria-label="Apps"></button>
+        <button class="nav-dot" data-label="Digital Products" data-i18n-attr="data-label:nav_digital; aria-label:nav_digital" data-target="#digital" aria-label="Digital Products"></button>
+        <button class="nav-dot" data-label="Writing" data-i18n-attr="data-label:nav_writing; aria-label:nav_writing" data-target="#writing" aria-label="Writing"></button>
+        <button class="nav-dot" data-label="Contact" data-i18n-attr="data-label:nav_contact; aria-label:nav_contact" data-target="#contact" aria-label="Contact"></button>
     </nav>
 
     <div class="theme-flash" id="theme-flash"></div>
@@ -97,7 +98,7 @@
                 <span id="theme-text" data-i18n="theme_light">Light</span>
             </button>
             <div class="lang-globe-wrap">
-                <button class="lang-globe-btn" id="langGlobeBtn" aria-label="Select language" aria-expanded="false">
+                <button class="lang-globe-btn" id="langGlobeBtn" aria-label="Select language" data-i18n-attr="aria-label:aria_language" aria-expanded="false">
                     <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                 </button>
                 <div class="lang-dropdown" id="langDropdown" role="menu">
@@ -154,7 +155,7 @@
     <!-- Hero -->
     <header>
         <div class="hero-content">
-            <div id="world-clock" aria-label="World clock"></div>
+            <div id="world-clock" aria-label="World clock" data-i18n-attr="aria-label:aria_world_clock"></div>
             <p class="hero-tagline">
                 <span data-i18n="tagline_ai">Python Developer</span><span class="dot">·</span><span data-i18n="tagline_data">Data Scientist</span><span class="dot">·</span><span data-i18n="tagline_app">AI &amp; ML</span>
             </p>
@@ -162,14 +163,14 @@
                 Sh<span class="spin-a">a</span>z
                 <span class="last-name">M<span class="hero-o">o</span>gh<span class="spin-a">a</span>dd<span class="spin-a">a</span>m</span>
             </h1>
-            <p class="hero-sub" data-i18n="hero_sub">Where data science, code, and product thinking meet — and turn into <span class="hl">things people actually use.</span></p>
+            <p class="hero-sub" data-i18n="hero_sub">Where data science, code, and product thinking meet, and turn into <span class="hl">things people actually use.</span></p>
             <div class="hero-badge">
                 <span class="hero-badge-dot" aria-hidden="true"></span>
-                <span data-i18n="hero_badge">Available for freelance, contract, and full-time opportunities — in London or internationally</span>
+                <span data-i18n="hero_badge">Available for freelance, contract, and full-time opportunities, in London or internationally</span>
             </div>
             <div class="hero-cta">
-                <a href="#projects" class="hero-btn hero-btn-primary" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'}); return false;"><span data-i18n="hero_cta_work">View my work</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                <a href="#contact" class="hero-btn hero-btn-ghost" onclick="document.querySelector('.contact').scrollIntoView({behavior:'smooth'}); return false;"><span data-i18n="hero_cta_contact">Get in touch</span></a>
+                <a href="#projects" class="hero-btn hero-btn-primary"><span data-i18n="hero_cta_work">View my work</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="#contact" class="hero-btn hero-btn-ghost"><span data-i18n="hero_cta_contact">Get in touch</span></a>
             </div>
         </div>
     </header>
@@ -183,7 +184,7 @@
         <div class="stat-backdrop" id="statBackdrop" aria-hidden="true"></div>
 
         <!-- 7 Apps -->
-        <a class="stat-item" href="#apps" onclick="document.querySelector('.products').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#apps">
             <span class="sr-only">7 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -197,7 +198,7 @@
         </a>
 
         <!-- 19 Digital Products -->
-        <a class="stat-item" href="#digital" onclick="document.querySelectorAll('.products')[1].scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#digital">
             <span class="sr-only">19 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
@@ -213,7 +214,7 @@
         </a>
 
         <!-- 50 Projects -->
-        <a class="stat-item" href="#projects" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#projects">
             <span class="sr-only">50 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
@@ -229,7 +230,7 @@
         </a>
 
         <!-- 5 Certifications -->
-        <a class="stat-item" href="#certs" onclick="document.querySelector('.certifications').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#certifications">
             <span class="sr-only">6 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -243,7 +244,7 @@
         </a>
 
         <!-- 7 Publications -->
-        <a class="stat-item" href="#writing" onclick="document.querySelector('.writing').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#writing">
             <span class="sr-only">7 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -260,8 +261,141 @@
 
     <div class="container">
 
+        <!-- Projects -->
+        <section class="projects" id="projects">
+            <span class="section-label reveal" data-i18n="label_work">Work</span>
+            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="projects_heading">Projects</h2>
+            <div class="projects-accordion reveal reveal-delay-2">
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">01</span>
+                        <span class="accordion-title" data-i18n="t_ledgerlet">LedgerLet — Making Tax Digital for UK Landlords</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">SQLAlchemy</span>
+                            <span class="project-tag">Alembic</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Vite</span>
+                            <span class="project-tag">Auth0</span>
+                            <span class="project-tag">HMRC MTD API</span>
+                            <span class="project-tag">Playwright</span>
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Render</span>
+                        </div>
+                        <p data-i18n="d_ledgerlet">A Making Tax Digital platform for UK landlords that keeps property records and files cumulative quarterly updates straight to HMRC. Landlords add income and expenses by hand or import a bank statement CSV through a two-step preview that blocks duplicate rows. Every figure is stored as integer pence and mapped to HMRC's property headings, with joint ownership shares and mortgage interest handled the way HMRC requires. It connects to HMRC over OAuth with encrypted tokens, sends validated fraud prevention headers, checks obligations and deadlines, and keeps an append-only audit trail of every submission. Built as a modular monolith (FastAPI, PostgreSQL, SQLAlchemy 2.0, Alembic) with a React and TypeScript frontend whose types are generated from the API, Auth0 sign-in in the UK region, and a CI gate that runs 394 backend tests on SQLite and Postgres plus frontend unit and browser tests with accessibility checks at phone, tablet and laptop sizes. The live demo runs end to end on HMRC's sandbox.</p>
+                        <a href="https://ledgerlet.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">02</span>
+                        <span class="accordion-title" data-i18n="t_voltedge">VoltEdge — Enterprise Energy Intelligence Platform</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Plotly Dash</span>
+                            <span class="project-tag">scikit-learn</span>
+                            <span class="project-tag" data-i18n="tag_causal_ai">Causal AI</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Claude AI</span>
+                            <span class="project-tag">Railway</span>
+                            <span class="project-tag">Render</span>
+                        </div>
+                        <p data-i18n="d_voltedge">An enterprise energy intelligence platform for UK and European industrial operations. It provides real-time multi-site energy monitoring, ML anomaly detection with an isolation forest model, causal AI root-cause analysis with quantified causal strength scores, and CSRD-ready ESG reporting covering Scope 2 emissions, GRI 302-1 and carbon intensity. Includes a plain-English AI assistant powered by Claude, JWT authentication with role-based access control, and 903 passing tests. The live demo is deployed on Render.</p>
+                        <a href="https://github.com/ShazMoghaddam/voltedge" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://voltedge-1k6q.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">03</span>
+                        <span class="accordion-title" data-i18n="t_voltscope">VoltScope — UK Energy Bill Intelligence &amp; Extraction</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Claude API</span>
+                            <span class="project-tag">Pydantic</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">REST API</span>
+                            <span class="project-tag">OpenAPI</span>
+                            <span class="project-tag">Render</span>
+                        </div>
+                        <p data-i18n="d_voltscope">Structured extraction and deterministic validation for UK commercial energy bills, and the bill-intelligence module of VoltEdge. It accepts PDFs and phone photos (including iPhone HEIC), sends each one to Claude for schema-constrained extraction into a fixed Pydantic model, then runs a registry of independent validation checks covering MPAN digit counts, subtotal and VAT reconciliation, estimated reads, duplicate charges, contract-renewal windows and non-energy-bill detection. It ships a FastAPI review app with a drag-and-drop frontend, SQLite persistence, API-key auth and JSON, Excel and CSV export, plus a cross-portfolio layer that surfaces renewals, quantified suspected overcharges and supplier comparisons. Includes interactive OpenAPI docs, a Render deployment blueprint and 50 passing golden-file tests anchored on real, anonymised supplier bills.</p>
+                        <a href="https://github.com/ShazMoghaddam/voltscope" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">04</span>
+                        <span class="accordion-title" data-i18n="t_cliniq">ClinIQ — Clinical Trial Site Performance Intelligence</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">Plotly Dash</span>
+                            <span class="project-tag">SQLAlchemy</span>
+                            <span class="project-tag">scikit-learn</span>
+                            <span class="project-tag">spaCy</span>
+                            <span class="project-tag">SQLite</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Claude AI</span>
+                            <span class="project-tag">Render</span>
+                        </div>
+                        <p data-i18n="d_cliniq">A B2B clinical trial site performance intelligence platform for mid-market CROs in the UK and EU. It monitors enrolment velocity, risk scores and protocol deviations across trial sites, with an AI-assisted insights layer powered by Claude. Features a FastAPI backend, a Plotly Dash dashboard and a SQLAlchemy data layer that seeds itself on startup. Built across five phases with 496 passing tests.</p>
+                        <a href="https://github.com/ShazMoghaddam/cliniq" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">05</span>
+                        <span class="accordion-title" data-i18n="t_salaryaxis">SalaryAxis — UK Salary Intelligence Platform</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Flask</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">pandas</span>
+                            <span class="project-tag">NumPy</span>
+                            <span class="project-tag">SciPy</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">AWS / GCP</span>
+                            <span class="project-tag" data-i18n="tag_ons">ONS Open Data</span>
+                        </div>
+                        <p data-i18n="d_salaryaxis">A production-grade UK salary intelligence platform built on ONS open data. It aggregates Annual Survey of Hours and Earnings data, applies CPI inflation adjustment and statistical analysis, and delivers fair salary benchmarks through a REST API and a React dashboard. Features include regional breakdowns, gender pay gap trends, occupation distribution profiles and CAGR analysis, all GDPR-compliant with no personal data collected. Deployable to AWS ECS Fargate or GCP Cloud Run with a multi-stage Docker build.</p>
+                        <a href="https://github.com/ShazMoghaddam/salaryaxis" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+            </div>
+        </section>
+
         <!-- Skills -->
-        <section class="skills">
+        <section class="skills" id="skills">
             <span class="section-label reveal" data-i18n="label_expertise">Expertise</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="skills_heading">Skills &amp; Tools</h2>
             <div class="skills-table reveal reveal-delay-2">
@@ -280,7 +414,7 @@
                         <li>HTML &amp; CSS</li>
                         <li>SVG</li>
                         <li>SQL &amp; PostgreSQL</li>
-                        <li>Machine Learning</li>
+                        <li data-i18n="skill_ml">Machine Learning</li>
                         <li>NLP &amp; spaCy</li>
                         <li>pandas &amp; NumPy</li>
                         <li>scikit-learn</li>
@@ -331,18 +465,18 @@
                         <li>Railway</li>
                         <li>Render</li>
                         <li>Auth0, OAuth 2.0 &amp; OIDC</li>
-                        <li>HMRC Making Tax Digital APIs</li>
-                        <li>Accessibility (WCAG, axe)</li>
-                        <li>Causal AI &amp; NetworkX</li>
-                        <li>Android Development</li>
-                        <li>Generative Design</li>
-                        <li>CSS Blend Modes</li>
-                        <li>UI / Visual Design</li>
-                        <li>Digital Product Design</li>
+                        <li data-i18n="skill_hmrc">HMRC Making Tax Digital APIs</li>
+                        <li data-i18n="skill_a11y">Accessibility (WCAG, axe)</li>
+                        <li data-i18n="skill_causal">Causal AI &amp; NetworkX</li>
+                        <li data-i18n="skill_android">Android Development</li>
+                        <li data-i18n="skill_generative">Generative Design</li>
+                        <li data-i18n="skill_blend">CSS Blend Modes</li>
+                        <li data-i18n="skill_ui">UI / Visual Design</li>
+                        <li data-i18n="skill_product">Digital Product Design</li>
                         <li>Anthropic Claude API</li>
                         <li>ChatGPT &amp; Gemini</li>
-                        <li>Photography</li>
-                        <li>Videography</li>
+                        <li data-i18n="skill_photo">Photography</li>
+                        <li data-i18n="skill_video">Videography</li>
                     </ul>
                     </div>
                 </div>
@@ -350,7 +484,7 @@
         </section>
 
         <!-- About -->
-        <section class="about">
+        <section class="about" id="about">
             <div class="about-split reveal">
                 <div class="about-left">
                     <span class="section-label" data-i18n="label_about">About</span>
@@ -419,7 +553,7 @@
         </section>
 
         <!-- Certifications -->
-        <section class="certifications">
+        <section class="certifications" id="certifications">
             <span class="section-label reveal" data-i18n="label_credentials">Credentials</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="certs_heading">Certifi<em>cations</em></h2>
             <div class="cert-scroll-hint">
@@ -439,8 +573,8 @@
                         <span class="project-tag">HyperionDev</span>
                     </div>
                     <div class="cert-card-meta">
-                        <span>June 10, 2025</span>
-                        <span>No: ES25030017561-7076</span>
+                        <span data-i18n="cert_ds_date">10 June 2025</span>
+                        <span><span data-i18n="cert_no">No:</span> ES25030017561-7076</span>
                     </div>
                 </a>
 
@@ -453,9 +587,9 @@
                         <span class="project-tag">Udemy</span>
                     </div>
                     <div class="cert-card-meta">
-                        <span>July 14, 2023</span>
-                        <span>58 hours</span>
-                        <span>No: UC-5eff400e-07a6-40ff-adef-913727f2c37d</span>
+                        <span data-i18n="cert_100_date">14 July 2023</span>
+                        <span data-i18n="cert_100_hours">58 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-5eff400e-07a6-40ff-adef-913727f2c37d</span>
                     </div>
                 </a>
 
@@ -468,9 +602,9 @@
                         <span class="project-tag">Udemy</span>
                     </div>
                     <div class="cert-card-meta">
-                        <span>Oct 2, 2025</span>
-                        <span>32 hours</span>
-                        <span>No: UC-73115e41-ec60-434c-b153-97e62a6bd6a3</span>
+                        <span data-i18n="cert_dsc_date">2 October 2025</span>
+                        <span data-i18n="cert_dsc_hours">32 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-73115e41-ec60-434c-b153-97e62a6bd6a3</span>
                     </div>
                 </a>
 
@@ -483,9 +617,9 @@
                         <span class="project-tag">Google Play Academy</span>
                     </div>
                     <div class="cert-card-meta">
-                        <span>April 14, 2026</span>
-                        <span>Valid through: April 14, 2029</span>
-                        <span>No: 179779870</span>
+                        <span data-i18n="cert_gp_date">14 April 2026</span>
+                        <span data-i18n="cert_gp_valid">Valid until 14 April 2029</span>
+                        <span><span data-i18n="cert_no">No:</span> 179779870</span>
                     </div>
                 </a>
 
@@ -498,25 +632,25 @@
                         <span class="project-tag">Udemy</span>
                     </div>
                     <div class="cert-card-meta">
-                        <span>Jan 23, 2024</span>
-                        <span>60.5 hours</span>
-                        <span>No: UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97</span>
+                        <span data-i18n="cert_ios_date">23 January 2024</span>
+                        <span data-i18n="cert_ios_hours">60.5 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97</span>
                     </div>
                 </a>
 
                 <a href="assets/certificates/NHS.pdf" target="_blank" rel="noopener noreferrer" class="cert-card cert-card--blood">
                     <span class="cert-blood-group" aria-hidden="true">A+</span>
                     <div class="cert-card-top">
-                        <span class="cert-card-title">50 Blood Donations Certificate</span>
+                        <span class="cert-card-title" data-i18n="cert_blood_title">50 Blood Donations Certificate</span>
                         <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
                     </div>
                     <div class="cert-card-tags">
-                        <span class="project-tag">NHS Blood & Transplant</span>
+                        <span class="project-tag">NHS Blood and Transplant</span>
                     </div>
                     <div class="cert-card-meta">
                         <span>2026</span>
-                        <span>50 donations milestone</span>
-                        <span>Every donation counts</span>
+                        <span data-i18n="cert_blood_milestone">50 donations milestone</span>
+                        <span data-i18n="cert_blood_counts">Every donation counts</span>
                     </div>
                 </a>
 
@@ -524,181 +658,8 @@
             </div>
         </section>
 
-        <!-- Projects -->
-        <section class="projects">
-            <span class="section-label reveal" data-i18n="label_work">Work</span>
-            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="projects_heading">Projects</h2>
-            <div class="projects-accordion reveal reveal-delay-2">
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">01</span>
-                        <span class="accordion-title">LedgerLet — Making Tax Digital for UK Landlords</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">PostgreSQL</span>
-                            <span class="project-tag">SQLAlchemy</span>
-                            <span class="project-tag">Alembic</span>
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">TypeScript</span>
-                            <span class="project-tag">Vite</span>
-                            <span class="project-tag">Auth0</span>
-                            <span class="project-tag">HMRC MTD API</span>
-                            <span class="project-tag">Playwright</span>
-                            <span class="project-tag">GitHub Actions</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">Render</span>
-                        </div>
-                        <p>A Making Tax Digital platform for UK landlords that keeps property records and files cumulative quarterly updates straight to HMRC. Landlords add income and expenses by hand or import a bank statement CSV through a two-step preview that blocks duplicate rows, and every figure is stored as integer pence and mapped to HMRC's property headings, with joint ownership shares and mortgage interest handled the way HMRC requires. Connects to HMRC over OAuth with encrypted tokens, sends validated fraud prevention headers, checks obligations and deadlines, and keeps an append-only audit trail of every submission. Built as a modular monolith (FastAPI, PostgreSQL, SQLAlchemy 2.0, Alembic) with a React and TypeScript frontend whose types are generated from the API, Auth0 sign-in in the UK region, and a CI gate that runs 394 backend tests on SQLite and Postgres plus frontend unit and browser tests with accessibility checks at phone, tablet and laptop sizes. Live demo runs end to end on HMRC's sandbox.</p>
-                        <a href="https://ledgerlet.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">02</span>
-                        <span class="accordion-title">VoltEdge — Enterprise Energy Intelligence Platform</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">Plotly Dash</span>
-                            <span class="project-tag">scikit-learn</span>
-                            <span class="project-tag">Causal AI</span>
-                            <span class="project-tag">SQLite</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">Claude AI</span>
-                            <span class="project-tag">Railway</span>
-                            <span class="project-tag">Render</span>
-                        </div>
-                        <p>Enterprise energy intelligence platform targeting UK and European industrial operations. Provides real-time multi-site energy monitoring, ML anomaly detection using an isolation forest model, causal AI root-cause analysis with quantified causal strength scores, and CSRD-ready ESG reporting covering Scope 2 emissions, GRI 302-1, and carbon intensity. Includes a plain-English AI assistant powered by Claude, JWT authentication with RBAC, and 903 passing tests. Live demo deployed to Render.</p>
-                        <a href="https://github.com/ShazMoghaddam/voltedge" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://voltedge-1k6q.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
-                        <span class="accordion-title">VoltScope — UK Energy Bill Intelligence &amp; Extraction</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">Claude API</span>
-                            <span class="project-tag">Pydantic</span>
-                            <span class="project-tag">SQLite</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">REST API</span>
-                            <span class="project-tag">OpenAPI</span>
-                            <span class="project-tag">Render</span>
-                        </div>
-                        <p>Structured extraction and deterministic validation for UK commercial energy bills, and the bill-intelligence module of VoltEdge. Accepts PDFs and phone photos (including iPhone HEIC), sends each to Claude for schema-constrained extraction into a fixed Pydantic model, then runs a registry of independent validation checks covering MPAN digit counts, subtotal and VAT reconciliation, estimated reads, duplicate charges, contract-renewal windows, and non-energy-bill detection. Ships a FastAPI review app with a drag-and-drop frontend, SQLite persistence, API-key auth, and JSON, Excel, and CSV export, plus a cross-portfolio intelligence layer that surfaces renewals, quantified suspected overcharges, and supplier comparisons. Includes interactive OpenAPI docs, a Render deployment blueprint, and 50 passing golden-file tests anchored on real anonymised supplier bills.</p>
-                        <a href="https://github.com/ShazMoghaddam/voltscope" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
-                        <span class="accordion-title">ClinIQ — Clinical Trial Site Performance Intelligence</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">FastAPI</span>
-                            <span class="project-tag">Plotly Dash</span>
-                            <span class="project-tag">SQLAlchemy</span>
-                            <span class="project-tag">scikit-learn</span>
-                            <span class="project-tag">spaCy</span>
-                            <span class="project-tag">SQLite</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">Claude AI</span>
-                            <span class="project-tag">Render</span>
-                        </div>
-                        <p>B2B clinical trial site performance intelligence platform targeting mid-market CROs in the UK and EU. Monitors enrolment velocity, risk scoring, and protocol deviation tracking across trial sites, with an AI-assisted insights layer powered by Claude. Features a FastAPI backend, Plotly Dash dashboard, and SQLAlchemy data layer with auto-seeding on startup. Built across five phases with 496 passing tests.</p>
-                        <a href="https://github.com/ShazMoghaddam/cliniq" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title">SalaryAxis — UK Salary Intelligence Platform</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Flask</span>
-                            <span class="project-tag">React</span>
-                            <span class="project-tag">pandas</span>
-                            <span class="project-tag">NumPy</span>
-                            <span class="project-tag">SciPy</span>
-                            <span class="project-tag">Docker</span>
-                            <span class="project-tag">AWS / GCP</span>
-                            <span class="project-tag">ONS Open Data</span>
-                        </div>
-                        <p>A production-grade UK salary intelligence platform built on ONS open data. Aggregates Annual Survey of Hours and Earnings data, applies CPI inflation adjustment and statistical analysis, and delivers fair salary benchmarks via a REST API and React dashboard. Features include regional breakdowns, gender pay gap trends, occupation distribution profiles, and CAGR analysis — all GDPR-compliant with no personal data collected. Deployable to AWS ECS Fargate or GCP Cloud Run via multi-stage Docker.</p>
-                        <a href="https://github.com/ShazMoghaddam/salaryaxis" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title">CVLens — AI CV Reader &amp; Analyzer</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">spaCy</span>
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">PyMuPDF</span>
-                            <span class="project-tag">python-docx</span>
-                            <span class="project-tag">regex</span>
-                        </div>
-                        <p>Built an NLP-driven system to parse and analyse CVs in PDF and DOCX formats using Python. Applied spaCy for tokenisation, entity processing, and skill extraction from unstructured text with automated quality checks.</p>
-                        <a href="https://github.com/ShazMoghaddam/CVLens" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title">Stock Tracker Dashboard</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Streamlit</span>
-                            <span class="project-tag">yfinance</span>
-                            <span class="project-tag">pandas</span>
-                            <span class="project-tag">Plotly</span>
-                            <span class="project-tag">REST API</span>
-                        </div>
-                        <p>A real-time interactive dashboard built with Python that tracks and visualises stock market data. It integrates live price updates, key performance metrics, and dynamic charts to help users monitor market movements and make informed investment decisions.</p>
-                        <a href="https://github.com/ShazMoghaddam/Stock_Tracker_Dashboard" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-            </div>
-        </section>
-
         <!-- Products & Apps -->
-        <section class="products">
+        <section class="products" id="apps">
             <span class="section-label reveal" data-i18n="label_products_apps">Products &amp; Apps</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="built_heading">What I've <em>Built</em></h2>
             <div class="projects-accordion reveal reveal-delay-2">
@@ -706,110 +667,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
-                        <span class="accordion-title">Bingo Maths</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>A fun, bingo-style maths game for Android. Makes practising maths engaging through familiar bingo mechanics, designed to keep players coming back. Free to download and play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.bingomaths" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">02</span>
-                        <span class="accordion-title">Math Adventure — Maths for Kids</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Ages 3–11</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>An engaging adventure-based learning app for young learners aged 3 to 11. Combines storytelling and exploration with maths challenges to build foundational skills in a way that feels like play rather than study. Free to download and use.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.mathadventure" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
-                        <span class="accordion-title">Animated Month Wallpaper</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>A minimal, fullscreen animated live wallpaper for Android that displays the current month. Fully customisable with multiple languages, fonts, and a breathing animation with a live clock. Free to download.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.animatedmonthwallpaper" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
-                        <span class="accordion-title">Animated Weekday Wallpaper</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>A minimal, fullscreen animated live wallpaper for Android that displays the current day of the week. Supports multiple languages and fonts with a breathing animation and live clock. Free to download.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.animatedweeklywallpaper" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title">Split Flap World Clock</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>Turn your Android into a living departure board. Inspired by iconic split-flap Solari boards, this app shows live world clocks for multiple cities with authentic flip animations. Supports 300+ world cities and multiple colour themes. Free to download.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.splitflapworldclock" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title">World Builders</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
-                        </div>
-                        <p>Build a world from nothing and watch it grow. World Builders is an open sandbox that hands you the tools to shape the land and expand it piece by piece, at your own pace. No timers and no fixed goals, just room to create and experiment. Free to download and play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.worldbuilders" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title">SearchWars — Which Gets More Google Searches?</span>
+                        <span class="accordion-title" data-i18n="t_searchwars">SearchWars — Which Gets More Google Searches?</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
@@ -817,10 +675,113 @@
                             <span class="project-tag">Android</span>
                             <span class="project-tag">Flutter</span>
                             <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag">Free</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
                         </div>
-                        <p>A higher/lower guessing game inspired by higherlowergame.com. Players see two items and guess which gets more monthly Google searches. Features 3,187 questions across 11 categories — Sports, Celebrity, Tech, Gaming, Geography, History, and more — with 3 lives, per-category high scores, subcategory navigation, and smooth card animations. Free to play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.searchwars.app" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 0 10 10" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 10,5 0,10" /></svg>View on Google Play</a>
+                        <p data-i18n="d_searchwars">A higher-or-lower guessing game inspired by higherlowergame.com. Players see two items and guess which one gets more monthly Google searches. It has 3,187 questions across 11 categories, including Sports, Celebrity, Tech, Gaming, Geography and History, with 3 lives, high scores per category, subcategory navigation and smooth card animations. Free to play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.searchwars.app" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">02</span>
+                        <span class="accordion-title">World Builders</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_worldbuilders">Build a world from nothing and watch it grow. World Builders is an open sandbox that gives you the tools to shape the land and expand it piece by piece, at your own pace. No timers and no fixed goals, just room to create and experiment. Free to download and play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.worldbuilders" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">03</span>
+                        <span class="accordion-title" data-i18n="t_mathadventure">Math Adventure — Maths for Kids</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_ages">Ages 3–11</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_mathadventure">An adventure-based learning app for children aged 3 to 11. It combines storytelling and exploration with maths challenges to build core skills in a way that feels like play rather than study. Free to download and use.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.mathadventure" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">04</span>
+                        <span class="accordion-title">Bingo Maths</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_bingomaths">A fun, bingo-style maths game for Android. Familiar bingo mechanics make practising maths engaging, and the design keeps players coming back. Free to download and play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.bingomaths" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">05</span>
+                        <span class="accordion-title">Animated Month Wallpaper</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_monthwallpaper">A minimal, fullscreen animated live wallpaper for Android that shows the current month. Fully customisable, with multiple languages and fonts, a breathing animation and a live clock. Free to download.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.animatedmonthwallpaper" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">06</span>
+                        <span class="accordion-title">Animated Weekday Wallpaper</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_weekdaywallpaper">A minimal, fullscreen animated live wallpaper for Android that shows the current day of the week. Supports multiple languages and fonts, with a breathing animation and a live clock. Free to download.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.animatedweeklywallpaper" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">07</span>
+                        <span class="accordion-title">Split Flap World Clock</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_splitflap">Turns an Android phone into a living departure board. Inspired by the classic split-flap Solari boards, it shows live world clocks for multiple cities with authentic flip animations. Supports 300+ world cities and multiple colour themes. Free to download.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.splitflapworldclock" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
                     </div></div>
                 </div>
 
@@ -828,7 +789,7 @@
         </section>
 
         <!-- Digital Products -->
-        <section class="products">
+        <section class="products" id="digital">
             <span class="section-label reveal" data-i18n="label_digital_products">Digital Products</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="shipped_heading">What I've <em>Shipped</em></h2>
             <div class="projects-accordion reveal reveal-delay-2">
@@ -836,135 +797,67 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
-                        <span class="accordion-title">Market Pulse — Minimal Economic Calendar for Traders</span>
+                        <span class="accordion-title" data-i18n="t_worldmap">World Map — Interactive SVG Country Explorer</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag">Finance Tool</span>
-                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">SVG</span>
+                            <span class="project-tag">HTML5</span>
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Gumroad</span>
                         </div>
-                        <p>A clean, self-hosted economic calendar built for traders. High-impact events highlighted first, smart LIVE detection, automatic local timezone conversion, and zero dependencies. Works fully offline as a single HTML file — no app, no subscription.</p>
+                        <p data-i18n="d_worldmap">An interactive choropleth world map covering 172 countries across 7 data layers: population density, GDP per capita, HDI, CO₂ per capita, life expectancy, internet usage and a default view. Features region and political group filters (EU, G20, NATO, BRICS+), CSV and JSON data import, shareable URLs, iframe embedding with a JavaScript API, full keyboard navigation and dark mode, with zero dependencies in one HTML file.</p>
+                        <a href="https://github.com/ShazMoghaddam/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">02</span>
-                        <span class="accordion-title">TradeHours Pro — Live Global Market Hours</span>
+                        <span class="accordion-title" data-i18n="t_orbs">Orbs — Morphing Dot Animations for the Web</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag">Finance Tool</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Gumroad</span>
+                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag">Vanilla JS</span>
+                            <span class="project-tag" data-i18n="skill_generative">Generative Design</span>
+                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
                         </div>
-                        <p>Know exactly which markets are open right now. Live open/closed status for 25+ global markets, real-time countdown to open and close, holiday calendar pre-loaded, and drag-to-reorder cards. Installs as a home screen app and works fully offline — no subscription required.</p>
+                        <p data-i18n="d_orbs">An open-source JavaScript library of ten dot-formation animations: sphere, wave, spikes, network constellation, torus, double helix, spiral galaxy, loader ring, wireframe cube and k-means clusters. Any shape morphs smoothly into any other, and each has its own silhouette, drawing style and motion. Built for loaders, AI thinking states and small interactive moments. One file, about 5 KB gzipped, no dependencies, with support for reduced motion, keyboard use, and light and dark themes. Try it in the Get in Touch section below: click the orb to change its shape.</p>
+                        <a href="https://github.com/ShazMoghaddam/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">03</span>
-                        <span class="accordion-title">Animated Live Wallpapers — Months &amp; Weekdays</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Live Wallpaper</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">Lemon Squeezy</span>
-                        </div>
-                        <p>A series of minimal, fullscreen animated wallpapers — one displaying the current month, another the current day of the week. Both are fully customisable with 7 languages, 5 fonts, breathing animation, and a live clock. Single HTML files that work 100% offline with no install required. Compatible with Lively Wallpaper and Plash.</p>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
-                        <span class="accordion-title">Aero Atlas — Terminal Time Screensaver</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Screensaver</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Envato</span>
-                        </div>
-                        <p>Turn your screen into a living departure board. Inspired by iconic split-flap Solari boards, this fullscreen screensaver shows live world clocks for up to 10 cities with authentic flip animations. Supports 300+ world cities, 5 colour accent themes, acoustic click sounds, and works fully offline on macOS and Windows.</p>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title">KNOK Matrix / Mono — Geometric SVG Typographic System</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">SVG</span>
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS Blend Modes</span>
-                            <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag">Live Clock</span>
-                            <span class="project-tag">Gumroad</span>
-                        </div>
-                        <p>An abstract typographic system and real-time digital clock built from pure geometric SVG — zero dependencies, one file. Each digit (0–9) is a hand-composed geometric artwork using SVG primitives layered with CSS blend modes. Dual themes: Studio Light and Gallery Dark, where the same geometry reads as ink-on-paper or light-on-projector.</p>
-                        <a href="https://github.com/ShazMoghaddam/KNOK-Matrix-Mono-font" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title">Typography Digits — Generative Word-Cloud Art</span>
+                        <span class="accordion-title" data-i18n="t_typodigits">Typography Digits — Generative Word-Cloud Art</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
                             <span class="project-tag">SVG</span>
                             <span class="project-tag">HTML5 Canvas</span>
-                            <span class="project-tag">Generative Art</span>
+                            <span class="project-tag" data-i18n="tag_generative_art">Generative Art</span>
                             <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag">Collision Detection</span>
+                            <span class="project-tag" data-i18n="tag_collision">Collision Detection</span>
                             <span class="project-tag">Gumroad</span>
                         </div>
-                        <p>Digits 0–9 built entirely from programming and data-science vocabulary. Each digit is a living word cloud — unique on every load. Words are placed using canvas pixel masking, a two-gate collision system, and AABB packing, then clipped by an SVG clipPath. Features breathing animations, shimmer sweep, 3D cursor tilt, and palette cycling.</p>
-                        <a href="https://github.com/ShazMoghaddam/typography-digits" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <p data-i18n="d_typodigits">The digits 0 to 9 built entirely from programming and data science vocabulary. Each digit is a living word cloud, different on every load. Words are placed with canvas pixel masking, a two-gate collision system and AABB packing, then clipped by an SVG clipPath. Features breathing animations, a shimmer sweep, 3D cursor tilt and palette cycling.</p>
+                        <a href="https://github.com/ShazMoghaddam/typography-digits" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title">World Map — Interactive SVG Country Explorer</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">SVG</span>
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Gumroad</span>
-                        </div>
-                        <p>An interactive choropleth world map covering 172 countries across 7 data layers — Population Density, GDP per Capita, HDI, CO₂ per Capita, Life Expectancy, Internet Usage, and a default view. Features region and political group filtering (EU, G20, NATO, BRICS+), custom CSV/JSON data import, shareable URLs, iframe embedding with a JavaScript API, full keyboard navigation, dark mode, and zero dependencies — one HTML file.</p>
-                        <a href="https://github.com/ShazMoghaddam/world-map" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/world-map" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">08</span>
-                        <span class="accordion-title">FIFA World Cup 2026 — Bracket Predictor</span>
+                        <span class="accordion-num">04</span>
+                        <span class="accordion-title" data-i18n="t_worldcup">FIFA World Cup 2026 — Bracket Predictor</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
@@ -974,30 +867,30 @@
                             <span class="project-tag">Vanilla JS</span>
                             <span class="project-tag">GitHub Pages</span>
                         </div>
-                        <p>Interactive FIFA World Cup 2026 bracket predictor built as a single HTML file. Features a full 32-team clickable knockout bracket, group stage view, champion card with full journey breakdown, a 188-question trivia quiz across 6 categories, one-click PNG export, social sharing with encodable pick URLs, dark mode, timezone toggle, and full mobile responsiveness. Zero dependencies, hosted on GitHub Pages.</p>
-                        <a href="https://github.com/ShazMoghaddam/wc2026" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <p data-i18n="d_worldcup">An interactive FIFA World Cup 2026 bracket predictor built as a single HTML file. It has a clickable knockout bracket from the round of 32, a group stage view, a champion card that traces the full route to the final, a 188-question trivia quiz across 6 categories, one-click PNG export, sharing through encoded pick URLs, dark mode, a time zone toggle and a fully responsive mobile layout. Zero dependencies, hosted on GitHub Pages.</p>
+                        <a href="https://github.com/ShazMoghaddam/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/wc2026" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <a href="https://shazmoghaddam.github.io/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">09</span>
-                        <span class="accordion-title">Orbs: Morphing Dot Animations for the Web</span>
+                        <span class="accordion-num">05</span>
+                        <span class="accordion-title" data-i18n="t_knok">KNOK Matrix / Mono — Geometric SVG Typographic System</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag">SVG</span>
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS Blend Modes</span>
                             <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag">Generative Design</span>
-                            <span class="project-tag">Open Source</span>
+                            <span class="project-tag" data-i18n="tag_live_clock">Live Clock</span>
+                            <span class="project-tag">Gumroad</span>
                         </div>
-                        <p>An open-source JavaScript library of ten dot-formation animations: sphere, wave, spikes, network constellation, torus, double helix, spiral galaxy, loader ring, wireframe cube and k-means clusters. Any shape morphs smoothly into any other, and each one has its own silhouette, drawing style and motion. Built for loaders, AI thinking states and small interactive moments. One file, about 5 KB gzipped, no dependencies, with support for reduced motion, keyboard use, and light and dark themes. Try it in the Get in Touch section below: click the orb to change its shape.</p>
-                        <a href="https://github.com/ShazMoghaddam/orbs" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/orbs" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        <p data-i18n="d_knok">An abstract typographic system and real-time digital clock built from pure geometric SVG, with zero dependencies in a single file. Each digit (0 to 9) is a hand-composed geometric artwork made of SVG primitives layered with CSS blend modes. Two themes, Studio Light and Gallery Dark, make the same geometry read as ink on paper or light from a projector.</p>
+                        <a href="https://github.com/ShazMoghaddam/KNOK-Matrix-Mono-font" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
@@ -1005,7 +898,7 @@
         </section>
 
         <!-- Writing -->
-        <section class="writing">
+        <section class="writing" id="writing">
             <span class="section-label reveal" data-i18n="label_writing">Writing</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="written_heading">What I've <em>Written</em></h2>
             <p class="writing-intro reveal reveal-delay-2" data-i18n="writing_intro">Reflections on becoming, connection, and the things that stay with you.</p>
@@ -1100,16 +993,16 @@
         </section>
 
         <!-- Contact -->
-        <section class="contact">
+        <section class="contact" id="contact">
             <span class="section-label reveal" data-i18n="label_contact">Contact</span>
             <h2 class="reveal reveal-delay-1" data-i18n="contact_heading">Get in Touch</h2>
-            <p class="contact-sub reveal reveal-delay-2" data-i18n="contact_sub">Open to freelance, contract, and full-time opportunities — in London or internationally, wherever the work is interesting. If you're building something that matters, bring the problem. I'll bring the code, the models, and the thinking.</p>
-            <button type="button" class="contact-orb reveal reveal-delay-2" aria-label="Change the orb's shape">
+            <p class="contact-sub reveal reveal-delay-2" data-i18n="contact_sub">Open to freelance, contract, and full-time opportunities, in London or internationally, wherever the work is interesting. If you're building something that matters, bring the problem. I'll bring the code, the models, and the thinking.</p>
+            <button type="button" class="contact-orb reveal reveal-delay-2" aria-label="Change the orb's shape" data-i18n-attr="aria-label:aria_orb">
                 <canvas data-orb="wave" data-shapes="wave,spikes,constellation,cube,clusters,sphere" data-click="morph" data-points="160" data-dot="1.15" aria-hidden="true"></canvas>
             </button>
             <div class="contact-links reveal reveal-delay-3">
-                <a href="mailto:shaz.moghaddam@gmail.com">Email</a>
-                <a href="#" class="contact-phone" data-p="447519109433">Phone</a>
+                <a href="mailto:shaz.moghaddam@gmail.com" data-i18n="contact_email">Email</a>
+                <a href="#" class="contact-phone" data-p="447519109433" data-i18n="contact_phone">Phone</a>
                 <a href="https://github.com/ShazMoghaddam" target="_blank" rel="noopener noreferrer">GitHub</a>
                 <a href="https://www.linkedin.com/in/shazmoghaddam/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://instagram.com/shaz.0098" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -1122,9 +1015,9 @@
         </section>
 
         <!-- Ecosystem: Available on / Built with -->
-        <section class="ecosystem" aria-label="Where my work is available and what it's built with">
+        <section class="ecosystem" aria-label="Where my work is available and what it's built with" data-i18n-attr="aria-label:aria_ecosystem">
             <div class="eco-row reveal">
-                <span class="eco-label">Available on</span>
+                <span class="eco-label" data-i18n="eco_available">Available on</span>
                 <span class="eco-divider" aria-hidden="true"></span>
                 <div class="eco-marquee">
                     <div class="eco-track">
@@ -1150,7 +1043,7 @@
                 </div>
             </div>
             <div class="eco-row eco-row--wide reveal reveal-delay-1">
-                <span class="eco-label">Built with</span>
+                <span class="eco-label" data-i18n="eco_built">Built with</span>
                 <span class="eco-divider" aria-hidden="true"></span>
                 <div class="eco-marquee">
                     <div class="eco-track eco-track--reverse">
@@ -1209,7 +1102,7 @@
 
     </main>
 
-    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+    <button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top" data-i18n-attr="aria-label:aria_scroll_top">
         <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
 
@@ -1217,12 +1110,12 @@
         <div class="footer-inner">
             <div class="footer-rule" aria-hidden="true"></div>
             <div class="footer-legal">
-                <p class="footer-copy" data-i18n="footer_copy">© 2026 Shaz Moghaddam — London</p>
+                <p class="footer-copy" data-i18n="footer_copy">© 2026 Shaz Moghaddam · London</p>
                 <p class="footer-rights" data-i18n="footer_rights">All rights reserved</p>
             </div>
             <p class="footer-tagline">
                 <span class="ft-bracket" aria-hidden="true">&lt;&lt;&lt;</span>
-                <span class="ft-text">Garbage in // portfolio out</span>
+                <span class="ft-text">Trained on data // deployed on coffee</span>
                 <span class="ft-bracket" aria-hidden="true">&gt;&gt;&gt;</span>
             </p>
         </div>
@@ -1233,8 +1126,8 @@
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
 
-    <script src="main.js?v=chart2"></script>
-    <script src="world-clock.js?v=9"></script>
+    <script src="main.js?v=polish2"></script>
+    <script src="world-clock.js?v=10"></script>
     <script src="orb.js?v=4" defer></script>
     <!-- ═══════════════════════════════════════════════════════
          KNOK Matrix glyph store — 10 SVG artworks, inertly stored.
@@ -1300,26 +1193,21 @@
          i18next — Language Toggle
          ═══════════════════════════════════════════════════════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
-    <script src="i18n.js"></script>
+    <script src="i18n.js?v=polish3"></script>
 
     <!-- Footer tagline — one deadpan line, picked at random on each load -->
     <script>
         (function () {
-            var lines = [
-                "Garbage in // portfolio out",
-                "Works on my machine // and, it seems, on yours",
-                "Trained on data // deployed on coffee",
-                "Correlation != causation // great hire though",
-                "No models were overfit making this site",
-                "It's not a bug // it's an undocumented feature",
-                "Statistically significant // emotionally attached",
-                "Cleaned the data // then cried a little",
-                "Deployed on Friday // living dangerously",
-                "Pushed to main // said a prayer",
-                "Turning caffeine into commits"
-            ];
+            var n = 7; /* footer lines ft_1 .. ft_7 live in i18n/locales */
             var el = document.querySelector(".footer-tagline .ft-text");
-            if (el) { el.textContent = lines[Math.floor(Math.random() * lines.length)]; }
+            if (el) {
+                var key = "ft_" + (1 + Math.floor(Math.random() * n));
+                el.setAttribute("data-i18n", key);
+                if (window.i18next && window.i18next.isInitialized) {
+                    var t = window.i18next.t(key);
+                    if (t && t !== key) el.textContent = t;
+                }
+            }
         })();
     </script>
 

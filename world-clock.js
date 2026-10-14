@@ -18,13 +18,21 @@
     bar.dataset.built = '1';
 
     var cities = [
-      { label:'New York',     tz:'America/New_York',                lat:40.71, lon:-74.01 },
-      { label:'Buenos Aires', tz:'America/Argentina/Buenos_Aires',  lat:-34.60, lon:-58.38 },
-      { label:'London',       tz:'Europe/London',                   lat:51.51, lon:-0.13 },
-      { label:'Berlin',       tz:'Europe/Berlin',                   lat:52.52, lon:13.40 },
-      { label:'Tehran',       tz:'Asia/Tehran',                     lat:35.69, lon:51.39 },
-      { label:'Tokyo',        tz:'Asia/Tokyo',                      lat:35.69, lon:139.69 }
+      { key:'city_newyork', label:'New York',     tz:'America/New_York',                lat:40.71, lon:-74.01 },
+      { key:'city_buenosaires', label:'Buenos Aires', tz:'America/Argentina/Buenos_Aires',  lat:-34.60, lon:-58.38 },
+      { key:'city_london', label:'London',       tz:'Europe/London',                   lat:51.51, lon:-0.13 },
+      { key:'city_berlin', label:'Berlin',       tz:'Europe/Berlin',                   lat:52.52, lon:13.40 },
+      { key:'city_tehran', label:'Tehran',       tz:'Asia/Tehran',                     lat:35.69, lon:51.39 },
+      { key:'city_tokyo', label:'Tokyo',        tz:'Asia/Tokyo',                      lat:35.69, lon:139.69 }
     ];
+
+    /* screen-reader text follows the page language (see i18n.js) */
+    function tr(key, fallback){
+      var t = (window.i18next && window.i18next.isInitialized) ? window.i18next.t(key) : null;
+      return (t && t !== key) ? t : fallback;
+    }
+    function cityName(c){ return tr(c.key, c.label); }
+    function dayWord(day){ return day ? tr('clock_day','daytime') : tr('clock_night','night'); }
 
     var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -98,9 +106,9 @@
 
     cities.forEach(function(c,i){
       var w=document.createElement('div'); w.className='wc-clock'; w.setAttribute('role','img');
-      w.title='Click to switch clock shape';
+      w.title='Click to switch clock shape'; w.setAttribute('data-i18n-attr','title:clock_switch');
       w.innerHTML='<div class="wc-facewrap">'+faceSVG(i)+'<div class="wc-digital" aria-hidden="true"></div></div>'+
-                  '<div class="wc-name">'+SUN+MOON+'<span>'+c.label+'</span></div>';
+                  '<div class="wc-name">'+SUN+MOON+'<span data-i18n="'+c.key+'">'+c.label+'</span></div>';
       c.el=w; c.hour=w.querySelector('.wc-hour'); c.min=w.querySelector('.wc-min'); c.sec=w.querySelector('.wc-sec');
       c.dig=w.querySelector('.wc-digital');
       c.fmt=new Intl.DateTimeFormat('en-US',{timeZone:c.tz,hour12:false,hour:'2-digit',minute:'2-digit',second:'2-digit'});
@@ -273,7 +281,7 @@
         var day=isDaytime(c.lat,c.lon,now);
         c.el.classList.toggle('is-night',!day);
         c.dig.textContent=pad(c.p.hour)+':'+pad(c.p.minute);
-        c.el.setAttribute('aria-label', c.label+', '+to12(c.p.hour,c.p.minute)+', '+(day?'daytime':'night'));
+        c.el.setAttribute('aria-label', cityName(c)+', '+to12(c.p.hour,c.p.minute)+', '+dayWord(day));
       });
     }
 

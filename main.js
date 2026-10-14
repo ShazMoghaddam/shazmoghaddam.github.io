@@ -113,36 +113,50 @@ function toggleTheme() {
         }, i * 150);
     });
 
+    try { localStorage.setItem('theme', newTheme); } catch (e) {}
+
     setTimeout(() => {
-        body.setAttribute('data-theme', newTheme);
-        const tcMeta = document.getElementById('theme-color-meta');
-        if (tcMeta) tcMeta.setAttribute('content', newTheme === 'dark' ? '#0e0f0b' : '#f4f1eb');
-        const themeText = document.getElementById('theme-text');
-        const themeIcon = document.getElementById('theme-icon');
-        // The label's translation key is dynamic: it depends on the current
-        // theme, not a fixed data-i18n value. Keep data-i18n in sync with the
-        // theme and resolve the text through i18next when it is available,
-        // falling back to English. This keeps the label in the active language
-        // after a theme toggle, and lets a later language switch translate it
-        // correctly instead of forcing it back to "Light".
-        const themeKey = newTheme === 'dark' ? 'theme_light' : 'theme_dark';
-        const themeFallback = newTheme === 'dark' ? 'Light' : 'Dark';
-        if (themeText) {
-            themeText.setAttribute('data-i18n', themeKey);
-            const translated = (window.i18next && window.i18next.isInitialized)
-                ? window.i18next.t(themeKey) : null;
-            themeText.textContent = (translated && translated !== themeKey) ? translated : themeFallback;
-        }
-        if (themeIcon) {
-            if (newTheme === 'dark') {
-                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-            } else {
-                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
-            }
-        }
+        applyThemeChrome(newTheme);
         setTimeout(() => flash.classList.remove('active'), 400);
     }, 120);
 }
+
+// Sets the theme and everything that depends on it (browser colour, label, icon)
+function applyThemeChrome(newTheme) {
+    const body = document.body;
+    body.setAttribute('data-theme', newTheme);
+    const tcMeta = document.getElementById('theme-color-meta');
+    if (tcMeta) tcMeta.setAttribute('content', newTheme === 'dark' ? '#0e0f0b' : '#f4f1eb');
+    const themeText = document.getElementById('theme-text');
+    const themeIcon = document.getElementById('theme-icon');
+    // The label's translation key is dynamic: it depends on the current
+    // theme, not a fixed data-i18n value. Keep data-i18n in sync with the
+    // theme and resolve the text through i18next when it is available,
+    // falling back to English. This keeps the label in the active language
+    // after a theme toggle, and lets a later language switch translate it
+    // correctly instead of forcing it back to "Light".
+    const themeKey = newTheme === 'dark' ? 'theme_light' : 'theme_dark';
+    const themeFallback = newTheme === 'dark' ? 'Light' : 'Dark';
+    if (themeText) {
+        themeText.setAttribute('data-i18n', themeKey);
+        const translated = (window.i18next && window.i18next.isInitialized)
+            ? window.i18next.t(themeKey) : null;
+        themeText.textContent = (translated && translated !== themeKey) ? translated : themeFallback;
+    }
+    if (themeIcon) {
+        if (newTheme === 'dark') {
+            themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+        } else {
+            themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+        }
+    }
+}
+
+// Restore a theme chosen on an earlier visit (set early in <body>, synced here)
+(function () {
+    const t = document.body.getAttribute('data-theme');
+    if (t === 'light') applyThemeChrome('light');
+})();
 
 // ── Random highlight colour — picked once per visit ────────
 (function() {
@@ -622,17 +636,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ── Section nav dots ──────────────────────────────────────
-const navDots = document.querySelectorAll('.nav-dot');
-const sections = [
-    document.querySelector('.skills'),
-    document.querySelector('.about'),
-    document.querySelector('.certifications'),
-    document.querySelector('.projects'),
-    document.querySelectorAll('.products')[0],
-    document.querySelectorAll('.products')[1],
-    document.querySelector('.writing'),
-    document.querySelector('.contact'),
-];
+// Each dot names its section with data-target="#id", so the page order can
+// change without touching this code.
+const navDots = [...document.querySelectorAll('.nav-dot')];
+const sections = navDots.map(d => document.querySelector(d.dataset.target));
 
 navDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
@@ -640,19 +647,30 @@ navDots.forEach((dot, i) => {
     });
 });
 
-// Default: activate first dot on load (before any scroll)
-if (navDots[0]) navDots[0].classList.add('active');
-
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const idx = sections.indexOf(entry.target);
-            navDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-        }
+// The active dot is the section that crosses the middle of the screen.
+// (A visibility threshold fails for sections taller than the screen.)
+function updateActiveDot() {
+    const mid = window.innerHeight / 2;
+    let idx = -1;
+    sections.forEach((sec, i) => {
+        if (!sec) return;
+        const r = sec.getBoundingClientRect();
+        if (r.top <= mid && r.bottom > mid) idx = i;
     });
-}, { threshold: 0.3 });
-
-sections.forEach(s => { if (s) sectionObserver.observe(s); });
+    navDots.forEach((d, i) => {
+        const on = i === idx;
+        d.classList.toggle('active', on);
+        if (on) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+    });
+}
+let navTick = false;
+window.addEventListener('scroll', () => {
+    if (navTick) return;
+    navTick = true;
+    requestAnimationFrame(() => { updateActiveDot(); navTick = false; });
+}, { passive: true });
+window.addEventListener('resize', updateActiveDot);
+updateActiveDot();
 
 // ── Scramble heading animation ─────────────────────────────
 (function () {
