@@ -68,7 +68,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;700;900;1000&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=polish1">
+    <link rel="stylesheet" href="styles.css?v=polish2">
     <link rel="stylesheet" href="world-clock.css?v=9">
 </head>
 <body data-theme="dark">
@@ -78,14 +78,14 @@
 
     <!-- Section nav dots -->
     <nav id="section-nav" aria-label="Page sections" data-i18n-attr="aria-label:aria_sections">
-        <button class="nav-dot" data-label="Skills" data-i18n-attr="data-label:nav_skills" data-target=".skills"></button>
-        <button class="nav-dot" data-label="About" data-i18n-attr="data-label:nav_about" data-target=".about"></button>
-        <button class="nav-dot" data-label="Certifications" data-i18n-attr="data-label:nav_certs" data-target=".certifications"></button>
-        <button class="nav-dot" data-label="Projects" data-i18n-attr="data-label:nav_projects" data-target=".projects"></button>
-        <button class="nav-dot" data-label="Apps" data-i18n-attr="data-label:nav_apps" data-target=".products:nth-of-type(1)"></button>
-        <button class="nav-dot" data-label="Digital Products" data-i18n-attr="data-label:nav_digital" data-target=".products:nth-of-type(2)"></button>
-        <button class="nav-dot" data-label="Writing" data-i18n-attr="data-label:nav_writing" data-target=".writing"></button>
-        <button class="nav-dot" data-label="Contact" data-i18n-attr="data-label:nav_contact" data-target=".contact"></button>
+        <button class="nav-dot" data-label="Projects" data-i18n-attr="data-label:nav_projects; aria-label:nav_projects" data-target="#projects" aria-label="Projects"></button>
+        <button class="nav-dot" data-label="Skills" data-i18n-attr="data-label:nav_skills; aria-label:nav_skills" data-target="#skills" aria-label="Skills"></button>
+        <button class="nav-dot" data-label="About" data-i18n-attr="data-label:nav_about; aria-label:nav_about" data-target="#about" aria-label="About"></button>
+        <button class="nav-dot" data-label="Certifications" data-i18n-attr="data-label:nav_certs; aria-label:nav_certs" data-target="#certifications" aria-label="Certifications"></button>
+        <button class="nav-dot" data-label="Apps" data-i18n-attr="data-label:nav_apps; aria-label:nav_apps" data-target="#apps" aria-label="Apps"></button>
+        <button class="nav-dot" data-label="Digital Products" data-i18n-attr="data-label:nav_digital; aria-label:nav_digital" data-target="#digital" aria-label="Digital Products"></button>
+        <button class="nav-dot" data-label="Writing" data-i18n-attr="data-label:nav_writing; aria-label:nav_writing" data-target="#writing" aria-label="Writing"></button>
+        <button class="nav-dot" data-label="Contact" data-i18n-attr="data-label:nav_contact; aria-label:nav_contact" data-target="#contact" aria-label="Contact"></button>
     </nav>
 
     <div class="theme-flash" id="theme-flash"></div>
@@ -169,8 +169,8 @@
                 <span data-i18n="hero_badge">Available for freelance, contract, and full-time opportunities, in London or internationally</span>
             </div>
             <div class="hero-cta">
-                <a href="#projects" class="hero-btn hero-btn-primary" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'}); return false;"><span data-i18n="hero_cta_work">View my work</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                <a href="#contact" class="hero-btn hero-btn-ghost" onclick="document.querySelector('.contact').scrollIntoView({behavior:'smooth'}); return false;"><span data-i18n="hero_cta_contact">Get in touch</span></a>
+                <a href="#projects" class="hero-btn hero-btn-primary"><span data-i18n="hero_cta_work">View my work</span><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="#contact" class="hero-btn hero-btn-ghost"><span data-i18n="hero_cta_contact">Get in touch</span></a>
             </div>
         </div>
     </header>
@@ -184,7 +184,7 @@
         <div class="stat-backdrop" id="statBackdrop" aria-hidden="true"></div>
 
         <!-- 7 Apps -->
-        <a class="stat-item" href="#apps" onclick="document.querySelector('.products').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#apps">
             <span class="sr-only">7 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -198,7 +198,7 @@
         </a>
 
         <!-- 19 Digital Products -->
-        <a class="stat-item" href="#digital" onclick="document.querySelectorAll('.products')[1].scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#digital">
             <span class="sr-only">19 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
@@ -214,7 +214,7 @@
         </a>
 
         <!-- 50 Projects -->
-        <a class="stat-item" href="#projects" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#projects">
             <span class="sr-only">50 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
@@ -230,7 +230,7 @@
         </a>
 
         <!-- 5 Certifications -->
-        <a class="stat-item" href="#certs" onclick="document.querySelector('.certifications').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#certifications">
             <span class="sr-only">6 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -244,7 +244,7 @@
         </a>
 
         <!-- 7 Publications -->
-        <a class="stat-item" href="#writing" onclick="document.querySelector('.writing').scrollIntoView({behavior:'smooth'}); return false;">
+        <a class="stat-item" href="#writing">
             <span class="sr-only">7 </span>
             <div class="stat-num">
                 <div class="knok-digits" aria-hidden="true">
@@ -261,272 +261,8 @@
 
     <div class="container">
 
-        <!-- Skills -->
-        <section class="skills">
-            <span class="section-label reveal" data-i18n="label_expertise">Expertise</span>
-            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="skills_heading">Skills &amp; Tools</h2>
-            <div class="skills-table reveal reveal-delay-2">
-                <div class="skills-col">
-                    <button class="skills-col-toggle" aria-expanded="false">
-                        <span class="skills-col-label" data-i18n="skills_col_lang">Languages &amp; Data</span>
-                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="skills-panel">
-                    <ul class="skills-list">
-                        <li>Python</li>
-                        <li>Kotlin &amp; Java</li>
-                        <li>Flutter</li>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>HTML &amp; CSS</li>
-                        <li>SVG</li>
-                        <li>SQL &amp; PostgreSQL</li>
-                        <li data-i18n="skill_ml">Machine Learning</li>
-                        <li>NLP &amp; spaCy</li>
-                        <li>pandas &amp; NumPy</li>
-                        <li>scikit-learn</li>
-                        <li>SciPy</li>
-                        <li>TensorFlow</li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="skills-col">
-                    <button class="skills-col-toggle" aria-expanded="false">
-                        <span class="skills-col-label" data-i18n="skills_col_frameworks">Frameworks &amp; Tools</span>
-                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="skills-panel">
-                    <ul class="skills-list">
-                        <li>FastAPI</li>
-                        <li>Plotly Dash</li>
-                        <li>React</li>
-                        <li>Flask</li>
-                        <li>SQLAlchemy &amp; Alembic</li>
-                        <li>Pydantic</li>
-                        <li>Vite</li>
-                        <li>TanStack Query</li>
-                        <li>Electron</li>
-                        <li>Streamlit</li>
-                        <li>Docker</li>
-                        <li>Git &amp; GitHub</li>
-                        <li>GitHub Actions (CI/CD)</li>
-                        <li>pytest, Vitest &amp; Playwright</li>
-                        <li>REST APIs</li>
-                        <li>Jupyter</li>
-                        <li>Matplotlib &amp; Seaborn</li>
-                        <li>Plotly</li>
-                        <li>Vanilla JS</li>
-                        <li>HTML5 Canvas</li>
-                    </ul>
-                    </div>
-                </div>
-                <div class="skills-col">
-                    <button class="skills-col-toggle" aria-expanded="false">
-                        <span class="skills-col-label" data-i18n="skills_col_cloud">Cloud, Design &amp; Product</span>
-                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <div class="skills-panel">
-                    <ul class="skills-list">
-                        <li>AWS</li>
-                        <li>GCP</li>
-                        <li>Railway</li>
-                        <li>Render</li>
-                        <li>Auth0, OAuth 2.0 &amp; OIDC</li>
-                        <li data-i18n="skill_hmrc">HMRC Making Tax Digital APIs</li>
-                        <li data-i18n="skill_a11y">Accessibility (WCAG, axe)</li>
-                        <li data-i18n="skill_causal">Causal AI &amp; NetworkX</li>
-                        <li data-i18n="skill_android">Android Development</li>
-                        <li data-i18n="skill_generative">Generative Design</li>
-                        <li data-i18n="skill_blend">CSS Blend Modes</li>
-                        <li data-i18n="skill_ui">UI / Visual Design</li>
-                        <li data-i18n="skill_product">Digital Product Design</li>
-                        <li>Anthropic Claude API</li>
-                        <li>ChatGPT &amp; Gemini</li>
-                        <li data-i18n="skill_photo">Photography</li>
-                        <li data-i18n="skill_video">Videography</li>
-                    </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About -->
-        <section class="about">
-            <div class="about-split reveal">
-                <div class="about-left">
-                    <span class="section-label" data-i18n="label_about">About</span>
-                    <h2 data-scramble data-i18n="about_heading">From raw data<br>to <em>something useful</em></h2>
-                    <div class="about-body">
-                        <p data-i18n="about_p1">I'm a London-based Data Scientist and Python Developer, trained at Imperial College London (96% average). My day-to-day spans the whole data workflow: cleaning messy datasets, building and tuning models, and shipping the result as something people can actually use, not just a notebook that lives on my laptop.</p>
-                        <p data-i18n="about_p2">Outside client and product work, I build my own things: Android apps, trading tools, generative art systems, live wallpapers, screensavers, word-cloud typography. Fifty-plus projects so far, spread across the <strong>Google Play Store</strong>, <strong>Gumroad</strong>, <strong>Envato</strong>, and <strong>Lemon Squeezy</strong>. Running these myself taught me things a job rarely does: how to price something, when to ship versus keep polishing, and what users actually respond to once a product is out in the world.</p>
-                        <p data-i18n="about_p3">There's a quieter part of my life too. After major surgery and the birth of my eldest child, I started donating blood regularly, and in 2026 hit my <strong>50th donation</strong>, recognised by NHS Blood and Transplant. It's a small, repeatable way of putting something back.</p>
-                        <p data-i18n="about_p4">I also write, though not often and not because I'd call myself a writer. Some thoughts just need somewhere to land. A few of those essays are published on <strong>Medium</strong>, and you can find them in the Writing section below.</p>
-                    </div>
-                </div>
-                <div class="about-right">
-                    <div class="about-headshot-wrap">
-                        <img class="about-headshot headshot-dark" src="assets/certificates/headshot-dark.webp" alt="Shaz Moghaddam" width="640" height="853" loading="lazy" decoding="async">
-                        <img class="about-headshot headshot-light" src="assets/certificates/headshot-light.webp" alt="Shaz Moghaddam" width="640" height="853" loading="lazy" decoding="async">
-                    </div>
-                    <span class="what-i-do-label" data-i18n="what_i_do_label">What I Do</span>
-                    <div class="what-grid">
-                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
-                            <div class="what-item-header">
-                                
-                                <span class="what-title" data-i18n="what_title_data">Data Science &amp; Python Development</span>
-                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                            </div>
-                            <p class="what-preview" data-i18n="what_preview_data">End-to-end Python solutions: exploratory analysis, machine learning, NLP, and data-driven insights built for clarity and real-world use.</p>
-                            <div class="what-body"><div class="what-body-inner">
-                                <p class="what-desc" data-i18n="what_desc_data">I take projects from raw data to deployed model: cleaning, feature engineering, classification, regression, NLP, and lately building AI assistants powered by the Claude API into the products themselves. I write it so both technical and non-technical people can follow what's happening and why.</p>
-                            </div></div>
-                        </button>
-                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
-                            <div class="what-item-header">
-                                
-                                <span class="what-title" data-i18n="what_title_digital">Digital Products, Apps &amp; Freelance</span>
-                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                            </div>
-                            <p class="what-preview" data-i18n="what_preview_digital">I build and ship Android apps and digital products on my own, across the Google Play Store, Gumroad, Envato, and Lemon Squeezy, handling everything from the first idea to launch.</p>
-                            <div class="what-body"><div class="what-body-inner">
-                                <p class="what-desc" data-i18n="what_desc_digital">Open to freelance and contract work in data science, Python development, and digital products. I can scope a project, build it, and stick around to publish, price, and iterate based on what users actually say.</p>
-                            </div></div>
-                        </button>
-                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
-                            <div class="what-item-header">
-                                
-                                <span class="what-title" data-i18n="what_title_photo">Photography &amp; Videography</span>
-                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                            </div>
-                            <p class="what-preview" data-i18n="what_preview_photo">Through photography and videography, I explore architecture and urban life across different countries and cultures.</p>
-                            <div class="what-body"><div class="what-body-inner">
-                                <p class="what-desc" data-i18n="what_desc_photo">I'm drawn to how light, form, and environment reveal the character of a place: small, fleeting moments that end up feeling universal. Whether it's a still frame or something moving, I'm chasing stories that feel intimate but still land with anyone looking at them.</p>
-                            </div></div>
-                        </button>
-                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
-                            <div class="what-item-header">
-                                
-                                <span class="what-title" data-i18n="what_title_design">Design</span>
-                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                            </div>
-                            <p class="what-preview" data-i18n="what_preview_design">I'm pulled toward both historic and contemporary architecture, and toward minimalist, purposeful design where form supports function and nothing is there by accident.</p>
-                            <div class="what-body"><div class="what-body-inner">
-                                <p class="what-desc" data-i18n="what_desc_design">Whether classical or modern, I'm drawn to structure, proportion, and the way thoughtful design shapes experience. I carry this approach into my work, aiming for clarity, simplicity, and considered execution.</p>
-                            </div></div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications -->
-        <section class="certifications">
-            <span class="section-label reveal" data-i18n="label_credentials">Credentials</span>
-            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="certs_heading">Certifi<em>cations</em></h2>
-            <div class="cert-scroll-hint">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                <span data-i18n="drag_to_explore">Drag to explore</span>
-            </div>
-            <div class="cert-scroll-container reveal reveal-delay-2">
-            <div class="cert-grid">
-
-                <a href="assets/certificates/certificate%20(28).pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
-                    <div class="cert-card-top">
-                        <span class="cert-card-title">Data Science Online Bootcamp</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">Imperial College London</span>
-                        <span class="project-tag">HyperionDev</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span data-i18n="cert_ds_date">10 June 2025</span>
-                        <span><span data-i18n="cert_no">No:</span> ES25030017561-7076</span>
-                    </div>
-                </a>
-
-                <a href="assets/certificates/UC-5eff400e-07a6-40ff-adef-913727f2c37d.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
-                    <div class="cert-card-top">
-                        <span class="cert-card-title">100 Days of Code: The Complete Python Pro Bootcamp</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">Udemy</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span data-i18n="cert_100_date">14 July 2023</span>
-                        <span data-i18n="cert_100_hours">58 hours</span>
-                        <span><span data-i18n="cert_no">No:</span> UC-5eff400e-07a6-40ff-adef-913727f2c37d</span>
-                    </div>
-                </a>
-
-                <a href="assets/certificates/UC-73115e41-ec60-434c-b153-97e62a6bd6a3.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
-                    <div class="cert-card-top">
-                        <span class="cert-card-title">The Data Science Course: Complete Data Science Bootcamp 2025</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">Udemy</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span data-i18n="cert_dsc_date">2 October 2025</span>
-                        <span data-i18n="cert_dsc_hours">32 hours</span>
-                        <span><span data-i18n="cert_no">No:</span> UC-73115e41-ec60-434c-b153-97e62a6bd6a3</span>
-                    </div>
-                </a>
-
-                <a href="assets/certificates/titlcnxh_1776184220278.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
-                    <div class="cert-card-top">
-                        <span class="cert-card-title">Google Play Store Listing Certificate</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">Google Play Academy</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span data-i18n="cert_gp_date">14 April 2026</span>
-                        <span data-i18n="cert_gp_valid">Valid until 14 April 2029</span>
-                        <span><span data-i18n="cert_no">No:</span> 179779870</span>
-                    </div>
-                </a>
-
-                <a href="assets/certificates/UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
-                    <div class="cert-card-top">
-                        <span class="cert-card-title">iOS &amp; Swift: The Complete iOS App Development Bootcamp</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">Udemy</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span data-i18n="cert_ios_date">23 January 2024</span>
-                        <span data-i18n="cert_ios_hours">60.5 hours</span>
-                        <span><span data-i18n="cert_no">No:</span> UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97</span>
-                    </div>
-                </a>
-
-                <a href="assets/certificates/NHS.pdf" target="_blank" rel="noopener noreferrer" class="cert-card cert-card--blood">
-                    <span class="cert-blood-group" aria-hidden="true">A+</span>
-                    <div class="cert-card-top">
-                        <span class="cert-card-title" data-i18n="cert_blood_title">50 Blood Donations Certificate</span>
-                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
-                    </div>
-                    <div class="cert-card-tags">
-                        <span class="project-tag">NHS Blood and Transplant</span>
-                    </div>
-                    <div class="cert-card-meta">
-                        <span>2026</span>
-                        <span data-i18n="cert_blood_milestone">50 donations milestone</span>
-                        <span data-i18n="cert_blood_counts">Every donation counts</span>
-                    </div>
-                </a>
-
-            </div>
-            </div>
-        </section>
-
         <!-- Projects -->
-        <section class="projects">
+        <section class="projects" id="projects">
             <span class="section-label reveal" data-i18n="label_work">Work</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="projects_heading">Projects</h2>
             <div class="projects-accordion reveal reveal-delay-2">
@@ -655,51 +391,275 @@
                     </div></div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title" data-i18n="t_cvlens">CVLens — AI CV Reader &amp; Analyser</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">spaCy</span>
-                            <span class="project-tag">NLP</span>
-                            <span class="project-tag">PyMuPDF</span>
-                            <span class="project-tag">python-docx</span>
-                            <span class="project-tag">regex</span>
-                        </div>
-                        <p data-i18n="d_cvlens">An NLP system that reads and analyses CVs in PDF and DOCX format. It uses spaCy for tokenisation, entity recognition and skill extraction from unstructured text, and runs automated quality checks on every result.</p>
-                        <a href="https://github.com/ShazMoghaddam/CVLens" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
+            </div>
+        </section>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title" data-i18n="t_stocktracker">Stock Tracker Dashboard</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+        <!-- Skills -->
+        <section class="skills" id="skills">
+            <span class="section-label reveal" data-i18n="label_expertise">Expertise</span>
+            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="skills_heading">Skills &amp; Tools</h2>
+            <div class="skills-table reveal reveal-delay-2">
+                <div class="skills-col">
+                    <button class="skills-col-toggle" aria-expanded="false">
+                        <span class="skills-col-label" data-i18n="skills_col_lang">Languages &amp; Data</span>
+                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Streamlit</span>
-                            <span class="project-tag">yfinance</span>
-                            <span class="project-tag">pandas</span>
-                            <span class="project-tag">Plotly</span>
-                            <span class="project-tag">REST API</span>
-                        </div>
-                        <p data-i18n="d_stocktracker">A real-time interactive dashboard in Python that tracks stock market data, with live price updates, key performance metrics and dynamic charts for following market movements as they happen.</p>
-                        <a href="https://github.com/ShazMoghaddam/Stock_Tracker_Dashboard" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
+                    <div class="skills-panel">
+                    <ul class="skills-list">
+                        <li>Python</li>
+                        <li>Kotlin &amp; Java</li>
+                        <li>Flutter</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>HTML &amp; CSS</li>
+                        <li>SVG</li>
+                        <li>SQL &amp; PostgreSQL</li>
+                        <li data-i18n="skill_ml">Machine Learning</li>
+                        <li>NLP &amp; spaCy</li>
+                        <li>pandas &amp; NumPy</li>
+                        <li>scikit-learn</li>
+                        <li>SciPy</li>
+                        <li>TensorFlow</li>
+                    </ul>
+                    </div>
                 </div>
+                <div class="skills-col">
+                    <button class="skills-col-toggle" aria-expanded="false">
+                        <span class="skills-col-label" data-i18n="skills_col_frameworks">Frameworks &amp; Tools</span>
+                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="skills-panel">
+                    <ul class="skills-list">
+                        <li>FastAPI</li>
+                        <li>Plotly Dash</li>
+                        <li>React</li>
+                        <li>Flask</li>
+                        <li>SQLAlchemy &amp; Alembic</li>
+                        <li>Pydantic</li>
+                        <li>Vite</li>
+                        <li>TanStack Query</li>
+                        <li>Electron</li>
+                        <li>Streamlit</li>
+                        <li>Docker</li>
+                        <li>Git &amp; GitHub</li>
+                        <li>GitHub Actions (CI/CD)</li>
+                        <li>pytest, Vitest &amp; Playwright</li>
+                        <li>REST APIs</li>
+                        <li>Jupyter</li>
+                        <li>Matplotlib &amp; Seaborn</li>
+                        <li>Plotly</li>
+                        <li>Vanilla JS</li>
+                        <li>HTML5 Canvas</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="skills-col">
+                    <button class="skills-col-toggle" aria-expanded="false">
+                        <span class="skills-col-label" data-i18n="skills_col_cloud">Cloud, Design &amp; Product</span>
+                        <svg class="skills-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="skills-panel">
+                    <ul class="skills-list">
+                        <li>AWS</li>
+                        <li>GCP</li>
+                        <li>Railway</li>
+                        <li>Render</li>
+                        <li>Auth0, OAuth 2.0 &amp; OIDC</li>
+                        <li data-i18n="skill_hmrc">HMRC Making Tax Digital APIs</li>
+                        <li data-i18n="skill_a11y">Accessibility (WCAG, axe)</li>
+                        <li data-i18n="skill_causal">Causal AI &amp; NetworkX</li>
+                        <li data-i18n="skill_android">Android Development</li>
+                        <li data-i18n="skill_generative">Generative Design</li>
+                        <li data-i18n="skill_blend">CSS Blend Modes</li>
+                        <li data-i18n="skill_ui">UI / Visual Design</li>
+                        <li data-i18n="skill_product">Digital Product Design</li>
+                        <li>Anthropic Claude API</li>
+                        <li>ChatGPT &amp; Gemini</li>
+                        <li data-i18n="skill_photo">Photography</li>
+                        <li data-i18n="skill_video">Videography</li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- About -->
+        <section class="about" id="about">
+            <div class="about-split reveal">
+                <div class="about-left">
+                    <span class="section-label" data-i18n="label_about">About</span>
+                    <h2 data-scramble data-i18n="about_heading">From raw data<br>to <em>something useful</em></h2>
+                    <div class="about-body">
+                        <p data-i18n="about_p1">I'm a London-based Data Scientist and Python Developer, trained at Imperial College London (96% average). My day-to-day spans the whole data workflow: cleaning messy datasets, building and tuning models, and shipping the result as something people can actually use, not just a notebook that lives on my laptop.</p>
+                        <p data-i18n="about_p2">Outside client and product work, I build my own things: Android apps, trading tools, generative art systems, live wallpapers, screensavers, word-cloud typography. Fifty-plus projects so far, spread across the <strong>Google Play Store</strong>, <strong>Gumroad</strong>, <strong>Envato</strong>, and <strong>Lemon Squeezy</strong>. Running these myself taught me things a job rarely does: how to price something, when to ship versus keep polishing, and what users actually respond to once a product is out in the world.</p>
+                        <p data-i18n="about_p3">There's a quieter part of my life too. After major surgery and the birth of my eldest child, I started donating blood regularly, and in 2026 hit my <strong>50th donation</strong>, recognised by NHS Blood and Transplant. It's a small, repeatable way of putting something back.</p>
+                        <p data-i18n="about_p4">I also write, though not often and not because I'd call myself a writer. Some thoughts just need somewhere to land. A few of those essays are published on <strong>Medium</strong>, and you can find them in the Writing section below.</p>
+                    </div>
+                </div>
+                <div class="about-right">
+                    <div class="about-headshot-wrap">
+                        <img class="about-headshot headshot-dark" src="assets/certificates/headshot-dark.webp" alt="Shaz Moghaddam" width="640" height="853" loading="lazy" decoding="async">
+                        <img class="about-headshot headshot-light" src="assets/certificates/headshot-light.webp" alt="Shaz Moghaddam" width="640" height="853" loading="lazy" decoding="async">
+                    </div>
+                    <span class="what-i-do-label" data-i18n="what_i_do_label">What I Do</span>
+                    <div class="what-grid">
+                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
+                            <div class="what-item-header">
+                                
+                                <span class="what-title" data-i18n="what_title_data">Data Science &amp; Python Development</span>
+                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                            </div>
+                            <p class="what-preview" data-i18n="what_preview_data">End-to-end Python solutions: exploratory analysis, machine learning, NLP, and data-driven insights built for clarity and real-world use.</p>
+                            <div class="what-body"><div class="what-body-inner">
+                                <p class="what-desc" data-i18n="what_desc_data">I take projects from raw data to deployed model: cleaning, feature engineering, classification, regression, NLP, and lately building AI assistants powered by the Claude API into the products themselves. I write it so both technical and non-technical people can follow what's happening and why.</p>
+                            </div></div>
+                        </button>
+                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
+                            <div class="what-item-header">
+                                
+                                <span class="what-title" data-i18n="what_title_digital">Digital Products, Apps &amp; Freelance</span>
+                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                            </div>
+                            <p class="what-preview" data-i18n="what_preview_digital">I build and ship Android apps and digital products on my own, across the Google Play Store, Gumroad, Envato, and Lemon Squeezy, handling everything from the first idea to launch.</p>
+                            <div class="what-body"><div class="what-body-inner">
+                                <p class="what-desc" data-i18n="what_desc_digital">Open to freelance and contract work in data science, Python development, and digital products. I can scope a project, build it, and stick around to publish, price, and iterate based on what users actually say.</p>
+                            </div></div>
+                        </button>
+                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
+                            <div class="what-item-header">
+                                
+                                <span class="what-title" data-i18n="what_title_photo">Photography &amp; Videography</span>
+                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                            </div>
+                            <p class="what-preview" data-i18n="what_preview_photo">Through photography and videography, I explore architecture and urban life across different countries and cultures.</p>
+                            <div class="what-body"><div class="what-body-inner">
+                                <p class="what-desc" data-i18n="what_desc_photo">I'm drawn to how light, form, and environment reveal the character of a place: small, fleeting moments that end up feeling universal. Whether it's a still frame or something moving, I'm chasing stories that feel intimate but still land with anyone looking at them.</p>
+                            </div></div>
+                        </button>
+                        <button class="what-item" onclick="toggleWhat(this)" aria-expanded="false">
+                            <div class="what-item-header">
+                                
+                                <span class="what-title" data-i18n="what_title_design">Design</span>
+                                <span class="what-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                            </div>
+                            <p class="what-preview" data-i18n="what_preview_design">I'm pulled toward both historic and contemporary architecture, and toward minimalist, purposeful design where form supports function and nothing is there by accident.</p>
+                            <div class="what-body"><div class="what-body-inner">
+                                <p class="what-desc" data-i18n="what_desc_design">Whether classical or modern, I'm drawn to structure, proportion, and the way thoughtful design shapes experience. I carry this approach into my work, aiming for clarity, simplicity, and considered execution.</p>
+                            </div></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="certifications" id="certifications">
+            <span class="section-label reveal" data-i18n="label_credentials">Credentials</span>
+            <h2 class="reveal reveal-delay-1" data-scramble data-i18n="certs_heading">Certifi<em>cations</em></h2>
+            <div class="cert-scroll-hint">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span data-i18n="drag_to_explore">Drag to explore</span>
+            </div>
+            <div class="cert-scroll-container reveal reveal-delay-2">
+            <div class="cert-grid">
+
+                <a href="assets/certificates/certificate%20(28).pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-card-top">
+                        <span class="cert-card-title">Data Science Online Bootcamp</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">Imperial College London</span>
+                        <span class="project-tag">HyperionDev</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span data-i18n="cert_ds_date">10 June 2025</span>
+                        <span><span data-i18n="cert_no">No:</span> ES25030017561-7076</span>
+                    </div>
+                </a>
+
+                <a href="assets/certificates/UC-5eff400e-07a6-40ff-adef-913727f2c37d.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-card-top">
+                        <span class="cert-card-title">100 Days of Code: The Complete Python Pro Bootcamp</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">Udemy</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span data-i18n="cert_100_date">14 July 2023</span>
+                        <span data-i18n="cert_100_hours">58 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-5eff400e-07a6-40ff-adef-913727f2c37d</span>
+                    </div>
+                </a>
+
+                <a href="assets/certificates/UC-73115e41-ec60-434c-b153-97e62a6bd6a3.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-card-top">
+                        <span class="cert-card-title">The Data Science Course: Complete Data Science Bootcamp 2025</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">Udemy</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span data-i18n="cert_dsc_date">2 October 2025</span>
+                        <span data-i18n="cert_dsc_hours">32 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-73115e41-ec60-434c-b153-97e62a6bd6a3</span>
+                    </div>
+                </a>
+
+                <a href="assets/certificates/titlcnxh_1776184220278.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-card-top">
+                        <span class="cert-card-title">Google Play Store Listing Certificate</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">Google Play Academy</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span data-i18n="cert_gp_date">14 April 2026</span>
+                        <span data-i18n="cert_gp_valid">Valid until 14 April 2029</span>
+                        <span><span data-i18n="cert_no">No:</span> 179779870</span>
+                    </div>
+                </a>
+
+                <a href="assets/certificates/UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97.pdf" target="_blank" rel="noopener noreferrer" class="cert-card">
+                    <div class="cert-card-top">
+                        <span class="cert-card-title">iOS &amp; Swift: The Complete iOS App Development Bootcamp</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">Udemy</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span data-i18n="cert_ios_date">23 January 2024</span>
+                        <span data-i18n="cert_ios_hours">60.5 hours</span>
+                        <span><span data-i18n="cert_no">No:</span> UC-da8958ce-4389-4ed9-90a1-72c6ffd01b97</span>
+                    </div>
+                </a>
+
+                <a href="assets/certificates/NHS.pdf" target="_blank" rel="noopener noreferrer" class="cert-card cert-card--blood">
+                    <span class="cert-blood-group" aria-hidden="true">A+</span>
+                    <div class="cert-card-top">
+                        <span class="cert-card-title" data-i18n="cert_blood_title">50 Blood Donations Certificate</span>
+                        <span class="cert-card-arrow"><svg viewBox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+                    </div>
+                    <div class="cert-card-tags">
+                        <span class="project-tag">NHS Blood and Transplant</span>
+                    </div>
+                    <div class="cert-card-meta">
+                        <span>2026</span>
+                        <span data-i18n="cert_blood_milestone">50 donations milestone</span>
+                        <span data-i18n="cert_blood_counts">Every donation counts</span>
+                    </div>
+                </a>
+
+            </div>
             </div>
         </section>
 
         <!-- Products & Apps -->
-        <section class="products">
+        <section class="products" id="apps">
             <span class="section-label reveal" data-i18n="label_products_apps">Products &amp; Apps</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="built_heading">What I've <em>Built</em></h2>
             <div class="projects-accordion reveal reveal-delay-2">
@@ -707,7 +667,25 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
-                        <span class="accordion-title">Bingo Maths</span>
+                        <span class="accordion-title" data-i18n="t_searchwars">SearchWars — Which Gets More Google Searches?</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_searchwars">A higher-or-lower guessing game inspired by higherlowergame.com. Players see two items and guess which one gets more monthly Google searches. It has 3,187 questions across 11 categories, including Sports, Celebrity, Tech, Gaming, Geography and History, with 3 lives, high scores per category, subcategory navigation and smooth card animations. Free to play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.searchwars.app" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">02</span>
+                        <span class="accordion-title">Split Flap World Clock</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
@@ -716,14 +694,31 @@
                             <span class="project-tag">Google Play Store</span>
                             <span class="project-tag" data-i18n="tag_free">Free</span>
                         </div>
-                        <p data-i18n="d_bingomaths">A fun, bingo-style maths game for Android. Familiar bingo mechanics make practising maths engaging, and the design keeps players coming back. Free to download and play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.bingomaths" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                        <p data-i18n="d_splitflap">Turns an Android phone into a living departure board. Inspired by the classic split-flap Solari boards, it shows live world clocks for multiple cities with authentic flip animations. Supports 300+ world cities and multiple colour themes. Free to download.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.splitflapworldclock" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">02</span>
+                        <span class="accordion-num">03</span>
+                        <span class="accordion-title">World Builders</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_worldbuilders">Build a world from nothing and watch it grow. World Builders is an open sandbox that gives you the tools to shape the land and expand it piece by piece, at your own pace. No timers and no fixed goals, just room to create and experiment. Free to download and play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.worldbuilders" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">04</span>
                         <span class="accordion-title" data-i18n="t_mathadventure">Math Adventure — Maths for Kids</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -741,7 +736,24 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
+                        <span class="accordion-num">05</span>
+                        <span class="accordion-title">Bingo Maths</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Android</span>
+                            <span class="project-tag">Google Play Store</span>
+                            <span class="project-tag" data-i18n="tag_free">Free</span>
+                        </div>
+                        <p data-i18n="d_bingomaths">A fun, bingo-style maths game for Android. Familiar bingo mechanics make practising maths engaging, and the design keeps players coming back. Free to download and play.</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.bingomaths" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">06</span>
                         <span class="accordion-title">Animated Month Wallpaper</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -758,7 +770,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
+                        <span class="accordion-num">07</span>
                         <span class="accordion-title">Animated Weekday Wallpaper</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -773,63 +785,11 @@
                     </div></div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title">Split Flap World Clock</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag" data-i18n="tag_free">Free</span>
-                        </div>
-                        <p data-i18n="d_splitflap">Turns an Android phone into a living departure board. Inspired by the classic split-flap Solari boards, it shows live world clocks for multiple cities with authentic flip animations. Supports 300+ world cities and multiple colour themes. Free to download.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.ShazMoghaddam.splitflapworldclock" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title">World Builders</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag" data-i18n="tag_free">Free</span>
-                        </div>
-                        <p data-i18n="d_worldbuilders">Build a world from nothing and watch it grow. World Builders is an open sandbox that gives you the tools to shape the land and expand it piece by piece, at your own pace. No timers and no fixed goals, just room to create and experiment. Free to download and play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.shazmoghaddam.worldbuilders" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title" data-i18n="t_searchwars">SearchWars — Which Gets More Google Searches?</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Android</span>
-                            <span class="project-tag">Flutter</span>
-                            <span class="project-tag">Google Play Store</span>
-                            <span class="project-tag" data-i18n="tag_free">Free</span>
-                        </div>
-                        <p data-i18n="d_searchwars">A higher-or-lower guessing game inspired by higherlowergame.com. Players see two items and guess which one gets more monthly Google searches. It has 3,187 questions across 11 categories, including Sports, Celebrity, Tech, Gaming, Geography and History, with 3 lives, high scores per category, subcategory navigation and smooth card animations. Free to play.</p>
-                        <a href="https://play.google.com/store/apps/details?id=com.searchwars.app" target="_blank" rel="noopener noreferrer" class="play-link"><svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><polygon points="0,0 10,5 0,10" /></svg><span data-i18n="link_play">View on Google Play</span></a>
-                    </div></div>
-                </div>
-
             </div>
         </section>
 
         <!-- Digital Products -->
-        <section class="products">
+        <section class="products" id="digital">
             <span class="section-label reveal" data-i18n="label_digital_products">Digital Products</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="shipped_heading">What I've <em>Shipped</em></h2>
             <div class="projects-accordion reveal reveal-delay-2">
@@ -837,68 +797,80 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
-                        <span class="accordion-title" data-i18n="t_marketpulse">Market Pulse — Minimal Economic Calendar for Traders</span>
+                        <span class="accordion-title" data-i18n="t_worldmap">World Map — Interactive SVG Country Explorer</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag" data-i18n="tag_finance">Finance Tool</span>
-                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">SVG</span>
+                            <span class="project-tag">HTML5</span>
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Gumroad</span>
                         </div>
-                        <p data-i18n="d_marketpulse">A clean, self-hosted economic calendar built for traders. High-impact events are highlighted first, with smart LIVE detection, automatic local time zone conversion and zero dependencies. Works fully offline as a single HTML file: no app, no subscription.</p>
+                        <p data-i18n="d_worldmap">An interactive choropleth world map covering 172 countries across 7 data layers: population density, GDP per capita, HDI, CO₂ per capita, life expectancy, internet usage and a default view. Features region and political group filters (EU, G20, NATO, BRICS+), CSV and JSON data import, shareable URLs, iframe embedding with a JavaScript API, full keyboard navigation and dark mode, with zero dependencies in one HTML file.</p>
+                        <a href="https://github.com/ShazMoghaddam/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">02</span>
-                        <span class="accordion-title" data-i18n="t_tradehours">TradeHours Pro — Live Global Market Hours</span>
+                        <span class="accordion-title" data-i18n="t_orbs">Orbs — Morphing Dot Animations for the Web</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag" data-i18n="tag_finance">Finance Tool</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Gumroad</span>
+                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag">Vanilla JS</span>
+                            <span class="project-tag" data-i18n="skill_generative">Generative Design</span>
+                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
                         </div>
-                        <p data-i18n="d_tradehours">Know exactly which markets are open right now. Live open and closed status for 25+ global markets, a real-time countdown to each open and close, a preloaded holiday calendar and cards you can drag to reorder. Installs as a home screen app and works fully offline, with no subscription.</p>
+                        <p data-i18n="d_orbs">An open-source JavaScript library of ten dot-formation animations: sphere, wave, spikes, network constellation, torus, double helix, spiral galaxy, loader ring, wireframe cube and k-means clusters. Any shape morphs smoothly into any other, and each has its own silhouette, drawing style and motion. Built for loaders, AI thinking states and small interactive moments. One file, about 5 KB gzipped, no dependencies, with support for reduced motion, keyboard use, and light and dark themes. Try it in the Get in Touch section below: click the orb to change its shape.</p>
+                        <a href="https://github.com/ShazMoghaddam/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">03</span>
-                        <span class="accordion-title" data-i18n="t_livewallpapers">Animated Live Wallpapers — Months &amp; Weekdays</span>
+                        <span class="accordion-title" data-i18n="t_typodigits">Typography Digits — Generative Word-Cloud Art</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag" data-i18n="tag_live_wallpaper">Live Wallpaper</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">Lemon Squeezy</span>
+                            <span class="project-tag">SVG</span>
+                            <span class="project-tag">HTML5 Canvas</span>
+                            <span class="project-tag" data-i18n="tag_generative_art">Generative Art</span>
+                            <span class="project-tag">Vanilla JS</span>
+                            <span class="project-tag" data-i18n="tag_collision">Collision Detection</span>
+                            <span class="project-tag">Gumroad</span>
                         </div>
-                        <p data-i18n="d_livewallpapers">A pair of minimal, fullscreen animated wallpapers: one shows the current month, the other the current day of the week. Both are fully customisable, with 7 languages, 5 fonts, a breathing animation and a live clock. Single HTML files that work 100% offline with nothing to install. Compatible with Lively Wallpaper and Plash.</p>
+                        <p data-i18n="d_typodigits">The digits 0 to 9 built entirely from programming and data science vocabulary. Each digit is a living word cloud, different on every load. Words are placed with canvas pixel masking, a two-gate collision system and AABB packing, then clipped by an SVG clipPath. Features breathing animations, a shimmer sweep, 3D cursor tilt and palette cycling.</p>
+                        <a href="https://github.com/ShazMoghaddam/typography-digits" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">04</span>
-                        <span class="accordion-title" data-i18n="t_aeroatlas">Aero Atlas — Terminal Time Screensaver</span>
+                        <span class="accordion-title" data-i18n="t_worldcup">FIFA World Cup 2026 — Bracket Predictor</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
                         <div class="project-tags">
-                            <span class="project-tag" data-i18n="tag_screensaver">Screensaver</span>
-                            <span class="project-tag">HTML</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Envato</span>
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">Vanilla JS</span>
+                            <span class="project-tag">GitHub Pages</span>
                         </div>
-                        <p data-i18n="d_aeroatlas">A fullscreen screensaver for macOS and Windows styled as an airport departure board. It shows live world clocks for up to 10 cities with authentic split-flap animations, with 300+ cities to choose from, 5 accent colour themes and acoustic click sounds, and it works fully offline.</p>
+                        <p data-i18n="d_worldcup">An interactive FIFA World Cup 2026 bracket predictor built as a single HTML file. It has a clickable knockout bracket from the round of 32, a group stage view, a champion card that traces the full route to the final, a 188-question trivia quiz across 6 categories, one-click PNG export, sharing through encoded pick URLs, dark mode, a time zone toggle and a fully responsive mobile layout. Zero dependencies, hosted on GitHub Pages.</p>
+                        <a href="https://github.com/ShazMoghaddam/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
@@ -922,91 +894,11 @@
                     </div></div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title" data-i18n="t_typodigits">Typography Digits — Generative Word-Cloud Art</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">SVG</span>
-                            <span class="project-tag">HTML5 Canvas</span>
-                            <span class="project-tag" data-i18n="tag_generative_art">Generative Art</span>
-                            <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag" data-i18n="tag_collision">Collision Detection</span>
-                            <span class="project-tag">Gumroad</span>
-                        </div>
-                        <p data-i18n="d_typodigits">The digits 0 to 9 built entirely from programming and data science vocabulary. Each digit is a living word cloud, different on every load. Words are placed with canvas pixel masking, a two-gate collision system and AABB packing, then clipped by an SVG clipPath. Features breathing animations, a shimmer sweep, 3D cursor tilt and palette cycling.</p>
-                        <a href="https://github.com/ShazMoghaddam/typography-digits" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
-                        <span class="accordion-title" data-i18n="t_worldmap">World Map — Interactive SVG Country Explorer</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">SVG</span>
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Gumroad</span>
-                        </div>
-                        <p data-i18n="d_worldmap">An interactive choropleth world map covering 172 countries across 7 data layers: population density, GDP per capita, HDI, CO₂ per capita, life expectancy, internet usage and a default view. Features region and political group filters (EU, G20, NATO, BRICS+), CSV and JSON data import, shareable URLs, iframe embedding with a JavaScript API, full keyboard navigation and dark mode, with zero dependencies in one HTML file.</p>
-                        <a href="https://github.com/ShazMoghaddam/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">08</span>
-                        <span class="accordion-title" data-i18n="t_worldcup">FIFA World Cup 2026 — Bracket Predictor</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag">GitHub Pages</span>
-                        </div>
-                        <p data-i18n="d_worldcup">An interactive FIFA World Cup 2026 bracket predictor built as a single HTML file. It has a clickable knockout bracket from the round of 32, a group stage view, a champion card that traces the full route to the final, a 188-question trivia quiz across 6 categories, one-click PNG export, sharing through encoded pick URLs, dark mode, a time zone toggle and a fully responsive mobile layout. Zero dependencies, hosted on GitHub Pages.</p>
-                        <a href="https://github.com/ShazMoghaddam/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">09</span>
-                        <span class="accordion-title" data-i18n="t_orbs">Orbs — Morphing Dot Animations for the Web</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">HTML5 Canvas</span>
-                            <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag" data-i18n="skill_generative">Generative Design</span>
-                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
-                        </div>
-                        <p data-i18n="d_orbs">An open-source JavaScript library of ten dot-formation animations: sphere, wave, spikes, network constellation, torus, double helix, spiral galaxy, loader ring, wireframe cube and k-means clusters. Any shape morphs smoothly into any other, and each has its own silhouette, drawing style and motion. Built for loaders, AI thinking states and small interactive moments. One file, about 5 KB gzipped, no dependencies, with support for reduced motion, keyboard use, and light and dark themes. Try it in the Get in Touch section below: click the orb to change its shape.</p>
-                        <a href="https://github.com/ShazMoghaddam/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/orbs" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
             </div>
         </section>
 
         <!-- Writing -->
-        <section class="writing">
+        <section class="writing" id="writing">
             <span class="section-label reveal" data-i18n="label_writing">Writing</span>
             <h2 class="reveal reveal-delay-1" data-scramble data-i18n="written_heading">What I've <em>Written</em></h2>
             <p class="writing-intro reveal reveal-delay-2" data-i18n="writing_intro">Reflections on becoming, connection, and the things that stay with you.</p>
@@ -1101,7 +993,7 @@
         </section>
 
         <!-- Contact -->
-        <section class="contact">
+        <section class="contact" id="contact">
             <span class="section-label reveal" data-i18n="label_contact">Contact</span>
             <h2 class="reveal reveal-delay-1" data-i18n="contact_heading">Get in Touch</h2>
             <p class="contact-sub reveal reveal-delay-2" data-i18n="contact_sub">Open to freelance, contract, and full-time opportunities, in London or internationally, wherever the work is interesting. If you're building something that matters, bring the problem. I'll bring the code, the models, and the thinking.</p>
@@ -1223,7 +1115,7 @@
             </div>
             <p class="footer-tagline">
                 <span class="ft-bracket" aria-hidden="true">&lt;&lt;&lt;</span>
-                <span class="ft-text">Garbage in // portfolio out</span>
+                <span class="ft-text">Trained on data // deployed on coffee</span>
                 <span class="ft-bracket" aria-hidden="true">&gt;&gt;&gt;</span>
             </p>
         </div>
@@ -1234,7 +1126,7 @@
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
 
-    <script src="main.js?v=polish1"></script>
+    <script src="main.js?v=polish2"></script>
     <script src="world-clock.js?v=10"></script>
     <script src="orb.js?v=4" defer></script>
     <!-- ═══════════════════════════════════════════════════════
@@ -1301,12 +1193,12 @@
          i18next — Language Toggle
          ═══════════════════════════════════════════════════════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
-    <script src="i18n.js?v=polish1"></script>
+    <script src="i18n.js?v=polish2"></script>
 
     <!-- Footer tagline — one deadpan line, picked at random on each load -->
     <script>
         (function () {
-            var n = 11; /* footer lines ft_1 .. ft_11 live in i18n/locales */
+            var n = 9; /* footer lines ft_1 .. ft_9 live in i18n/locales */
             var el = document.querySelector(".footer-tagline .ft-text");
             if (el) {
                 var key = "ft_" + (1 + Math.floor(Math.random() * n));

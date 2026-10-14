@@ -636,17 +636,10 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ── Section nav dots ──────────────────────────────────────
-const navDots = document.querySelectorAll('.nav-dot');
-const sections = [
-    document.querySelector('.skills'),
-    document.querySelector('.about'),
-    document.querySelector('.certifications'),
-    document.querySelector('.projects'),
-    document.querySelectorAll('.products')[0],
-    document.querySelectorAll('.products')[1],
-    document.querySelector('.writing'),
-    document.querySelector('.contact'),
-];
+// Each dot names its section with data-target="#id", so the page order can
+// change without touching this code.
+const navDots = [...document.querySelectorAll('.nav-dot')];
+const sections = navDots.map(d => document.querySelector(d.dataset.target));
 
 navDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
@@ -654,19 +647,30 @@ navDots.forEach((dot, i) => {
     });
 });
 
-// Default: activate first dot on load (before any scroll)
-if (navDots[0]) navDots[0].classList.add('active');
-
-const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const idx = sections.indexOf(entry.target);
-            navDots.forEach((d, i) => d.classList.toggle('active', i === idx));
-        }
+// The active dot is the section that crosses the middle of the screen.
+// (A visibility threshold fails for sections taller than the screen.)
+function updateActiveDot() {
+    const mid = window.innerHeight / 2;
+    let idx = -1;
+    sections.forEach((sec, i) => {
+        if (!sec) return;
+        const r = sec.getBoundingClientRect();
+        if (r.top <= mid && r.bottom > mid) idx = i;
     });
-}, { threshold: 0.3 });
-
-sections.forEach(s => { if (s) sectionObserver.observe(s); });
+    navDots.forEach((d, i) => {
+        const on = i === idx;
+        d.classList.toggle('active', on);
+        if (on) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+    });
+}
+let navTick = false;
+window.addEventListener('scroll', () => {
+    if (navTick) return;
+    navTick = true;
+    requestAnimationFrame(() => { updateActiveDot(); navTick = false; });
+}, { passive: true });
+window.addEventListener('resize', updateActiveDot);
+updateActiveDot();
 
 // ── Scramble heading animation ─────────────────────────────
 (function () {

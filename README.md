@@ -54,8 +54,6 @@ i18n/               # Translation source, build script, and locale files
 - **VoltScope** — Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
 - **ClinIQ** — B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
 - **SalaryAxis** — UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
-- **CVLens** — AI CV reader and analyser using NLP and spaCy
-- **Stock Tracker Dashboard** — Real-time stock dashboard with Streamlit and Plotly
 
 ## Apps and digital products
 

@@ -597,7 +597,7 @@ h2 em { font-style: italic; color: var(--accent); }
     border-top: none; border-left: none; border-right: none;
     border-bottom: 1px solid var(--border);
     cursor: pointer;
-    user-select: none; -webkit-user-select: none;
+    -webkit-user-select: none; user-select: none; -webkit-user-select: none;
     width: 100%; background: none;
     text-align: left; color: inherit; font: inherit;
 }
@@ -665,7 +665,7 @@ h2 em { font-style: italic; color: var(--accent); }
     display: flex; align-items: center; gap: 2rem;
     padding: 1.8rem 0; cursor: pointer;
     transition: all 0.3s ease;
-    user-select: none; -webkit-user-select: none;
+    -webkit-user-select: none; user-select: none; -webkit-user-select: none;
     width: 100%; background: none; border: none; text-align: left;
     color: inherit; font: inherit;
 }
@@ -703,7 +703,7 @@ h2 em { font-style: italic; color: var(--accent); }
     padding-bottom: 2.5rem; opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.4s ease 0.05s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
-    user-select: none; -webkit-user-select: none;
+    -webkit-user-select: none; user-select: none; -webkit-user-select: none;
 }
 .accordion-item.open .accordion-body-inner { user-select: text; -webkit-user-select: text; opacity: 1; transform: translateY(0); }
 .accordion-body p {
@@ -937,7 +937,7 @@ h2 em { font-style: italic; color: var(--accent); }
     color: #fa1e0e;
     opacity: 0.30;
     pointer-events: none;
-    user-select: none;
+    -webkit-user-select: none; user-select: none;
     -webkit-user-select: none;
     white-space: nowrap;
     z-index: 0;
@@ -1120,7 +1120,7 @@ h2 em { font-style: italic; color: var(--accent); }
     cursor: pointer;
     position: relative;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-    user-select: none;
+    -webkit-user-select: none; user-select: none;
     z-index: 2;
 }
 [data-theme="light"] .mindmap-hub {
@@ -1935,7 +1935,7 @@ footer {
     to   { transform: translateX(-50%); }
 }
 .eco-word {
-    flex: 0 0 auto; white-space: nowrap; user-select: none;
+    flex: 0 0 auto; white-space: nowrap; -webkit-user-select: none; user-select: none;
     font-family: 'DM Sans', sans-serif; font-weight: 1000; font-size: 1rem;
     color: var(--text);
 }
@@ -1971,4 +1971,57 @@ footer {
 @media (max-width: 760px) {
     .time-info { z-index: 101; }
     .top-bar.scrolled { padding-bottom: 1.9rem; }
+}
+
+/* In-page links (stats, hero buttons, nav dots) glide to their section and stop
+   below the fixed top bar */
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+main section[id] { scroll-margin-top: 4.5rem; }
+
+/* ── Responsive hardening (Oct 2026) ── */
+
+/* Hero grows with its content instead of clipping it on short screens
+   (phones in landscape, small laptops). svh avoids the iOS address-bar jump. */
+header { height: auto; min-height: 100vh; min-height: 100svh; }
+
+/* Short landscape screens (phones on their side): keep the hero clear of the
+   top bar and drop the side rails, which collide at this height */
+@media (orientation: landscape) and (max-height: 500px) {
+    header { padding: 4.5rem 0 3rem; }
+    .hero-content { padding-top: 0; }
+    #section-nav, .time-info { display: none; }
+    .made-with-intention { display: flex; position: static; flex-direction: row; padding: 0.6rem 0 2rem; justify-content: center; }
+}
+
+/* Small phones: three stat circles must fit side by side */
+@media (max-width: 400px) {
+    .stats-bar { gap: 1rem; padding-left: 0.5rem; padding-right: 0.5rem; --orbit-r: 31px; }
+    .stat-item { width: 100px; height: 100px; }
+    .knok-slot { width: 66px; height: 92px; }
+    .typo-slot { width: 69px; height: 92px; }
+    .knok-digits--two .knok-slot { width: 48px; height: 67px; }
+    .typo-digits--two .typo-slot { width: 50px; height: 67px; }
+}
+@media (max-width: 360px) {
+    .stats-bar { gap: 0.5rem; --orbit-r: 28px; }
+    .stat-item { width: 90px; height: 90px; }
+    .knok-slot { width: 58px; height: 81px; }
+    .typo-slot { width: 61px; height: 81px; }
+    .knok-digits--two .knok-slot { width: 42px; height: 59px; }
+    .typo-digits--two .typo-slot { width: 44px; height: 59px; }
+}
+
+/* Touch screens: enlarge the tappable area of small controls without changing
+   how they look (an invisible hit area around each one) */
+@media (pointer: coarse) {
+    .dark-mode-toggle, .lang-globe-btn, .shop-toggle, .project-link, .play-link,
+    .cv-download { position: relative; }
+    .dark-mode-toggle::after, .shop-toggle::after, .project-link::after, .play-link::after,
+    .cv-download::after {
+        content: ''; position: absolute; inset: -12px -4px;
+    }
+    .lang-globe-btn::after { content: ''; position: absolute; inset: -15px; }
+    .contact-links a { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+    .contact-links { gap: 0.75rem; }
 }
