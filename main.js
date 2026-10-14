@@ -113,36 +113,50 @@ function toggleTheme() {
         }, i * 150);
     });
 
+    try { localStorage.setItem('theme', newTheme); } catch (e) {}
+
     setTimeout(() => {
-        body.setAttribute('data-theme', newTheme);
-        const tcMeta = document.getElementById('theme-color-meta');
-        if (tcMeta) tcMeta.setAttribute('content', newTheme === 'dark' ? '#0e0f0b' : '#f4f1eb');
-        const themeText = document.getElementById('theme-text');
-        const themeIcon = document.getElementById('theme-icon');
-        // The label's translation key is dynamic: it depends on the current
-        // theme, not a fixed data-i18n value. Keep data-i18n in sync with the
-        // theme and resolve the text through i18next when it is available,
-        // falling back to English. This keeps the label in the active language
-        // after a theme toggle, and lets a later language switch translate it
-        // correctly instead of forcing it back to "Light".
-        const themeKey = newTheme === 'dark' ? 'theme_light' : 'theme_dark';
-        const themeFallback = newTheme === 'dark' ? 'Light' : 'Dark';
-        if (themeText) {
-            themeText.setAttribute('data-i18n', themeKey);
-            const translated = (window.i18next && window.i18next.isInitialized)
-                ? window.i18next.t(themeKey) : null;
-            themeText.textContent = (translated && translated !== themeKey) ? translated : themeFallback;
-        }
-        if (themeIcon) {
-            if (newTheme === 'dark') {
-                themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
-            } else {
-                themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
-            }
-        }
+        applyThemeChrome(newTheme);
         setTimeout(() => flash.classList.remove('active'), 400);
     }, 120);
 }
+
+// Sets the theme and everything that depends on it (browser colour, label, icon)
+function applyThemeChrome(newTheme) {
+    const body = document.body;
+    body.setAttribute('data-theme', newTheme);
+    const tcMeta = document.getElementById('theme-color-meta');
+    if (tcMeta) tcMeta.setAttribute('content', newTheme === 'dark' ? '#0e0f0b' : '#f4f1eb');
+    const themeText = document.getElementById('theme-text');
+    const themeIcon = document.getElementById('theme-icon');
+    // The label's translation key is dynamic: it depends on the current
+    // theme, not a fixed data-i18n value. Keep data-i18n in sync with the
+    // theme and resolve the text through i18next when it is available,
+    // falling back to English. This keeps the label in the active language
+    // after a theme toggle, and lets a later language switch translate it
+    // correctly instead of forcing it back to "Light".
+    const themeKey = newTheme === 'dark' ? 'theme_light' : 'theme_dark';
+    const themeFallback = newTheme === 'dark' ? 'Light' : 'Dark';
+    if (themeText) {
+        themeText.setAttribute('data-i18n', themeKey);
+        const translated = (window.i18next && window.i18next.isInitialized)
+            ? window.i18next.t(themeKey) : null;
+        themeText.textContent = (translated && translated !== themeKey) ? translated : themeFallback;
+    }
+    if (themeIcon) {
+        if (newTheme === 'dark') {
+            themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+        } else {
+            themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+        }
+    }
+}
+
+// Restore a theme chosen on an earlier visit (set early in <body>, synced here)
+(function () {
+    const t = document.body.getAttribute('data-theme');
+    if (t === 'light') applyThemeChrome('light');
+})();
 
 // ── Random highlight colour — picked once per visit ────────
 (function() {

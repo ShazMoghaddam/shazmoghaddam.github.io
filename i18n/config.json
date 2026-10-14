@@ -1,6 +1,11 @@
 {
   "sourceLang": "en",
-  "targetLangs": ["fr", "de", "es", "nl"],
+  "targetLangs": [
+    "fr",
+    "de",
+    "es",
+    "nl"
+  ],
   "provider": "deepl",
   "deepl": {
     "endpoint": "https://api-free.deepl.com/v2/translate",
@@ -54,6 +59,29 @@
     "Flutter",
     "Kotlin",
     "JavaScript",
-    "NLP"
+    "NLP",
+    "LedgerLet",
+    "Making Tax Digital",
+    "HMRC",
+    "Auth0",
+    "PostgreSQL",
+    "SQLAlchemy",
+    "Alembic",
+    "TypeScript",
+    "Vite",
+    "Pydantic",
+    "Playwright",
+    "GitHub Actions",
+    "Render",
+    "Orbs",
+    "Animated Live Wallpapers",
+    "FIFA World Cup 2026",
+    "Split Flap World Clock",
+    "Animated Month Wallpaper",
+    "Animated Weekday Wallpaper",
+    "Studio Light",
+    "Gallery Dark",
+    "Lively Wallpaper",
+    "Plash"
   ]
 }
