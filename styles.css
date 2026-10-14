@@ -1926,10 +1926,10 @@ footer {
     display: flex; width: max-content; align-items: center;
     gap: clamp(2rem, 5vw, 4rem);
     will-change: transform;
-    animation: eco-scroll var(--eco-speed, 40s) linear infinite;
+    animation: eco-scroll var(--eco-speed, 45s) linear infinite;
 }
 .eco-track--reverse { animation-direction: reverse; }
-.eco-row--wide { --eco-speed: 85s; }   /* wider row, longer duration = same visual speed */
+.eco-row--wide { --eco-speed: 130s; }   /* wider row, longer duration = same visual speed */
 @keyframes eco-scroll {
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
