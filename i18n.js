@@ -977,6 +977,7 @@
 
     function closeDropdown() {
         dropdown.classList.remove('open');
+        document.body.classList.remove('lang-open');
         globeBtn.classList.remove('active');
         globeBtn.setAttribute('aria-expanded', 'false');
     }
@@ -994,6 +995,7 @@
         e.stopPropagation();
         cancelClose();
         const open = dropdown.classList.toggle('open');
+        document.body.classList.toggle('lang-open', open);
         globeBtn.classList.toggle('active', open);
         globeBtn.setAttribute('aria-expanded', String(open));
         // Auto-dismiss after 4s if user doesn't interact

@@ -1991,7 +1991,17 @@ header { height: auto; min-height: 100vh; min-height: 100svh; }
     header { padding: 4.5rem 0 3rem; }
     .hero-content { padding-top: 0; }
     #section-nav, .time-info { display: none; }
-    .made-with-intention { display: flex; position: static; flex-direction: row; padding: 0.6rem 0 2rem; justify-content: center; }
+    /* keep the vertical side rail, tucked into the left margin */
+    .made-with-intention {
+        display: flex; position: fixed; left: 0.55rem; bottom: 1rem;
+        flex-direction: column; align-items: center; gap: 0.4rem;
+        padding: 0; font-size: 0.62rem;
+    }
+    .made-with-intention .text { writing-mode: vertical-rl; }
+}
+/* narrow landscape phones (e.g. iPhone SE on its side): make room for the rail */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 760px) {
+    .container { padding-left: 2.2rem; }
 }
 
 /* Small phones: three stat circles must fit side by side */
@@ -2025,3 +2035,7 @@ header { height: auto; min-height: 100vh; min-height: 100svh; }
     .contact-links a { padding-top: 0.6rem; padding-bottom: 0.6rem; }
     .contact-links { gap: 0.75rem; }
 }
+
+/* Language menu open: hide the phone time strip so it can't sit on top of the menu */
+body.lang-open .time-info { opacity: 0; pointer-events: none; }
+.time-info { transition: opacity 0.2s ease; }
