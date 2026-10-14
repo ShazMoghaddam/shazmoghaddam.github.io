@@ -49,6 +49,7 @@ i18n/               # Translation source, build script, and locale files
 
 ## Selected projects
 
+- **LedgerLet** — Making Tax Digital platform for UK landlords: records, CSV bank import and quarterly submissions to HMRC, live demo on HMRC's sandbox (Python, FastAPI, PostgreSQL, SQLAlchemy, React, TypeScript, Auth0)
 - **VoltEdge** — Enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
 - **VoltScope** — Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
 - **ClinIQ** — B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)

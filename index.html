@@ -52,7 +52,7 @@
         "@type": "Place",
         "name": "London, United Kingdom"
       },
-      "knowsAbout": ["Python", "FastAPI", "Plotly Dash", "Data Visualization", "AI Integration", "Android Development"],
+      "knowsAbout": ["Python", "FastAPI", "PostgreSQL", "React", "TypeScript", "Plotly Dash", "Data Visualization", "AI Integration", "Android Development"],
       "sameAs": [
         "https://github.com/ShazMoghaddam",
         "https://www.linkedin.com/in/shazmoghaddam/",
@@ -196,33 +196,33 @@
             <span class="stat-label" data-i18n="stat_apps">Apps</span>
         </a>
 
-        <!-- 16 Digital Products -->
+        <!-- 19 Digital Products -->
         <a class="stat-item" href="#digital" onclick="document.querySelectorAll('.products')[1].scrollIntoView({behavior:'smooth'}); return false;">
-            <span class="sr-only">16 </span>
+            <span class="sr-only">19 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
                     <div class="knok-slot" data-digit="1"></div>
-                    <div class="knok-slot" data-digit="6"></div>
+                    <div class="knok-slot" data-digit="9"></div>
                 </div>
                 <div class="typo-digits typo-digits--two" aria-hidden="true">
                     <div class="typo-slot" data-digit="1"></div>
-                    <div class="typo-slot" data-digit="6"></div>
+                    <div class="typo-slot" data-digit="9"></div>
                 </div>
             </div>
             <span class="stat-label" data-i18n="stat_digital">Digital Products</span>
         </a>
 
-        <!-- 48 Projects -->
+        <!-- 50 Projects -->
         <a class="stat-item" href="#projects" onclick="document.querySelector('.projects').scrollIntoView({behavior:'smooth'}); return false;">
-            <span class="sr-only">48 </span>
+            <span class="sr-only">50 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
-                    <div class="knok-slot" data-digit="4"></div>
-                    <div class="knok-slot" data-digit="8"></div>
+                    <div class="knok-slot" data-digit="5"></div>
+                    <div class="knok-slot" data-digit="0"></div>
                 </div>
                 <div class="typo-digits typo-digits--two" aria-hidden="true">
-                    <div class="typo-slot" data-digit="4"></div>
-                    <div class="typo-slot" data-digit="8"></div>
+                    <div class="typo-slot" data-digit="5"></div>
+                    <div class="typo-slot" data-digit="0"></div>
                 </div>
             </div>
             <span class="stat-label" data-i18n="stat_projects">Projects</span>
@@ -276,9 +276,10 @@
                         <li>Kotlin &amp; Java</li>
                         <li>Flutter</li>
                         <li>JavaScript</li>
+                        <li>TypeScript</li>
                         <li>HTML &amp; CSS</li>
                         <li>SVG</li>
-                        <li>SQL</li>
+                        <li>SQL &amp; PostgreSQL</li>
                         <li>Machine Learning</li>
                         <li>NLP &amp; spaCy</li>
                         <li>pandas &amp; NumPy</li>
@@ -299,10 +300,16 @@
                         <li>Plotly Dash</li>
                         <li>React</li>
                         <li>Flask</li>
+                        <li>SQLAlchemy &amp; Alembic</li>
+                        <li>Pydantic</li>
+                        <li>Vite</li>
+                        <li>TanStack Query</li>
                         <li>Electron</li>
                         <li>Streamlit</li>
                         <li>Docker</li>
                         <li>Git &amp; GitHub</li>
+                        <li>GitHub Actions (CI/CD)</li>
+                        <li>pytest, Vitest &amp; Playwright</li>
                         <li>REST APIs</li>
                         <li>Jupyter</li>
                         <li>Matplotlib &amp; Seaborn</li>
@@ -323,6 +330,9 @@
                         <li>GCP</li>
                         <li>Railway</li>
                         <li>Render</li>
+                        <li>Auth0, OAuth 2.0 &amp; OIDC</li>
+                        <li>HMRC Making Tax Digital APIs</li>
+                        <li>Accessibility (WCAG, axe)</li>
                         <li>Causal AI &amp; NetworkX</li>
                         <li>Android Development</li>
                         <li>Generative Design</li>
@@ -523,6 +533,34 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
+                        <span class="accordion-title">LedgerLet — Making Tax Digital for UK Landlords</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">SQLAlchemy</span>
+                            <span class="project-tag">Alembic</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">Vite</span>
+                            <span class="project-tag">Auth0</span>
+                            <span class="project-tag">HMRC MTD API</span>
+                            <span class="project-tag">Playwright</span>
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Render</span>
+                        </div>
+                        <p>A Making Tax Digital platform for UK landlords that keeps property records and files cumulative quarterly updates straight to HMRC. Landlords add income and expenses by hand or import a bank statement CSV through a two-step preview that blocks duplicate rows, and every figure is stored as integer pence and mapped to HMRC's property headings, with joint ownership shares and mortgage interest handled the way HMRC requires. Connects to HMRC over OAuth with encrypted tokens, sends validated fraud prevention headers, checks obligations and deadlines, and keeps an append-only audit trail of every submission. Built as a modular monolith (FastAPI, PostgreSQL, SQLAlchemy 2.0, Alembic) with a React and TypeScript frontend whose types are generated from the API, Auth0 sign-in in the UK region, and a CI gate that runs 394 backend tests on SQLite and Postgres plus frontend unit and browser tests with accessibility checks at phone, tablet and laptop sizes. Live demo runs end to end on HMRC's sandbox.</p>
+                        <a href="https://ledgerlet.onrender.com" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">02</span>
                         <span class="accordion-title">VoltEdge — Enterprise Energy Intelligence Platform</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -548,7 +586,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">02</span>
+                        <span class="accordion-num">03</span>
                         <span class="accordion-title">VoltScope — UK Energy Bill Intelligence &amp; Extraction</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -571,7 +609,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
+                        <span class="accordion-num">04</span>
                         <span class="accordion-title">ClinIQ — Clinical Trial Site Performance Intelligence</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -595,7 +633,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
+                        <span class="accordion-num">05</span>
                         <span class="accordion-title">SalaryAxis — UK Salary Intelligence Platform</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -618,7 +656,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
+                        <span class="accordion-num">06</span>
                         <span class="accordion-title">CVLens — AI CV Reader &amp; Analyzer</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -638,7 +676,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
+                        <span class="accordion-num">07</span>
                         <span class="accordion-title">Stock Tracker Dashboard</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -1098,6 +1136,7 @@
                         <span class="eco-word">GitHub</span>
                         <span class="eco-word">Instagram</span>
                         <span class="eco-word">LinkedIn</span>
+                        <span class="eco-word">Render</span>
                         <span class="eco-word" aria-hidden="true">Google&nbsp;Play</span>
                         <span class="eco-word" aria-hidden="true">Gumroad</span>
                         <span class="eco-word" aria-hidden="true">Envato</span>
@@ -1106,6 +1145,7 @@
                         <span class="eco-word" aria-hidden="true">GitHub</span>
                         <span class="eco-word" aria-hidden="true">Instagram</span>
                         <span class="eco-word" aria-hidden="true">LinkedIn</span>
+                        <span class="eco-word" aria-hidden="true">Render</span>
                     </div>
                 </div>
             </div>
@@ -1123,6 +1163,14 @@
                         <span class="eco-word">FastAPI</span>
                         <span class="eco-word">Flask</span>
                         <span class="eco-word">React</span>
+                        <span class="eco-word">TypeScript</span>
+                        <span class="eco-word">Vite</span>
+                        <span class="eco-word">PostgreSQL</span>
+                        <span class="eco-word">SQLAlchemy</span>
+                        <span class="eco-word">Pydantic</span>
+                        <span class="eco-word">Auth0</span>
+                        <span class="eco-word">GitHub&nbsp;Actions</span>
+                        <span class="eco-word">Playwright</span>
                         <span class="eco-word">Flutter</span>
                         <span class="eco-word">Docker</span>
                         <span class="eco-word">Render</span>
@@ -1138,6 +1186,14 @@
                         <span class="eco-word" aria-hidden="true">FastAPI</span>
                         <span class="eco-word" aria-hidden="true">Flask</span>
                         <span class="eco-word" aria-hidden="true">React</span>
+                        <span class="eco-word" aria-hidden="true">TypeScript</span>
+                        <span class="eco-word" aria-hidden="true">Vite</span>
+                        <span class="eco-word" aria-hidden="true">PostgreSQL</span>
+                        <span class="eco-word" aria-hidden="true">SQLAlchemy</span>
+                        <span class="eco-word" aria-hidden="true">Pydantic</span>
+                        <span class="eco-word" aria-hidden="true">Auth0</span>
+                        <span class="eco-word" aria-hidden="true">GitHub&nbsp;Actions</span>
+                        <span class="eco-word" aria-hidden="true">Playwright</span>
                         <span class="eco-word" aria-hidden="true">Flutter</span>
                         <span class="eco-word" aria-hidden="true">Docker</span>
                         <span class="eco-word" aria-hidden="true">Render</span>
