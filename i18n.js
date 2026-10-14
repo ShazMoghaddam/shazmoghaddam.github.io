@@ -178,9 +178,7 @@
                 "ft_4": "No models were overfit making this site",
                 "ft_5": "It's not a bug // it's an undocumented feature",
                 "ft_6": "Statistically significant // emotionally attached",
-                "ft_7": "Deployed on Friday // living dangerously",
-                "ft_8": "Pushed to main // said a prayer",
-                "ft_9": "Turning caffeine into commits"
+                "ft_7": "Turning caffeine into commits"
             }
         },
         "fr": {
@@ -357,9 +355,7 @@
                 "ft_4": "Aucun modèle n'a été surajusté pendant la création de ce site",
                 "ft_5": "Ce n'est pas un bug // c'est une fonctionnalité non documentée",
                 "ft_6": "Statistiquement significatif // émotionnellement attaché",
-                "ft_7": "Déployé un vendredi // on vit dangereusement",
-                "ft_8": "Poussé sur main // et une petite prière",
-                "ft_9": "Transformer la caféine en commits"
+                "ft_7": "Transformer la caféine en commits"
             }
         },
         "de": {
@@ -536,9 +532,7 @@
                 "ft_4": "Für diese Seite wurde kein Modell überangepasst",
                 "ft_5": "Das ist kein Bug // das ist ein undokumentiertes Feature",
                 "ft_6": "Statistisch signifikant // emotional gebunden",
-                "ft_7": "Am Freitag deployt // gefährlich gelebt",
-                "ft_8": "Auf main gepusht // ein Stoßgebet gesprochen",
-                "ft_9": "Koffein rein, Commits raus"
+                "ft_7": "Koffein rein, Commits raus"
             }
         },
         "es": {
@@ -715,9 +709,7 @@
                 "ft_4": "Ningún modelo sufrió sobreajuste en la creación de esta web",
                 "ft_5": "No es un bug // es una función sin documentar",
                 "ft_6": "Estadísticamente significativo // emocionalmente apegado",
-                "ft_7": "Desplegado en viernes // viviendo al límite",
-                "ft_8": "Subido a main // y a rezar",
-                "ft_9": "Convirtiendo cafeína en commits"
+                "ft_7": "Convirtiendo cafeína en commits"
             }
         },
         "nl": {
@@ -894,9 +886,7 @@
                 "ft_4": "Bij het maken van deze site is geen enkel model overfit",
                 "ft_5": "Het is geen bug // het is een ongedocumenteerde feature",
                 "ft_6": "Statistisch significant // emotioneel gehecht",
-                "ft_7": "Op vrijdag gedeployed // gevaarlijk leven",
-                "ft_8": "Naar main gepusht // en een schietgebedje gedaan",
-                "ft_9": "Cafeïne omzetten in commits"
+                "ft_7": "Cafeïne omzetten in commits"
             }
         }
     };
