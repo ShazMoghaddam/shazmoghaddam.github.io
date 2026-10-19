@@ -1411,15 +1411,12 @@ footer {
     font-weight: 400; text-transform: uppercase;
     color: var(--text); margin: 0;
 }
-.footer-tagline {
-    margin: 0;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.7rem; letter-spacing: 0.1em;
-    line-height: 1.5;
-    text-transform: uppercase;
+.footer-copy .ft-bracket { font-weight: 500; }
+.footer-copy .ft-text { margin: 0 0.55em; }
+@media (max-width: 480px) {
+    .footer-copy { letter-spacing: 0.06em; white-space: nowrap; font-size: 0.66rem; }
+    .footer-copy .ft-text { margin: 0 0.4em; }
 }
-.footer-tagline .ft-bracket { color: var(--text); font-weight: 500; }
-.footer-tagline .ft-text { font-weight: 500; color: var(--text); margin: 0 0.55em; }
 .made-with-intention {
     position: fixed;
     bottom: 2.8rem;
