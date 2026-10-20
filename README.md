@@ -19,6 +19,7 @@ This repository holds the source for my personal site, hosted on GitHub Pages. I
 - Responsive single-page layout with smooth scrolling and light/dark mode
 - Skills and tools spanning data, frameworks, cloud, and design
 - Projects, apps, digital products, certifications, and writing sections
+- Interactive Orbs animation in the contact section (click it to change shape)
 - Live location, clock, and weather in the header
 - World clock strip in the hero: live analog clocks for New York, Buenos Aires, Berlin, Tehran, and Tokyo, with sun/moon day-night markers, theme-aware, shown on tablet and larger
 - Five-language switcher, with translations generated from a single English source (see below)
@@ -49,11 +50,24 @@ i18n/               # Translation source, build script, and locale files
 
 ## Selected projects
 
-- **LedgerLet** — Making Tax Digital platform for UK landlords: records, CSV bank import and quarterly submissions to HMRC, live demo on HMRC's sandbox (Python, FastAPI, PostgreSQL, SQLAlchemy, React, TypeScript, Auth0)
-- **VoltEdge** — Enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
-- **VoltScope** — Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
-- **ClinIQ** — B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
-- **SalaryAxis** — UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
+- **LedgerLet**: Making Tax Digital platform for UK landlords: records, CSV bank import and quarterly submissions to HMRC, live demo on HMRC's sandbox (Python, FastAPI, PostgreSQL, SQLAlchemy, React, TypeScript, Auth0)
+- **VoltEdge**: Enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
+- **VoltScope**: Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
+- **ClinIQ**: B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
+- **SalaryAxis**: UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
+
+## Open source and design work
+
+- **[Orbs](https://github.com/ShazMoghaddam/orbs)**: ten morphing dot-formation animations for the web, one file, about 5 KB gzipped, no dependencies ([live demo](https://shazmoghaddam.github.io/orbs/))
+- **[Strata Symbol Kit](https://github.com/ShazMoghaddam/strata-symbols)**: 183 layered-line symbols, letters and numbers, with a browser editor and SVG, PNG and sprite export ([live editor](https://shazmoghaddam.github.io/strata-symbols/))
+- **[ux-boards](https://github.com/ShazMoghaddam/ux-boards)**: turns one YAML file into UX documentation boards, exported as HTML, PDF and PNG ([live examples](https://shazmoghaddam.github.io/ux-boards/))
+- **[KNOK Matrix / Mono](https://github.com/ShazMoghaddam/KNOK-Matrix-Mono-font)**: a geometric SVG typographic system and live digital clock
+- **[Typography Digits](https://github.com/ShazMoghaddam/typography-digits)**: the digits 0 to 9 built from programming and data science vocabulary as generative word clouds
+
+## Writing
+
+- Programming posts on [Reddit](https://www.reddit.com/user/Aggravating_Pie2373/) and [DEV](https://dev.to/shazmoghaddam)
+- Personal essays on [Medium](https://medium.com/@shaz.moghaddam), all linked in the site's Writing section
 
 ## Apps and digital products
 
@@ -61,16 +75,19 @@ Android apps published on the Google Play Store, plus digital products across Gu
 
 ## Certifications
 
-- Data Science Online Bootcamp — Imperial College London / HyperionDev (96% average)
-- The Data Science Course: Complete Data Science Bootcamp — Udemy
-- 100 Days of Code: The Complete Python Pro Bootcamp — Udemy
-- iOS & Swift: The Complete iOS App Development Bootcamp — Udemy
-- Google Play Store Listing Certificate — Google Play Academy
+- Data Science Online Bootcamp: Imperial College London and HyperionDev (96% average)
+- The Data Science Course: Complete Data Science Bootcamp: Udemy
+- 100 Days of Code: The Complete Python Pro Bootcamp: Udemy
+- iOS & Swift: The Complete iOS App Development Bootcamp: Udemy
+- Google Play Store Listing Certificate: Google Play Academy
 
 ## Contact
 
 - Email: shaz.moghaddam@gmail.com
 - GitHub: [ShazMoghaddam](https://github.com/ShazMoghaddam)
+- Reddit: [u/Aggravating_Pie2373](https://www.reddit.com/user/Aggravating_Pie2373/)
+- DEV: [shazmoghaddam](https://dev.to/shazmoghaddam)
+- Medium: [@shaz.moghaddam](https://medium.com/@shaz.moghaddam)
 - LinkedIn: [shazmoghaddam](https://www.linkedin.com/in/shazmoghaddam/)
 - Instagram: [@shaz.0098](https://instagram.com/shaz.0098)
 
