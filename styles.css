@@ -1891,6 +1891,7 @@ footer {
     font-family: 'DM Sans', sans-serif; font-weight: 1000; font-size: 1rem;
     color: var(--text);
 }
+.eco-sep { font-weight: 400; opacity: 0.5; }
 @media (max-width: 640px) {
     .eco-row { flex-wrap: wrap; gap: 0.8rem; }
     .eco-divider { display: none; }
