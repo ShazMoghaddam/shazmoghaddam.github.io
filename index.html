@@ -68,7 +68,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500;700;900;1000&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=strata2">
+    <link rel="stylesheet" href="styles.css?v=bezel3">
     <link rel="stylesheet" href="world-clock.css?v=9">
 </head>
 <body data-theme="dark">
@@ -183,13 +183,14 @@
         <!-- faint combo-chart backdrop behind the numbers -->
         <div class="stat-backdrop" id="statBackdrop" aria-hidden="true"></div>
 
-        <!-- 50 Projects -->
+        <!-- 50+ Projects -->
         <a class="stat-item" href="#projects">
-            <span class="sr-only">50 </span>
+            <span class="sr-only">50+ </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
                     <div class="knok-slot" data-digit="5"></div>
                     <div class="knok-slot" data-digit="0"></div>
+                    <div class="knok-slot knok-slot--plus" data-digit="+"></div>
                 </div>
                 <div class="typo-digits typo-digits--two" aria-hidden="true">
                     <div class="typo-slot" data-digit="5"></div>
@@ -213,31 +214,34 @@
             <span class="stat-label" data-i18n="stat_apps">Apps</span>
         </a>
 
-        <!-- 19 Digital Products -->
+        <!-- 23 Digital Products -->
         <a class="stat-item" href="#digital">
-            <span class="sr-only">19 </span>
+            <span class="sr-only">23 </span>
             <div class="stat-num">
                 <div class="knok-digits knok-digits--two" aria-hidden="true">
-                    <div class="knok-slot" data-digit="1"></div>
-                    <div class="knok-slot" data-digit="9"></div>
+                    <div class="knok-slot" data-digit="2"></div>
+                    <div class="knok-slot" data-digit="3"></div>
                 </div>
                 <div class="typo-digits typo-digits--two" aria-hidden="true">
-                    <div class="typo-slot" data-digit="1"></div>
-                    <div class="typo-slot" data-digit="9"></div>
+                    <div class="typo-slot" data-digit="2"></div>
+                    <div class="typo-slot" data-digit="3"></div>
                 </div>
             </div>
             <span class="stat-label" data-i18n="stat_digital">Digital Products</span>
         </a>
 
-        <!-- 7 Publications -->
+        <!-- 10+ Publications -->
         <a class="stat-item" href="#writing">
-            <span class="sr-only">7 </span>
+            <span class="sr-only">10+ </span>
             <div class="stat-num">
-                <div class="knok-digits" aria-hidden="true">
-                    <div class="knok-slot" data-digit="7"></div>
+                <div class="knok-digits knok-digits--two" aria-hidden="true">
+                    <div class="knok-slot" data-digit="1"></div>
+                    <div class="knok-slot" data-digit="0"></div>
+                    <div class="knok-slot knok-slot--plus" data-digit="+"></div>
                 </div>
-                <div class="typo-digits" aria-hidden="true">
-                    <div class="typo-slot" data-digit="7"></div>
+                <div class="typo-digits typo-digits--two" aria-hidden="true">
+                    <div class="typo-slot" data-digit="1"></div>
+                    <div class="typo-slot" data-digit="0"></div>
                 </div>
             </div>
             <span class="stat-label" data-i18n="stat_publications">Publications</span>
@@ -532,6 +536,27 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
+                        <span class="accordion-title" data-i18n="t_bezel">Bezel — Open-Source Clock, Calendar &amp; Weather Tiles</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Web Components</span>
+                            <span class="project-tag">SVG</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Container Queries</span>
+                            <span class="project-tag">Open Source</span>
+                        </div>
+                        <p data-i18n="d_bezel">Five zero-dependency web components for clocks, a calendar, live weather, an at-a-glance dashboard and a large-type poster calendar, inspired by Apple's StandBy widgets. Every tile is drawn in vectors and sized with container query units, so it looks the same at 120 px or across a 4K screen. A Studio lets anyone design a tile, share it as a link and copy the code, with automatic dark mode, live weather from Open-Meteo, .ics calendar feeds and weather words in seven languages. About 25 kB gzipped, tested with unit and browser suites, with zero axe accessibility violations.</p>
+                        <a href="https://github.com/ShazMoghaddam/bezel" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://shazmoghaddam.github.io/bezel/site/" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">02</span>
                         <span class="accordion-title" data-i18n="t_worldmap">World Map — Interactive SVG Country Explorer</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -551,7 +576,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">02</span>
+                        <span class="accordion-num">03</span>
                         <span class="accordion-title" data-i18n="t_orbs">Orbs — Morphing Dot Animations for the Web</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -571,7 +596,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
+                        <span class="accordion-num">04</span>
                         <span class="accordion-title" data-i18n="t_strata">Strata — Layered-Line Symbol Kit for Designers</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -594,7 +619,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
+                        <span class="accordion-num">05</span>
                         <span class="accordion-title" data-i18n="t_typodigits">Typography Digits — Generative Word-Cloud Art</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -609,26 +634,6 @@
                         </div>
                         <p data-i18n="d_typodigits">The digits 0 to 9 built entirely from programming and data science vocabulary. Each digit is a living word cloud, different on every load. Words are placed with canvas pixel masking, a two-gate collision system and AABB packing, then clipped by an SVG clipPath. Features breathing animations, a shimmer sweep, 3D cursor tilt and palette cycling.</p>
                         <a href="https://github.com/ShazMoghaddam/typography-digits" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title" data-i18n="t_worldcup">FIFA World Cup 2026 — Bracket Predictor</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">CSS</span>
-                            <span class="project-tag">Vanilla JS</span>
-                            <span class="project-tag">GitHub Pages</span>
-                        </div>
-                        <p data-i18n="d_worldcup">An interactive FIFA World Cup 2026 bracket predictor built as a single HTML file. It has a clickable knockout bracket from the round of 32, a group stage view, a champion card that traces the full route to the final, a 188-question trivia quiz across 6 categories, one-click PNG export, sharing through encoded pick URLs, dark mode, a time zone toggle and a fully responsive mobile layout. Zero dependencies, hosted on GitHub Pages.</p>
-                        <a href="https://github.com/ShazMoghaddam/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/wc2026" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
@@ -1149,12 +1154,26 @@
         <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
     </button>
 
-    <footer>
-        <div class="footer-inner">
-            <div class="footer-rule" aria-hidden="true"></div>
-            <div class="footer-legal">
-                <p class="footer-copy"><span class="ft-bracket" aria-hidden="true">&lt;&lt;&lt;</span><span class="ft-text" data-i18n="footer_copy">© 2026 Shaz Moghaddam · London</span><span class="ft-bracket" aria-hidden="true">&gt;&gt;&gt;</span></p>
-                <p class="footer-rights" data-i18n="footer_rights">All rights reserved</p>
+    <!-- Two-tone footer: the colours split on the diagonal from top right to bottom left.
+         The second layer is a visual copy clipped to the upper-left triangle, so the text
+         takes the right colour on each side of the line. Screen readers only read the first. -->
+    <footer class="footer-split">
+        <div class="ft-layer ft-layer--b">
+            <div class="footer-inner">
+                <div class="footer-rule" aria-hidden="true"></div>
+                <div class="footer-legal">
+                    <p class="footer-copy"><span class="ft-bracket" aria-hidden="true">&lt;&lt;&lt;</span><span class="ft-text" data-i18n="footer_copy">© 2026 Shaz Moghaddam · London</span><span class="ft-bracket" aria-hidden="true">&gt;&gt;&gt;</span></p>
+                    <p class="footer-rights" data-i18n="footer_rights">All rights reserved</p>
+                </div>
+            </div>
+        </div>
+        <div class="ft-layer ft-layer--a" aria-hidden="true">
+            <div class="footer-inner">
+                <div class="footer-rule" aria-hidden="true"></div>
+                <div class="footer-legal">
+                    <p class="footer-copy"><span class="ft-bracket" aria-hidden="true">&lt;&lt;&lt;</span><span class="ft-text" data-i18n="footer_copy">© 2026 Shaz Moghaddam · London</span><span class="ft-bracket" aria-hidden="true">&gt;&gt;&gt;</span></p>
+                    <p class="footer-rights" data-i18n="footer_rights">All rights reserved</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -1164,7 +1183,7 @@
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
 
-    <script src="main.js?v=polish3"></script>
+    <script src="main.js?v=bezel1"></script>
     <script src="world-clock.js?v=10"></script>
     <script src="orb.js?v=4" defer></script>
     <!-- ═══════════════════════════════════════════════════════
@@ -1226,12 +1245,15 @@
             <polygon points="325,220 370,220 260,560 215,560" fill="var(--c2)" />
             <rect x="160" y="115" width="230" height="60" fill="var(--c6)" />
         </svg>
+        <svg class="art-digit art-plus" viewBox="0 0 280 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="plus">
+            <path d="M140 270v180M50 360h180" />
+        </svg>
     </template>
     <!-- ═══════════════════════════════════════════════════════
          i18next — Language Toggle
          ═══════════════════════════════════════════════════════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
-    <script src="i18n.js?v=strata3"></script>
+    <script src="i18n.js?v=bezel1"></script>
 
 
 </body>

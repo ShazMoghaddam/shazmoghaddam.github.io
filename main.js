@@ -778,8 +778,13 @@ updateActiveDot();
 document.addEventListener('DOMContentLoaded', function () {
     const tmpl = document.getElementById('digit-templates');
     if (!tmpl) return;
-    const svgs = Array.from(tmpl.content.querySelectorAll('.art-digit'));
+    const svgs = Array.from(tmpl.content.querySelectorAll('.art-digit:not(.art-plus)'));
+    const plus = tmpl.content.querySelector('.art-plus');
     document.querySelectorAll('.knok-slot').forEach(slot => {
+        if (slot.dataset.digit === '+') {
+            if (plus) slot.appendChild(plus.cloneNode(true));
+            return;
+        }
         const d = parseInt(slot.dataset.digit, 10);
         if (!isNaN(d) && svgs[d]) slot.appendChild(svgs[d].cloneNode(true));
     });
@@ -1078,4 +1083,15 @@ document.addEventListener('DOMContentLoaded', function () {
             card.style.transform = '';   // eases home via the CSS transition
         });
     });
+})();
+
+
+/* ── Hide the fixed "Made with intention" tag over the two-tone footer ── */
+(function () {
+    var footer = document.querySelector('footer');
+    var tag = document.querySelector('.made-with-intention');
+    if (!footer || !tag || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (entries) {
+        tag.classList.toggle('is-hidden', entries[0].isIntersecting);
+    }, { rootMargin: '0px 0px -40px 0px' }).observe(footer);
 })();
