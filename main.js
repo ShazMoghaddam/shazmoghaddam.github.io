@@ -1029,31 +1029,183 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* ── Stat backdrop chart ─────────────────────────────────── */
+/* One bar per quarter since 2022, stacked by what shipped in it, plus a
+   running total of projects. Muted greys at rest; hovering (or tapping)
+   a number colours the parts of the chart that number counts.
+   To correct a date or add something new, edit SHIPPED below. */
 (function(){
-  var SEED = 7, MONO = false;               // MONO=true -> blue bars + one gold line only
   var mount = document.getElementById('statBackdrop');
-  if(!mount) return;
-  function rng(s){s=s>>>0;return function(){s^=s<<13;s^=s>>>17;s^=s<<5;return (s>>>0)/4294967296;};}
-  function spline(pts){if(pts.length<2)return'';var d='M'+pts[0][0]+','+pts[0][1],i;
-    for(i=0;i<pts.length-1;i++){var p0=pts[i-1]||pts[i],p1=pts[i],p2=pts[i+1],p3=pts[i+2]||p2;
-      var c1x=p1[0]+(p2[0]-p0[0])/6,c1y=p1[1]+(p2[1]-p0[1])/6,c2x=p2[0]-(p3[0]-p1[0])/6,c2y=p2[1]-(p3[1]-p1[1])/6;
-      d+=' C'+c1x+','+c1y+' '+c2x+','+c2y+' '+p2[0]+','+p2[1];}return d;}
-  var W=1160,H=250,L=6,R=6,B=6,T=8,plotW=W-L-R,plotH=H-T-B,base=H-B,n=34,r=rng(SEED),bars=[],i;
-  for(i=0;i<n;i++){var t=i/(n-1),tr=0.26+0.34*Math.sin(Math.min(t,0.72)/0.72*Math.PI*0.9);
-    if(t>0.72)tr=0.52-(t-0.72)*0.8;bars.push(Math.max(0.10,Math.min(0.98,tr+(r()-0.5)*0.60)));}
-  bars[Math.round(n*0.62)]=0.99;
-  var bw=plotW/n,gap=bw*0.34,iw=bw-gap,barSVG='';
-  for(i=0;i<n;i++){var x=L+i*bw+gap/2,h=bars[i]*plotH,y=base-h,fill='var(--c-blue)';
-    if(!MONO&&i===Math.round(n*0.28))fill='var(--c3)';
-    if(!MONO&&i===Math.round(n*0.82))fill='var(--c-red)';
-    barSVG+='<rect class="sb-grow" style="--d:'+(i*0.016).toFixed(2)+'s" x="'+x.toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+iw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="2" fill="'+fill+'"/>';}
-  function ln(seed,fn){var rr=rng(seed),p=[],k;for(k=0;k<n;k++){var tt=k/(n-1),v=fn(tt)+(rr()-0.5)*0.05;v=Math.max(0.08,Math.min(0.96,v));p.push([L+k*bw+bw/2,base-v*plotH]);}return spline(p);}
-  var gold=ln(SEED+9 ,function(t){return 0.14+0.76/(1+Math.exp(-(t-0.5)*9));});
-  var red =ln(SEED+21,function(t){return 0.30+0.38*Math.sin(t*Math.PI);});
-  var grn =ln(SEED+37,function(t){return 0.42+0.15*Math.sin(t*6.3+1.2)+t*0.10;});
-  var paths='<path class="sb-line" style="--len:1600;animation-delay:.5s" d="'+gold+'" fill="none" stroke="var(--c-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>';
-  if(!MONO){paths+='<path class="sb-line" style="--len:1600;animation-delay:.8s" d="'+red+'" fill="none" stroke="var(--c-red)" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" opacity=".9"/><path class="sb-line" style="--len:1600;animation-delay:1.05s" d="'+grn+'" fill="none" stroke="var(--c3)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>';}
-  mount.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMax meet" aria-hidden="true">'+barSVG+paths+'</svg>';
+  var bar = mount && mount.parentNode;
+  if(!mount || !bar) return;
+
+  // [type, 'YYYY-MM', name]
+  // types: plat = platform, build = other build, app, dig = digital product,
+  //        pub = publication, cert = certification
+  var SHIPPED = [
+    ['plat','2025-08','SalaryAxis'], ['plat','2025-11','ClinIQ'], ['plat','2026-03','VoltEdge'],
+    ['plat','2026-08','VoltScope'], ['plat','2026-10','LedgerLet'],
+
+    ['app','2024-03','Math Adventure'], ['app','2024-05','Bingo Maths'], ['app','2024-09','World Builders'],
+    ['app','2025-01','Animated Month Wallpaper'], ['app','2025-02','Animated Weekday Wallpaper'],
+    ['app','2025-05','Split Flap World Clock'], ['app','2025-10','SearchWars'],
+
+    ['dig','2025-03','KNOK Matrix / Mono'], ['dig','2025-04','Typography Digits'], ['dig','2025-12','World Map'],
+    ['dig','2026-09','Orbs'], ['dig','2026-10','UX Boards'], ['dig','2026-10','Strata Symbol Kit'],
+    ['dig','2026-10','Top Universities 2027'], ['dig','2026-10','Bezel'],
+    ['dig','2022-11','Digital product'], ['dig','2023-05','Digital product'], ['dig','2023-11','Digital product'],
+    ['dig','2024-01','Digital product'], ['dig','2024-05','Digital product'], ['dig','2024-10','Digital product'],
+    ['dig','2024-11','Digital product'], ['dig','2025-02','Digital product'], ['dig','2025-06','Digital product'],
+    ['dig','2025-07','Digital product'], ['dig','2025-12','Digital product'], ['dig','2026-03','Digital product'],
+    ['dig','2026-10','Digital product'], ['dig','2026-10','Digital product'], ['dig','2026-10','Digital product'],
+
+    ['build','2022-04','Build'], ['build','2022-07','Build'], ['build','2022-07','Build'], ['build','2022-09','Build'],
+    ['build','2022-10','Build'], ['build','2023-02','Build'], ['build','2023-12','Build'], ['build','2024-05','Build'],
+    ['build','2024-10','Build'], ['build','2024-11','Build'], ['build','2024-12','Build'], ['build','2025-04','Build'],
+    ['build','2026-06','Build'], ['build','2026-09','Build'], ['build','2026-09','Build'],
+
+    ['pub','2024-03','Article'], ['pub','2024-06','The Art of Becoming'], ['pub','2024-09','The Art of Unlearning'],
+    ['pub','2025-01','Building Resilience in the Face of Change'], ['pub','2025-05','The Road Is Always Calling'],
+    ['pub','2025-05','Article'], ['pub','2025-09','One Ear, Two Kids, and Fifty Pints of Grace'],
+    ['pub','2025-11','Article'], ['pub','2026-02','Co-Evolving'], ['pub','2026-06','The Weight of Enough'],
+
+    ['cert','2023-07','100 Days of Code'], ['cert','2024-01','iOS & Swift Bootcamp'],
+    ['cert','2025-06','Data Science Bootcamp'], ['cert','2025-10','The Data Science Course'],
+    ['cert','2026-01','50 Blood Donations'], ['cert','2026-04','Google Play Store Listing']
+  ];
+  var PROJECT_TYPES = ['plat','build','app','dig'];   // what "Projects" counts
+  var STACK_ORDER   = ['plat','build','app','dig','pub','cert'];
+  var START_YEAR = 2022;
+
+  // which part of the chart each number lights up (matches the CSS)
+  var KEY_BY_HREF = {'#projects':'proj','#apps':'app','#digital':'dig','#writing':'pub','#certifications':'cert'};
+
+  var NS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent){
+    var e = document.createElementNS(NS, tag);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    if(parent) parent.appendChild(e);
+    return e;
+  }
+
+  // bucket into quarters, up to the current quarter
+  var now = new Date();
+  var nQ = (now.getFullYear() - START_YEAR) * 4 + Math.floor(now.getMonth() / 3) + 1;
+  var quarters = [], i;
+  for(i = 0; i < nQ; i++) quarters.push([]);
+  SHIPPED.forEach(function(row){
+    var p = row[1].split('-'), q = (+p[0] - START_YEAR) * 4 + Math.floor((+p[1] - 1) / 3);
+    if(q >= 0 && q < nQ) quarters[q].push(row[0]);
+  });
+  quarters.forEach(function(list){
+    list.sort(function(a, b){ return STACK_ORDER.indexOf(a) - STACK_ORDER.indexOf(b); });
+  });
+  var maxQ = Math.max.apply(null, quarters.map(function(l){ return l.length; })) || 1;
+  var totalProjects = SHIPPED.filter(function(r){ return PROJECT_TYPES.indexOf(r[0]) > -1; }).length;
+
+  function spline(pts){
+    var d = 'M' + pts[0][0] + ',' + pts[0][1], k;
+    for(k = 0; k < pts.length - 1; k++){
+      var p0 = pts[k-1] || pts[k], p1 = pts[k], p2 = pts[k+1], p3 = pts[k+2] || p2;
+      d += ' C' + (p1[0] + (p2[0] - p0[0]) / 6).toFixed(1) + ',' + (p1[1] + (p2[1] - p0[1]) / 6).toFixed(1) +
+           ' ' + (p2[0] - (p3[0] - p1[0]) / 6).toFixed(1) + ',' + (p2[1] - (p3[1] - p1[1]) / 6).toFixed(1) +
+           ' ' + p2[0].toFixed(1) + ',' + p2[1].toFixed(1);
+    }
+    return d;
+  }
+
+  var drawn = false;
+  function draw(animate){
+    var W = mount.clientWidth, H = mount.clientHeight;
+    if(W < 50 || H < 50) return;
+    var narrow = W < 600;
+    var base = H - 22, top = narrow ? 18 : 26, plotH = base - top;
+    var bw = W / nQ, gap = Math.max(2, bw * 0.3), iw = bw - gap;
+    var unit = (plotH * 0.7) / maxQ;
+
+    var svg = el('svg', {viewBox:'0 0 ' + W + ' ' + H, width:W, height:H, 'aria-hidden':'true', focusable:'false'});
+    if(animate) svg.classList.add('sb-play');
+    var marks = el('g', {'class':'sb-marks'}, svg);
+    el('line', {'class':'sb-rule', x1:0, x2:W, y1:base + .5, y2:base + .5}, svg);
+
+    quarters.forEach(function(list, q){
+      var x = q * bw + gap / 2, y = base;
+      list.forEach(function(type){
+        y -= unit;
+        el('rect', {'class':'sb-m sb-grow', 'data-t':type, x:x.toFixed(1), y:(y + 2).toFixed(1),
+          width:iw.toFixed(1), height:Math.max(1, unit - 2).toFixed(1), rx:2,
+          style:'--d:' + (q * 0.035).toFixed(2) + 's'}, marks);
+      });
+      if(!list.length) el('rect', {'class':'sb-empty', x:x.toFixed(1), y:base - 2, width:iw.toFixed(1), height:2}, marks);
+    });
+
+    // running total of projects, on its own 0..total scale
+    var cum = 0, pts = [];
+    quarters.forEach(function(list, q){
+      list.forEach(function(t){ if(PROJECT_TYPES.indexOf(t) > -1) cum++; });
+      pts.push([q * bw + bw / 2, base - (cum / totalProjects) * plotH * 0.96]);
+    });
+    var line = el('path', {'class':'sb-m sb-total sb-line', 'data-t':'total', d:spline(pts),
+      fill:'none', 'stroke-width':narrow ? 2.2 : 3, 'stroke-linecap':'round'}, marks);
+    var len = line.getTotalLength ? Math.ceil(line.getTotalLength()) : 2000;
+    line.style.setProperty('--len', len);
+    var end = pts[pts.length - 1];
+    el('circle', {'class':'sb-m sb-total-dot', 'data-t':'total', cx:end[0].toFixed(1), cy:end[1].toFixed(1), r:4}, marks);
+    var lab = el('text', {'class':'sb-m sb-endlab', 'data-t':'total', x:(end[0] - 8).toFixed(1), y:(end[1] - 10).toFixed(1), 'text-anchor':'end'}, svg);
+    lab.textContent = totalProjects + ' projects';
+
+    // year ticks
+    for(var yr = START_YEAR; yr * 4 - START_YEAR * 4 < nQ; yr++){
+      var xi = (yr - START_YEAR) * 4 * bw;
+      el('line', {'class':'sb-rule', x1:xi, x2:xi, y1:base, y2:base + 5}, svg);
+      var t = el('text', {'class':'sb-axis', x:xi + 3, y:base + 15}, svg);
+      t.textContent = yr;
+    }
+
+    mount.replaceChildren(svg);
+    drawn = true;
+  }
+
+  // draw (with the grow-in) once the bar is on screen; after that, redraw on resize without animating
+  function start(){ draw(true); }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      if(entries[0].isIntersecting){ io.disconnect(); start(); }
+    }, {threshold:0.2});
+    io.observe(bar);
+  } else start();
+  if('ResizeObserver' in window){
+    var lastW = 0, t;
+    new ResizeObserver(function(){
+      if(!drawn || mount.clientWidth === lastW) return;
+      lastW = mount.clientWidth;
+      clearTimeout(t); t = setTimeout(function(){ draw(false); }, 80);
+    }).observe(mount);
+  }
+
+  // ── which number is lit ──
+  var items = Array.prototype.slice.call(bar.querySelectorAll('.stat-item'));
+  var current = null;
+  function light(item){
+    items.forEach(function(it){ it.classList.toggle('is-on', it === item); });
+    current = item;
+    if(item){ bar.setAttribute('data-sb', KEY_BY_HREF[item.getAttribute('href')] || ''); }
+    else bar.removeAttribute('data-sb');
+  }
+  var touchOnly = window.matchMedia('(hover: none)');
+  items.forEach(function(item){
+    item.addEventListener('pointerenter', function(e){ if(e.pointerType === 'mouse') light(item); });
+    item.addEventListener('pointerleave', function(e){ if(e.pointerType === 'mouse' && current === item) light(null); });
+    item.addEventListener('focus', function(){ if(item.matches(':focus-visible')) light(item); });
+    item.addEventListener('blur',  function(){ if(current === item) light(null); });
+    // on touch screens, the first tap lights the number; a second tap follows the link
+    item.addEventListener('click', function(e){
+      if(touchOnly.matches && current !== item){ e.preventDefault(); light(item); }
+    });
+  });
+  // tapping anywhere else clears it
+  document.addEventListener('pointerdown', function(e){
+    if(current && !current.contains(e.target)) light(null);
+  });
 })();
 
 // ── Cert card tilt (desktop, pointer-fine, motion-safe) ───

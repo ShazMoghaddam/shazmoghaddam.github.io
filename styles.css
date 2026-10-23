@@ -1642,15 +1642,18 @@ footer {
 }
 [data-theme="light"] .typo-digits { display: none; }
 
+/* --digit-scale shrinks every KNOK number in one place */
+.stats-bar { --digit-scale: 0.82; }
+.stat-num { height: calc(182px * var(--digit-scale)); }
 .knok-slot {
-    width: 130px;
-    height: 182px;
+    width: calc(130px * var(--digit-scale));
+    height: calc(182px * var(--digit-scale));
     overflow: hidden;
     flex-shrink: 0;
 }
 .knok-digits--two .knok-slot {
-    width: 100px;
-    height: 140px;
+    width: calc(100px * var(--digit-scale));
+    height: calc(140px * var(--digit-scale));
 }
 /* The "+" after 50 and 10: a half-width glyph that keeps the digits' height. */
 .knok-digits .knok-slot.knok-slot--plus {
@@ -1700,21 +1703,24 @@ footer {
     to   { opacity: 1; }
 }
 @media (max-width: 1023px) {
-    .knok-slot { width: 108px; height: 152px; }
+    .knok-slot { width: calc(108px * var(--digit-scale)); height: calc(152px * var(--digit-scale)); }
+    .stat-num { height: calc(152px * var(--digit-scale)); }
     .typo-slot { width: 114px; height: 152px; }
-    .knok-digits--two .knok-slot { width: 84px; height: 118px; }
+    .knok-digits--two .knok-slot { width: calc(84px * var(--digit-scale)); height: calc(118px * var(--digit-scale)); }
     .typo-digits--two .typo-slot { width: 88px; height: 117px; }
 }
 @media (max-width: 768px) {
-    .knok-slot { width: 90px; height: 126px; }
+    .knok-slot { width: calc(90px * var(--digit-scale)); height: calc(126px * var(--digit-scale)); }
+    .stat-num { height: calc(126px * var(--digit-scale)); }
     .typo-slot { width: 95px; height: 127px; }
-    .knok-digits--two .knok-slot { width: 70px; height: 98px; }
+    .knok-digits--two .knok-slot { width: calc(70px * var(--digit-scale)); height: calc(98px * var(--digit-scale)); }
     .typo-digits--two .typo-slot { width: 74px; height: 99px; }
 }
 @media (max-width: 480px) {
-    .knok-slot { width: 76px; height: 106px; }
+    .knok-slot { width: calc(76px * var(--digit-scale)); height: calc(106px * var(--digit-scale)); }
+    .stat-num { height: calc(106px * var(--digit-scale)); }
     .typo-slot { width: 80px; height: 107px; }
-    .knok-digits--two .knok-slot { width: 60px; height: 84px; }
+    .knok-digits--two .knok-slot { width: calc(60px * var(--digit-scale)); height: calc(84px * var(--digit-scale)); }
     .typo-digits--two .typo-slot { width: 63px; height: 84px; }
 }
 
@@ -1866,32 +1872,92 @@ footer {
 .lang-divider { display: none; }
 
 
-/* ── Stat backdrop — faint combo chart behind the numbers ─────────── */
+/* ── Stat backdrop — what shipped each quarter, behind the numbers ───
+   Muted greys at rest. Hovering or tapping a number colours the parts
+   of the chart that number counts. Data lives in main.js (SHIPPED). */
 .stats-bar { position: relative; }
 .stats-bar > .stat-item { z-index: 1; }
 
-.stat-backdrop{
-  position:absolute; left:8%; right:8%; bottom:0;
-  z-index:0; pointer-events:none;
-  opacity:.16; mix-blend-mode:screen;          /* dark is the default theme */
+:root {
+  --sb-build: #8f8a7b;   /* platforms and other builds */
+  --sb-make:  #6c6860;   /* apps and digital products */
+  --sb-pub:   #b3ad9c;   /* publications */
+  --sb-cert:  #55524a;   /* certifications */
+  --sb-line:  #d2ccba;   /* running total */
+  --sb-op: .34;
+  --sb-blend: screen;
 }
-.stat-backdrop svg{ width:100%; height:auto; display:block; }
+[data-theme="light"] {
+  --sb-build: #4f4f4f;
+  --sb-make:  #737373;
+  --sb-pub:   #2f2f2f;
+  --sb-cert:  #969696;
+  --sb-line:  #1f1f1f;
+  --sb-op: .28;
+  --sb-blend: multiply;
+}
 
-[data-theme="light"] .stat-backdrop{
-  opacity:.14; mix-blend-mode:multiply;        /* sinks into the cream */
+.stat-backdrop{
+  position:absolute; left:6%; right:6%; top:0; bottom:0;
+  z-index:0; pointer-events:none;
+  mix-blend-mode:var(--sb-blend);
 }
+.stat-backdrop svg{ position:absolute; inset:0; display:block; overflow:visible; }
+.stat-backdrop .sb-marks{ opacity:var(--sb-op); transition:opacity .3s ease; }
+.stat-backdrop .sb-m{ transition:opacity .25s ease, fill .3s ease, stroke .3s ease; }
+.stat-backdrop .sb-rule{ stroke:var(--border); stroke-width:1; }
+.stat-backdrop .sb-axis{ fill:var(--muted); font:400 9px 'DM Mono', monospace; letter-spacing:.12em; }
+.stat-backdrop .sb-endlab{ fill:var(--sb-line); font:500 11px 'DM Mono', monospace; letter-spacing:.06em; }
+.stat-backdrop .sb-empty{ fill:var(--muted); opacity:.6; }
+
+.stat-backdrop [data-t="plat"],
+.stat-backdrop [data-t="build"]{ fill:var(--sb-build); }
+.stat-backdrop [data-t="app"],
+.stat-backdrop [data-t="dig"]{ fill:var(--sb-make); }
+.stat-backdrop [data-t="pub"]{ fill:var(--sb-pub); }
+.stat-backdrop [data-t="cert"]{ fill:var(--sb-cert); }
+.stat-backdrop .sb-total{ fill:none; stroke:var(--sb-line); }
+.stat-backdrop .sb-total-dot{ fill:var(--sb-line); }
+
+/* a number is lit: everything fades except what it counts */
+.stats-bar[data-sb] .sb-marks{ opacity:calc(var(--sb-op) + .3); }
+.stats-bar[data-sb] .sb-m{ opacity:.12; }
+
+.stats-bar[data-sb="proj"] .sb-m:is([data-t="plat"],[data-t="build"],[data-t="app"],[data-t="dig"],[data-t="total"]),
+.stats-bar[data-sb="app"]  .sb-m[data-t="app"],
+.stats-bar[data-sb="dig"]  .sb-m[data-t="dig"],
+.stats-bar[data-sb="pub"]  .sb-m[data-t="pub"],
+.stats-bar[data-sb="cert"] .sb-m[data-t="cert"]{ opacity:1; }
+
+.stats-bar[data-sb] .sb-m:is([data-t="plat"],[data-t="build"]){ fill:var(--c-gold); }
+.stats-bar[data-sb] .sb-m[data-t="app"]{ fill:var(--c-tangerine); }
+.stats-bar[data-sb] .sb-m[data-t="dig"]{ fill:var(--c3); }
+.stats-bar[data-sb] .sb-m[data-t="pub"]{ fill:var(--c-blue); }
+.stats-bar[data-sb] .sb-m[data-t="cert"]{ fill:var(--c-crimson); }
+.stats-bar[data-sb="proj"] .sb-total{ stroke:var(--c-gold); }
+.stats-bar[data-sb="proj"] .sb-total-dot,
+.stats-bar[data-sb="proj"] .sb-endlab{ fill:var(--c-gold); }
+
+/* tapped number (touch) looks the same as a hovered one */
+.stat-item.is-on { animation-play-state: paused; }
+.stat-item.is-on .stat-num { transform: scale(1.1); }
+.stat-item.is-on .stat-label { color: var(--accent); }
 
 @media (prefers-reduced-motion:no-preference){
-  .stat-backdrop .sb-grow{transform:scaleY(0);transform-box:fill-box;transform-origin:bottom;
-    animation:sbGrow .8s cubic-bezier(.3,.7,.2,1) forwards;animation-delay:var(--d,0s)}
-  .stat-backdrop .sb-line{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);
-    animation:sbLine 1.9s cubic-bezier(.55,.02,.2,1) forwards}
-  @keyframes sbGrow{to{transform:scaleY(1)}}
-  @keyframes sbLine{to{stroke-dashoffset:0}}
+  .stat-backdrop .sb-play .sb-grow{transform-box:fill-box;transform-origin:bottom;
+    animation:sbGrow .8s cubic-bezier(.3,.7,.2,1) both;animation-delay:var(--d,0s)}
+  .stat-backdrop .sb-play .sb-line{stroke-dasharray:var(--len);
+    animation:sbLine 1.9s cubic-bezier(.55,.02,.2,1) .4s both}
+  @keyframes sbGrow{from{transform:scaleY(0)}}
+  @keyframes sbLine{from{stroke-dashoffset:var(--len)}}
 }
 
-/* stats reflow to a grid on small screens — keep the backdrop wide-only */
-@media (max-width:760px){ .stat-backdrop{ left:0; right:0; } }  /* show on portrait, full width */
+/* tablets and small laptops: tighter gaps so all five numbers stay on one row */
+@media (min-width:761px) and (max-width:1199px){ .stats-bar{ gap:1.75rem; } }
+@media (min-width:761px) and (max-width:899px){ .stats-bar{ gap:.75rem; padding-left:1rem; padding-right:1rem; } }
+
+/* stats reflow to a grid on small screens: the chart runs full width behind both rows */
+@media (max-width:760px){ .stat-backdrop{ left:0; right:0; } }
 
 
 /* ── Ecosystem strip — Available on / Built with (added) ── */
@@ -1997,17 +2063,19 @@ header { height: auto; min-height: 100vh; min-height: 100svh; }
 @media (max-width: 400px) {
     .stats-bar { gap: 1rem; padding-left: 0.5rem; padding-right: 0.5rem; }
     .stat-item { width: 100px; height: 100px; }
-    .knok-slot { width: 66px; height: 92px; }
+    .knok-slot { width: calc(66px * var(--digit-scale)); height: calc(92px * var(--digit-scale)); }
+    .stat-num { height: calc(92px * var(--digit-scale)); }
     .typo-slot { width: 69px; height: 92px; }
-    .knok-digits--two .knok-slot { width: 48px; height: 67px; }
+    .knok-digits--two .knok-slot { width: calc(48px * var(--digit-scale)); height: calc(67px * var(--digit-scale)); }
     .typo-digits--two .typo-slot { width: 50px; height: 67px; }
 }
 @media (max-width: 360px) {
     .stats-bar { gap: 0.5rem; }
     .stat-item { width: 90px; height: 90px; }
-    .knok-slot { width: 58px; height: 81px; }
+    .knok-slot { width: calc(58px * var(--digit-scale)); height: calc(81px * var(--digit-scale)); }
+    .stat-num { height: calc(81px * var(--digit-scale)); }
     .typo-slot { width: 61px; height: 81px; }
-    .knok-digits--two .knok-slot { width: 42px; height: 59px; }
+    .knok-digits--two .knok-slot { width: calc(42px * var(--digit-scale)); height: calc(59px * var(--digit-scale)); }
     .typo-digits--two .typo-slot { width: 44px; height: 59px; }
 }
 
