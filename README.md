@@ -17,6 +17,8 @@ This repository holds the source for my personal site, hosted on GitHub Pages. I
 ## Features
 
 - Responsive single-page layout with smooth scrolling and light/dark mode
+- Stats bar drawn with KNOK Matrix geometric digits
+- Two-tone diagonal footer with its own colours for light and dark mode
 - Skills and tools spanning data, frameworks, cloud, and design
 - Projects, apps, digital products, certifications, and writing sections
 - Interactive Orbs animation in the contact section (click it to change shape)
@@ -58,6 +60,7 @@ i18n/               # Translation source, build script, and locale files
 
 ## Open source and design work
 
+- **[Bezel](https://github.com/ShazMoghaddam/bezel)**: open-source clock, calendar and weather tiles as five zero-dependency web components, with a Studio to design and share them, automatic dark mode and live weather, about 25 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel/site/))
 - **[Orbs](https://github.com/ShazMoghaddam/orbs)**: ten morphing dot-formation animations for the web, one file, about 5 KB gzipped, no dependencies ([live demo](https://shazmoghaddam.github.io/orbs/))
 - **[Strata Symbol Kit](https://github.com/ShazMoghaddam/strata-symbols)**: 183 layered-line symbols, letters and numbers, with a browser editor and SVG, PNG and sprite export ([live editor](https://shazmoghaddam.github.io/strata-symbols/))
 - **[ux-boards](https://github.com/ShazMoghaddam/ux-boards)**: turns one YAML file into UX documentation boards, exported as HTML, PDF and PNG ([live examples](https://shazmoghaddam.github.io/ux-boards/))
