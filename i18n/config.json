@@ -87,6 +87,9 @@
     "fontTools",
     "Shapely",
     "Inter Display",
-    "SVG"
+    "SVG",
+    "Bezel",
+    "Open-Meteo",
+    "StandBy"
   ]
 }

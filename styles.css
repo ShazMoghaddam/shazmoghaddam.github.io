@@ -1381,8 +1381,23 @@ h2 em { font-style: italic; color: var(--accent); }
 
 /* ── Footer ── */
 footer {
+    /* Footer colours: --ft-a is the upper-left half, --ft-b the lower-right half,
+       each with its own ink so the text stays readable on both. */
+    --ft-a: #FFB200;  --ft-ink-a: #141414;
+    --ft-b: #FF7EE2;  --ft-ink-b: #141414;
+    display: grid;
+    background: linear-gradient(to bottom right, var(--ft-a) 50%, var(--ft-b) 50%);
+}
+[data-theme="light"] footer {
+    --ft-a: #9929EA;  --ft-ink-a: #FFFFFF;
+    --ft-b: #009990;  --ft-ink-b: #000000;
+}
+.ft-layer {
+    grid-area: 1 / 1;
     padding: 3rem 2.5rem 2.5rem;
 }
+.ft-layer--b { --text: var(--ft-ink-b); --muted: var(--ft-ink-b); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.ft-layer--a { --text: var(--ft-ink-a); --muted: var(--ft-ink-a); clip-path: polygon(0 0, 100% 0, 0 100%); }
 .footer-inner {
     max-width: 1200px; margin: 0 auto;
     display: flex; flex-direction: column; align-items: stretch;
@@ -1439,6 +1454,9 @@ footer {
 .made-with-intention svg { width: 13px; height: 13px; stroke: #fec508; fill: none; stroke-width: 2; }
 [data-theme="light"] .made-with-intention { color: #8700ff; }
 [data-theme="light"] .made-with-intention svg { stroke: #8700ff; }
+.made-with-intention { transition: opacity 0.3s ease; }
+.made-with-intention.is-hidden { opacity: 0; pointer-events: none; }
+@media (max-width: 768px) { .made-with-intention.is-hidden { opacity: 1; pointer-events: auto; } }
 
 
 /* ── Scroll to top ── */
@@ -1531,7 +1549,7 @@ footer {
         font-size: 0.68rem;
     }
     .made-with-intention .text { writing-mode: horizontal-tb; }
-    footer { padding-bottom: 0; }
+    .ft-layer { padding-bottom: 2rem; }
     /* Stats */
     .stats-bar { gap: 2rem; padding: 2.5rem 1rem; }
     .stat-item { width: 110px; height: 110px; }
@@ -1634,6 +1652,24 @@ footer {
     width: 100px;
     height: 140px;
 }
+/* The "+" after 50 and 10: a half-width glyph that keeps the digits' height. */
+.knok-digits .knok-slot.knok-slot--plus {
+    width: auto;
+    aspect-ratio: 280 / 700;
+    margin-left: -6px;
+}
+/* The plus is a plain sign in the text colour, not a KNOK glyph. */
+.art-digit.art-plus path {
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 40;
+    mix-blend-mode: normal;
+}
+/* A "1" is narrow, so when another digit follows it, slide it over to sit beside that digit. */
+.knok-slot[data-digit="1"]:not(:last-child) .art-digit { transform: translateX(30%); }
+/* A little extra room so the "+" doesn't crowd the next number. */
+.stat-item:has(.knok-slot--plus) { margin-right: 1.5rem; }
+@media (max-width: 600px) { .stat-item:has(.knok-slot--plus) { margin-right: 0; } }
 .typo-slot {
     width: 136px;
     height: 182px;
