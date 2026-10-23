@@ -1906,7 +1906,7 @@ footer {
 .stat-backdrop .sb-marks{ opacity:var(--sb-op); transition:opacity .3s ease; }
 .stat-backdrop .sb-m{ transition:opacity .25s ease, fill .3s ease, stroke .3s ease; }
 .stat-backdrop .sb-rule{ stroke:var(--border); stroke-width:1; }
-.stat-backdrop .sb-axis{ fill:var(--muted); font:400 9px 'DM Mono', monospace; letter-spacing:.12em; }
+.stat-backdrop .sb-axis{ fill:var(--text); font:400 9px 'DM Mono', monospace; letter-spacing:.12em; }
 .stat-backdrop .sb-endlab{ fill:var(--sb-line); font:500 11px 'DM Mono', monospace; letter-spacing:.06em; }
 .stat-backdrop .sb-empty{ fill:var(--muted); opacity:.6; }
 
