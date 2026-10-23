@@ -1,5 +1,7 @@
 # shazmoghaddam.github.io
 
+[![Screenshots of Shaz Moghaddam's portfolio site in dark and light mode](assets/readme-screenshots.jpg)](https://shazmoghaddam.github.io)
+
 Personal website and portfolio for Shaz Moghaddam, a London-based Data Scientist, Python Developer, and App & Automation Developer, trained at Imperial College London.
 
 Live site: https://shazmoghaddam.github.io
@@ -83,6 +85,7 @@ Android apps published on the Google Play Store, plus digital products across Gu
 - 100 Days of Code: The Complete Python Pro Bootcamp: Udemy
 - iOS & Swift: The Complete iOS App Development Bootcamp: Udemy
 - Google Play Store Listing Certificate: Google Play Academy
+- 50 Blood Donations Certificate: NHS Blood and Transplant
 
 ## Contact
 
