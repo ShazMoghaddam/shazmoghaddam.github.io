@@ -1,6 +1,6 @@
 # shazmoghaddam.github.io
 
-[![Screenshots of Shaz Moghaddam's portfolio site in dark and light mode](assets/readme-screenshots.jpg)](https://shazmoghaddam.github.io)
+[![Screenshots of Shaz Moghaddam's portfolio site in dark and light mode](assets/readme-screenshots-2026-10.jpg)](https://shazmoghaddam.github.io)
 
 Personal website and portfolio for Shaz Moghaddam, a London-based Data Scientist, Python Developer, and App & Automation Developer, trained at Imperial College London.
 
