@@ -19,13 +19,13 @@ This repository holds the source for my personal site, hosted on GitHub Pages. I
 ## Features
 
 - Responsive single-page layout with smooth scrolling and light/dark mode
-- Stats bar drawn with KNOK Matrix geometric digits
+- Stats bar drawn with KNOK Matrix geometric digits, over a faint backdrop chart: a quarterly shipping timeline from 2022 with a running total of projects, muted grey at rest and picking up each number's colour on hover
 - Two-tone diagonal footer with its own colours for light and dark mode
 - Skills and tools spanning data, frameworks, cloud, and design
 - Projects, apps, digital products, certifications, and writing sections
 - Interactive Orbs animation in the contact section (click it to change shape)
 - Live location, clock, and weather in the header
-- World clock strip in the hero: live analog clocks for New York, Buenos Aires, Berlin, Tehran, and Tokyo, with sun/moon day-night markers, theme-aware, shown on tablet and larger
+- World clock strip in the hero: live analog clocks for New York, Buenos Aires, London, Berlin, Tehran, and Tokyo, with sun/moon day-night markers. Clock faces switch between circle (Arabic numerals), square (Roman numerals), and hexagon (Persian digits), theme-aware, shown on tablet and larger
 - Five-language switcher, with translations generated from a single English source (see below)
 
 ## Multi-language setup
@@ -47,7 +47,7 @@ index.html          # Main content and structure
 styles.css          # Styling
 main.js             # Interactions and animations
 world-clock.css     # World clock strip styling
-world-clock.js      # World clock strip (five-city analog clocks, day/night)
+world-clock.js      # World clock strip (six-city analog clocks, day/night)
 i18n.js             # Generated translation bundle (do not edit by hand)
 i18n/               # Translation source, build script, and locale files
 ```
