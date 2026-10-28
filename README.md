@@ -102,3 +102,7 @@ Android apps published on the Google Play Store, plus digital products across Gu
 ## Availability
 
 Open to freelance, contract, and full-time opportunities in data science, Python development, and digital product work, in London or internationally.
+
+## Licence
+
+Copyright (c) 2026 [Shaz Moghaddam](https://shazmoghaddam.github.io), London. All rights reserved. See [LICENSE](LICENSE). Projects linked from the site live in their own repositories and keep their own licences.

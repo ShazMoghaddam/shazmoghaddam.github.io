@@ -1643,7 +1643,7 @@ footer {
 [data-theme="light"] .typo-digits { display: none; }
 
 /* --digit-scale shrinks every KNOK number in one place */
-.stats-bar { --digit-scale: 0.71; }
+.stats-bar { --digit-scale: 0.60; }   /* was 0.71, reduced 15% */
 .stat-num { height: calc(182px * var(--digit-scale)); }
 .knok-slot {
     width: calc(130px * var(--digit-scale));
