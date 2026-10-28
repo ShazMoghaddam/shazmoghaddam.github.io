@@ -1152,7 +1152,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var end = pts[pts.length - 1];
     el('circle', {'class':'sb-m sb-total-dot', 'data-t':'total', cx:end[0].toFixed(1), cy:end[1].toFixed(1), r:4}, marks);
     var lab = el('text', {'class':'sb-m sb-endlab', 'data-t':'total', x:(end[0] - 8).toFixed(1), y:(end[1] - 10).toFixed(1), 'text-anchor':'end'}, svg);
-    lab.textContent = totalProjects + '+ projects';
+    // round down to the nearest 10 so the label matches the stats bar ("50+")
+    lab.textContent = (Math.floor(totalProjects / 10) * 10) + '+ projects';
 
     // year ticks
     for(var yr = START_YEAR; yr * 4 - START_YEAR * 4 < nQ; yr++){
