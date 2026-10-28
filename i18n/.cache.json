@@ -144,7 +144,6 @@
     "t_salaryaxis": "8951d1da8f91",
     "t_mathadventure": "bae53d49056a",
     "t_searchwars": "bdd71b8f1f37",
-    "t_knok": "948575e05e3b",
     "t_typodigits": "568acaef2c3b",
     "t_bezel": "6a5d44f43d0a",
     "t_worldmap": "7b95a25d8a2a",
@@ -161,13 +160,14 @@
     "d_splitflap": "08f95be1efde",
     "d_worldbuilders": "51af31ee24ea",
     "d_searchwars": "43c883fcc5d7",
-    "d_knok": "8f689deb9d25",
     "d_typodigits": "20cc944adc2b",
     "d_bezel": "1cbb737a1eb3",
     "d_worldmap": "769aaf86e243",
     "d_orbs": "6d346b93205b",
     "t_strata": "c3cf0d41648a",
-    "d_strata": "c66d644a1214"
+    "d_strata": "c66d644a1214",
+    "t_bezelcharts": "01e1ba34c93c",
+    "d_bezelcharts": "65408ebc9169"
   },
   "de": {
     "location": "4c57f0c88d98",
@@ -314,7 +314,6 @@
     "t_salaryaxis": "8951d1da8f91",
     "t_mathadventure": "bae53d49056a",
     "t_searchwars": "bdd71b8f1f37",
-    "t_knok": "948575e05e3b",
     "t_typodigits": "568acaef2c3b",
     "t_bezel": "6a5d44f43d0a",
     "t_worldmap": "7b95a25d8a2a",
@@ -331,13 +330,14 @@
     "d_splitflap": "08f95be1efde",
     "d_worldbuilders": "51af31ee24ea",
     "d_searchwars": "43c883fcc5d7",
-    "d_knok": "8f689deb9d25",
     "d_typodigits": "20cc944adc2b",
     "d_bezel": "1cbb737a1eb3",
     "d_worldmap": "769aaf86e243",
     "d_orbs": "6d346b93205b",
     "t_strata": "c3cf0d41648a",
-    "d_strata": "c66d644a1214"
+    "d_strata": "c66d644a1214",
+    "t_bezelcharts": "01e1ba34c93c",
+    "d_bezelcharts": "65408ebc9169"
   },
   "es": {
     "location": "4c57f0c88d98",
@@ -484,7 +484,6 @@
     "t_salaryaxis": "8951d1da8f91",
     "t_mathadventure": "bae53d49056a",
     "t_searchwars": "bdd71b8f1f37",
-    "t_knok": "948575e05e3b",
     "t_typodigits": "568acaef2c3b",
     "t_bezel": "6a5d44f43d0a",
     "t_worldmap": "7b95a25d8a2a",
@@ -501,13 +500,14 @@
     "d_splitflap": "08f95be1efde",
     "d_worldbuilders": "51af31ee24ea",
     "d_searchwars": "43c883fcc5d7",
-    "d_knok": "8f689deb9d25",
     "d_typodigits": "20cc944adc2b",
     "d_bezel": "1cbb737a1eb3",
     "d_worldmap": "769aaf86e243",
     "d_orbs": "6d346b93205b",
     "t_strata": "c3cf0d41648a",
-    "d_strata": "c66d644a1214"
+    "d_strata": "c66d644a1214",
+    "t_bezelcharts": "01e1ba34c93c",
+    "d_bezelcharts": "65408ebc9169"
   },
   "nl": {
     "location": "4c57f0c88d98",
@@ -654,7 +654,6 @@
     "t_salaryaxis": "8951d1da8f91",
     "t_mathadventure": "bae53d49056a",
     "t_searchwars": "bdd71b8f1f37",
-    "t_knok": "948575e05e3b",
     "t_typodigits": "568acaef2c3b",
     "t_bezel": "6a5d44f43d0a",
     "t_worldmap": "7b95a25d8a2a",
@@ -671,12 +670,13 @@
     "d_splitflap": "08f95be1efde",
     "d_worldbuilders": "51af31ee24ea",
     "d_searchwars": "43c883fcc5d7",
-    "d_knok": "8f689deb9d25",
     "d_typodigits": "20cc944adc2b",
     "d_bezel": "1cbb737a1eb3",
     "d_worldmap": "769aaf86e243",
     "d_orbs": "6d346b93205b",
     "t_strata": "c3cf0d41648a",
-    "d_strata": "c66d644a1214"
+    "d_strata": "c66d644a1214",
+    "t_bezelcharts": "01e1ba34c93c",
+    "d_bezelcharts": "65408ebc9169"
   }
 }
