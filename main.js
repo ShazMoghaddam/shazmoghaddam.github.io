@@ -1051,12 +1051,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     ['dig','2025-03','KNOK Matrix / Mono'], ['dig','2025-04','Typography Digits'], ['dig','2025-12','World Map'],
     ['dig','2026-09','Orbs'], ['dig','2026-10','UX Boards'], ['dig','2026-10','Strata Symbol Kit'],
-    ['dig','2026-10','Top Universities 2027'], ['dig','2026-10','Bezel'],
+    ['dig','2026-10','Top Universities 2027'], ['dig','2026-10','Bezel'], ['dig','2026-10','Bezel Charts'],
     ['dig','2022-11','Digital product'], ['dig','2023-05','Digital product'], ['dig','2023-11','Digital product'],
     ['dig','2024-01','Digital product'], ['dig','2024-05','Digital product'], ['dig','2024-10','Digital product'],
     ['dig','2024-11','Digital product'], ['dig','2025-02','Digital product'], ['dig','2025-06','Digital product'],
     ['dig','2025-07','Digital product'], ['dig','2025-12','Digital product'], ['dig','2026-03','Digital product'],
     ['dig','2026-10','Digital product'], ['dig','2026-10','Digital product'], ['dig','2026-10','Digital product'],
+    ['dig','2026-10','Digital product'],
 
     ['build','2022-04','Build'], ['build','2022-07','Build'], ['build','2022-07','Build'], ['build','2022-09','Build'],
     ['build','2022-10','Build'], ['build','2023-02','Build'], ['build','2023-12','Build'], ['build','2024-05','Build'],

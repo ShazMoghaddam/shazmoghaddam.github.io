@@ -62,6 +62,8 @@ i18n/               # Translation source, build script, and locale files
 
 ## Open source and design work
 
+- **[Bezel Charts](https://github.com/ShazMoghaddam/bezel-charts)**: ten zero-dependency SVG chart tiles as web components, from sparklines to a scatter plot with a trend line and Pearson's r, with a Studio that imports CSV, Excel or JSON and exports static SVG for READMEs, about 12 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel-charts/site/))
+- **[World Map](https://github.com/ShazMoghaddam/world-map)**: interactive choropleth of 172 countries across seven data layers, in one dependency-free HTML file ([live demo](https://shazmoghaddam.github.io/world-map))
 - **[Bezel](https://github.com/ShazMoghaddam/bezel)**: open-source clock, calendar and weather tiles as five zero-dependency web components, with a Studio to design and share them, automatic dark mode and live weather, about 25 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel/site/))
 - **[Orbs](https://github.com/ShazMoghaddam/orbs)**: ten morphing dot-formation animations for the web, one file, about 5 KB gzipped, no dependencies ([live demo](https://shazmoghaddam.github.io/orbs/))
 - **[Strata Symbol Kit](https://github.com/ShazMoghaddam/strata-symbols)**: 183 layered-line symbols, letters and numbers, with a browser editor and SVG, PNG and sprite export ([live editor](https://shazmoghaddam.github.io/strata-symbols/))
