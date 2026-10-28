@@ -72,7 +72,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "b57dd9805cd3",
+    "footer_rights": "569e10846b9c",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -104,7 +104,6 @@
     "skill_causal": "36920d3e90af",
     "skill_android": "7dd2cefbe719",
     "skill_generative": "7b0ee80a572b",
-    "skill_blend": "2e8b1f05fc70",
     "skill_ui": "7f86d1ff0ea2",
     "skill_product": "d687d180a84a",
     "skill_photo": "b987e3f155a2",
@@ -167,7 +166,9 @@
     "t_strata": "c3cf0d41648a",
     "d_strata": "c66d644a1214",
     "t_bezelcharts": "01e1ba34c93c",
-    "d_bezelcharts": "65408ebc9169"
+    "d_bezelcharts": "65408ebc9169",
+    "skill_dataviz": "089abbca750a",
+    "skill_oss": "4c192c4a84a8"
   },
   "de": {
     "location": "4c57f0c88d98",
@@ -242,7 +243,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "b57dd9805cd3",
+    "footer_rights": "569e10846b9c",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -274,7 +275,6 @@
     "skill_causal": "36920d3e90af",
     "skill_android": "7dd2cefbe719",
     "skill_generative": "7b0ee80a572b",
-    "skill_blend": "2e8b1f05fc70",
     "skill_ui": "7f86d1ff0ea2",
     "skill_product": "d687d180a84a",
     "skill_photo": "b987e3f155a2",
@@ -337,7 +337,9 @@
     "t_strata": "c3cf0d41648a",
     "d_strata": "c66d644a1214",
     "t_bezelcharts": "01e1ba34c93c",
-    "d_bezelcharts": "65408ebc9169"
+    "d_bezelcharts": "65408ebc9169",
+    "skill_dataviz": "089abbca750a",
+    "skill_oss": "4c192c4a84a8"
   },
   "es": {
     "location": "4c57f0c88d98",
@@ -412,7 +414,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "b57dd9805cd3",
+    "footer_rights": "569e10846b9c",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -444,7 +446,6 @@
     "skill_causal": "36920d3e90af",
     "skill_android": "7dd2cefbe719",
     "skill_generative": "7b0ee80a572b",
-    "skill_blend": "2e8b1f05fc70",
     "skill_ui": "7f86d1ff0ea2",
     "skill_product": "d687d180a84a",
     "skill_photo": "b987e3f155a2",
@@ -507,7 +508,9 @@
     "t_strata": "c3cf0d41648a",
     "d_strata": "c66d644a1214",
     "t_bezelcharts": "01e1ba34c93c",
-    "d_bezelcharts": "65408ebc9169"
+    "d_bezelcharts": "65408ebc9169",
+    "skill_dataviz": "089abbca750a",
+    "skill_oss": "4c192c4a84a8"
   },
   "nl": {
     "location": "4c57f0c88d98",
@@ -582,7 +585,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "b57dd9805cd3",
+    "footer_rights": "569e10846b9c",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -614,7 +617,6 @@
     "skill_causal": "36920d3e90af",
     "skill_android": "7dd2cefbe719",
     "skill_generative": "7b0ee80a572b",
-    "skill_blend": "2e8b1f05fc70",
     "skill_ui": "7f86d1ff0ea2",
     "skill_product": "d687d180a84a",
     "skill_photo": "b987e3f155a2",
@@ -677,6 +679,8 @@
     "t_strata": "c3cf0d41648a",
     "d_strata": "c66d644a1214",
     "t_bezelcharts": "01e1ba34c93c",
-    "d_bezelcharts": "65408ebc9169"
+    "d_bezelcharts": "65408ebc9169",
+    "skill_dataviz": "089abbca750a",
+    "skill_oss": "4c192c4a84a8"
   }
 }
