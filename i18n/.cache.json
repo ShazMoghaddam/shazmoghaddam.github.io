@@ -72,7 +72,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "569e10846b9c",
+    "footer_rights": "b57dd9805cd3",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -168,7 +168,9 @@
     "t_bezelcharts": "01e1ba34c93c",
     "d_bezelcharts": "65408ebc9169",
     "skill_dataviz": "089abbca750a",
-    "skill_oss": "4c192c4a84a8"
+    "skill_oss": "4c192c4a84a8",
+    "t_houseprices": "cf0c8f6f146a",
+    "d_houseprices": "d914c476572e"
   },
   "de": {
     "location": "4c57f0c88d98",
@@ -243,7 +245,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "569e10846b9c",
+    "footer_rights": "b57dd9805cd3",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -339,7 +341,9 @@
     "t_bezelcharts": "01e1ba34c93c",
     "d_bezelcharts": "65408ebc9169",
     "skill_dataviz": "089abbca750a",
-    "skill_oss": "4c192c4a84a8"
+    "skill_oss": "4c192c4a84a8",
+    "t_houseprices": "cf0c8f6f146a",
+    "d_houseprices": "d914c476572e"
   },
   "es": {
     "location": "4c57f0c88d98",
@@ -414,7 +418,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "569e10846b9c",
+    "footer_rights": "b57dd9805cd3",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -510,7 +514,9 @@
     "t_bezelcharts": "01e1ba34c93c",
     "d_bezelcharts": "65408ebc9169",
     "skill_dataviz": "089abbca750a",
-    "skill_oss": "4c192c4a84a8"
+    "skill_oss": "4c192c4a84a8",
+    "t_houseprices": "cf0c8f6f146a",
+    "d_houseprices": "d914c476572e"
   },
   "nl": {
     "location": "4c57f0c88d98",
@@ -585,7 +591,7 @@
     "contact_sub": "238f2582418a",
     "download_cv": "c8eade842c08",
     "footer_copy": "ee7bb2631f02",
-    "footer_rights": "569e10846b9c",
+    "footer_rights": "b57dd9805cd3",
     "made_with_intention": "f4191158ea79",
     "skip_link": "0a4470d64e9d",
     "aria_sections": "630cb51eecc0",
@@ -681,6 +687,8 @@
     "t_bezelcharts": "01e1ba34c93c",
     "d_bezelcharts": "65408ebc9169",
     "skill_dataviz": "089abbca750a",
-    "skill_oss": "4c192c4a84a8"
+    "skill_oss": "4c192c4a84a8",
+    "t_houseprices": "cf0c8f6f146a",
+    "d_houseprices": "d914c476572e"
   }
 }
