@@ -399,6 +399,28 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">06</span>
+                        <span class="accordion-title" data-i18n="t_jobs">Jobs &amp; the Economy — Open UK Labour Market Challenge</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">pandas</span>
+                            <span class="project-tag">Bezel Charts</span>
+                            <span class="project-tag" data-i18n="tag_ons">ONS Open Data</span>
+                            <span class="project-tag">HMRC</span>
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">pytest</span>
+                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
+                        </div>
+                        <p data-i18n="d_jobs">A public data challenge on GitHub about UK jobs, unemployment and pay. One script downloads 33 ONS labour market series and HMRC payroll data, and a State of UK Jobs report of eight findings is generated straight from the data, so every number and sentence stays true as new figures arrive. At launch in October 2026 it showed long-term sickness up 620,000 since Covid to 2.74 million people, youth unemployment at 15.6%, a jobs market cooling from its 2022 record, and survey and payroll figures pointing in opposite directions since late 2024. A weekly GitHub Actions job tests the new data and opens a pull request with refreshed charts after every ONS release. All 15 charts are drawn with Bezel Charts, my own library, and each month brings a new brief with beginner to expert levels.</p>
+                        <a href="https://github.com/ShazMoghaddam/uk-jobs-economy" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">07</span>
                         <span class="accordion-title" data-i18n="t_houseprices">House Prices &amp; the Economy — Open UK Data Challenge</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -412,7 +434,7 @@
                             <span class="project-tag" data-i18n="tag_ons">ONS Open Data</span>
                             <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
                         </div>
-                        <p data-i18n="d_houseprices">A public monthly data challenge on GitHub that asks how UK house prices respond to economic shocks. It's built on the HM Land Registry UK House Price Index, with monthly prices from 1995 to 2026 by country, region, local area and property type. The first brief tracks the 2008 crash region by region: London took about 4 years to get back to its peak, the North East 13.5, and Northern Ireland is still below where it was in 2007. It also covers the stamp duty holiday spike and the 4% dip as Bank Rate rose from 0.1% to 5.25%. It comes with six reproducible charts, a pandas starter script and a roadmap for joining prices to ONS affordability, Bank Rate and CPI data. Anyone can take part: people share findings and vote on the next topic in a GitHub Discussion.</p>
+                        <p data-i18n="d_houseprices">A public monthly data challenge on GitHub that asks how UK house prices respond to economic shocks. It's built on the HM Land Registry UK House Price Index, with monthly prices from 1995 to 2026 by country, region, local area and property type. The first brief tracks the 2008 crash region by region: London took about 4 years to get back to its peak, the North East 13.5, and Northern Ireland is still below where it was in 2007. It also covers the stamp duty holiday spike and the 4% dip as Bank Rate rose from 0.1% to 5.25%. It comes with six reproducible charts, a pandas starter script and a roadmap for joining prices to ONS affordability, Bank Rate and CPI data. Anyone can take part, with a GitHub Discussion for sharing findings and voting on topics.</p>
                         <a href="https://github.com/ShazMoghaddam/uk-house-prices-economy" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
@@ -429,7 +451,7 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">01</span>
-                        <span class="accordion-title" data-i18n="t_bezelcharts">Bezel Charts — Open-Source SVG Chart Tiles</span>
+                        <span class="accordion-title" data-i18n="t_bezelcharts">Bezel Charts — Open-Source Chart Tiles for the Web and Python</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
                     <div class="accordion-body"><div class="accordion-body-inner">
@@ -437,13 +459,17 @@
                             <span class="project-tag">Web Components</span>
                             <span class="project-tag">SVG</span>
                             <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">PyPI</span>
                             <span class="project-tag">Data Visualisation</span>
                             <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
                         </div>
-                        <p data-i18n="d_bezelcharts">Ten zero-dependency chart tiles drawn in pure SVG, a sibling of Bezel: sparklines, lines, bars and grouped bars, rings, donuts, gauges, progress bars, a year-long heatmap and a scatter plot with a least-squares trend line and Pearson's r. Each chart is one HTML tag that fills its container, follows the viewer's light or dark setting, formats numbers for any locale and describes itself to screen readers. A Studio imports CSV, Excel or JSON, or cells pasted from a spreadsheet, picks out labels, series, units and dates, and exports the chart as HTML, a shareable link or a static SVG for READMEs, Notion and slides. About 12 kB gzipped, with unit tests and a Playwright browser test.</p>
+                        <p data-i18n="d_bezelcharts">Ten zero-dependency chart tiles drawn in pure SVG, a sibling of Bezel: sparklines, lines, bars and grouped bars, rings, donuts, gauges, progress bars, a year-long heatmap and a scatter plot with a least-squares trend line and Pearson's r. Each chart is one HTML tag that fills its container, follows the viewer's light or dark setting, formats numbers for any locale and describes itself to screen readers. A Studio imports CSV, Excel or JSON, or cells pasted from a spreadsheet, picks out labels, series, units and dates, and exports the chart as HTML, a shareable link or a static SVG for READMEs, Notion and slides. The same ten charts are also a Python package on PyPI (pip install bezel-charts) that draws them straight from pandas DataFrames for notebooks, reports and READMEs, tested to match the browser version byte for byte. The web components are about 12 kB gzipped, with unit tests and a Playwright browser test.</p>
                         <a href="https://github.com/ShazMoghaddam/bezel-charts" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         &nbsp;&nbsp;
                         <a href="https://shazmoghaddam.github.io/bezel-charts/site/" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://pypi.org/project/bezel-charts/" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_pypi">View on PyPI</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
                 </div>
 
@@ -1042,7 +1068,7 @@
                 <a href="https://www.linkedin.com/in/shazmoghaddam/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://instagram.com/shaz.0098" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
-            <a href="assets/certificates/Shaz-Moghaddam-CV.pdf?v=2026-10-29" class="cv-download reveal reveal-delay-3" download>
+            <a href="assets/certificates/Shaz-Moghaddam-CV.pdf?v=2026-10-31" class="cv-download reveal reveal-delay-3" download>
                 <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 <span data-i18n="download_cv">Download CV</span>
             </a>
@@ -1065,6 +1091,7 @@
                         <span class="eco-word">GitHub</span>
                         <span class="eco-word">GitHub&nbsp;Pages</span>
                         <span class="eco-word">jsDelivr</span>
+                        <span class="eco-word">PyPI</span>
                         <span class="eco-word">Instagram</span>
                         <span class="eco-word">Reddit</span>
                         <span class="eco-word">LinkedIn</span>
@@ -1078,6 +1105,7 @@
                         <span class="eco-word" aria-hidden="true">GitHub</span>
                         <span class="eco-word" aria-hidden="true">GitHub&nbsp;Pages</span>
                         <span class="eco-word" aria-hidden="true">jsDelivr</span>
+                        <span class="eco-word" aria-hidden="true">PyPI</span>
                         <span class="eco-word" aria-hidden="true">Instagram</span>
                         <span class="eco-word" aria-hidden="true">Reddit</span>
                         <span class="eco-word" aria-hidden="true">LinkedIn</span>
@@ -1092,11 +1120,13 @@
                     <div class="eco-track eco-track--reverse">
                         <span class="eco-word">Python</span>
                         <span class="eco-word">pandas</span>
+                        <span class="eco-word">Matplotlib</span>
                         <span class="eco-word">NumPy</span>
                         <span class="eco-word">Jupyter</span>
                         <span class="eco-word">scikit-learn</span>
                         <span class="eco-word">spaCy</span>
                         <span class="eco-word">Plotly</span>
+                        <span class="eco-word">Bezel&nbsp;Charts</span>
                         <span class="eco-word">Tableau</span>
                         <span class="eco-word">FastAPI</span>
                         <span class="eco-word">Flask</span>
@@ -1128,11 +1158,13 @@
                         <span class="eco-word">Data.gov</span>
                         <span class="eco-word" aria-hidden="true">Python</span>
                         <span class="eco-word" aria-hidden="true">pandas</span>
+                        <span class="eco-word" aria-hidden="true">Matplotlib</span>
                         <span class="eco-word" aria-hidden="true">NumPy</span>
                         <span class="eco-word" aria-hidden="true">Jupyter</span>
                         <span class="eco-word" aria-hidden="true">scikit-learn</span>
                         <span class="eco-word" aria-hidden="true">spaCy</span>
                         <span class="eco-word" aria-hidden="true">Plotly</span>
+                        <span class="eco-word" aria-hidden="true">Bezel&nbsp;Charts</span>
                         <span class="eco-word" aria-hidden="true">Tableau</span>
                         <span class="eco-word" aria-hidden="true">FastAPI</span>
                         <span class="eco-word" aria-hidden="true">Flask</span>
@@ -1204,7 +1236,7 @@
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
     </div>
 
-    <script src="main.js?v=stats3"></script>
+    <script src="main.js?v=stats4"></script>
     <script src="world-clock.js?v=10"></script>
     <script src="orb.js?v=4" defer></script>
     <!-- ═══════════════════════════════════════════════════════
@@ -1274,7 +1306,7 @@
          i18next — Language Toggle
          ═══════════════════════════════════════════════════════ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/23.11.5/i18next.min.js"></script>
-    <script src="i18n.js?v=refresh1"></script>
+    <script src="i18n.js?v=pypi1"></script>
 
 
 </body>

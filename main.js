@@ -1063,6 +1063,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ['build','2022-10','Build'], ['build','2023-02','Build'], ['build','2023-12','Build'], ['build','2024-05','Build'],
     ['build','2024-10','Build'], ['build','2024-11','Build'], ['build','2024-12','Build'], ['build','2025-04','Build'],
     ['build','2026-06','Build'], ['build','2026-09','Build'], ['build','2026-09','Build'],
+    ['build','2026-10','Jobs & the Economy'], ['build','2026-10','Bezel Charts for Python'],
 
     ['pub','2024-03','Article'], ['pub','2024-06','The Art of Becoming'], ['pub','2024-09','The Art of Unlearning'],
     ['pub','2025-01','Building Resilience in the Face of Change'], ['pub','2025-05','The Road Is Always Calling'],

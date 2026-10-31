@@ -59,10 +59,12 @@ i18n/               # Translation source, build script, and locale files
 - **VoltScope**: Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
 - **ClinIQ**: B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
 - **SalaryAxis**: UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
+- **[Jobs & the Economy](https://github.com/ShazMoghaddam/uk-jobs-economy)**: open UK labour market challenge with a State of UK Jobs report of eight findings that redraws itself after every ONS release, charted with Bezel Charts (Python, pandas, GitHub Actions, ONS and HMRC open data)
+- **[House Prices & the Economy](https://github.com/ShazMoghaddam/uk-house-prices-economy)**: open monthly data challenge on how UK house prices respond to economic shocks, built on the HM Land Registry UK House Price Index (Python, pandas, Matplotlib)
 
 ## Open source and design work
 
-- **[Bezel Charts](https://github.com/ShazMoghaddam/bezel-charts)**: ten zero-dependency SVG chart tiles as web components, from sparklines to a scatter plot with a trend line and Pearson's r, with a Studio that imports CSV, Excel or JSON and exports static SVG for READMEs, about 12 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel-charts/site/))
+- **[Bezel Charts](https://github.com/ShazMoghaddam/bezel-charts)**: ten zero-dependency SVG chart tiles as web components and as a Python package on [PyPI](https://pypi.org/project/bezel-charts/) (`pip install bezel-charts`), from sparklines to a scatter plot with a trend line and Pearson's r, with a Studio that imports CSV, Excel or JSON and exports static SVG for READMEs, about 12 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel-charts/site/))
 - **[World Map](https://github.com/ShazMoghaddam/world-map)**: interactive choropleth of 172 countries across seven data layers, in one dependency-free HTML file ([live demo](https://shazmoghaddam.github.io/world-map))
 - **[Bezel](https://github.com/ShazMoghaddam/bezel)**: open-source clock, calendar and weather tiles as five zero-dependency web components, with a Studio to design and share them, automatic dark mode and live weather, about 25 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel/site/))
 - **[Orbs](https://github.com/ShazMoghaddam/orbs)**: ten morphing dot-formation animations for the web, one file, about 5 KB gzipped, no dependencies ([live demo](https://shazmoghaddam.github.io/orbs/))
