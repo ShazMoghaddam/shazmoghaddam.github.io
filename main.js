@@ -442,8 +442,10 @@ init();
                 if (Math.abs(dx) > 0.001) t = Math.min(t, hw2 * len / Math.abs(dx));
                 if (Math.abs(dy) > 0.001) t = Math.min(t, hh2 * len / Math.abs(dy));
 
-                const x2 = nx - t * dx / len + GAP * dx / len;
-                const y2 = ny - t * dy / len + GAP * dy / len;
+                // Step back GAP px toward the hub so the line stops just
+                // short of the card border, mirroring the hub end.
+                const x2 = nx - (t + GAP) * dx / len;
+                const y2 = ny - (t + GAP) * dy / len;
 
                 drawLen = Math.hypot(x2 - x1, y2 - y1);
 
@@ -473,6 +475,22 @@ init();
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(buildLines, 120);
     }, { passive: true });
+
+    /* Rebuild whenever a card changes size without the window
+       resizing: switching language rewraps the titles, which changes
+       card heights and shifts the grid, and a late web font does the
+       same. Without this the lines keep pointing at the old layout.
+       ResizeObserver ignores CSS transforms, so the pop-in animation
+       never triggers a rebuild. */
+    if ('ResizeObserver' in window) {
+        let relayoutFrame = 0;
+        const relayout = new ResizeObserver(() => {
+            cancelAnimationFrame(relayoutFrame);
+            relayoutFrame = requestAnimationFrame(() => { armed = -1; buildLines(); });
+        });
+        nodes.forEach(node => relayout.observe(node));
+        relayout.observe(inner);
+    }
 
     /* ── Reveal — fires once, the moment the map scrolls into
        view. The hub is now a plain link straight to the Medium
