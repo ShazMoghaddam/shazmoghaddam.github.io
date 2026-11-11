@@ -8,7 +8,7 @@ Live site: https://shazmoghaddam.github.io
 
 ## About
 
-This repository holds the source for my personal site, hosted on GitHub Pages. It's a single-page, responsive portfolio covering my work across data science, Python development, Android apps, digital products, photography, and design.
+This repository holds the source for my personal site, hosted on GitHub Pages. It's a single-page, responsive portfolio covering my work across data science, Python development, Android apps, digital products, photography, and design. My commercial products are published under [Moghaddam Labs](https://github.com/Moghaddam-Labs), which I founded in 2022.
 
 ## Built with
 
