@@ -424,6 +424,20 @@ h2 {
 }
 h2 em { font-style: italic; color: var(--accent); }
 
+/* A one-line note under a section heading, e.g. Moghaddam Labs above Projects */
+.section-intro {
+    margin: calc(-1 * clamp(1.2rem, 2.5vw, 2rem)) 0 clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 62ch;
+    font-size: clamp(0.92rem, 1.05vw, 1rem); line-height: 1.7; font-weight: 300;
+    color: var(--text); opacity: .78;
+}
+.section-intro a {
+    color: var(--text); font-weight: 500; text-decoration: none;
+    border-bottom: 1px solid var(--accent); transition: color .2s ease;
+    white-space: nowrap;   /* keep "Moghaddam Labs" on one line */
+}
+.section-intro a:hover, .section-intro a:focus-visible { color: var(--accent); }
+
 /* ── Skills — dropdown-style panels (matches .lang-dropdown) ── */
 .skills-table {
     display: grid;

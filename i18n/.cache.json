@@ -36,7 +36,7 @@
     "what_title_design": "59b035367211",
     "what_preview_design": "c0c1af34139c",
     "what_desc_design": "374e718bb008",
-    "about_p1": "401342e1fb03",
+    "about_p1": "e7960f83e576",
     "about_p2": "febedddbe3e3",
     "about_p3": "d7248d3e2a86",
     "about_p4": "b5d2ecd05e10",
@@ -177,7 +177,8 @@
     "tag_geospatial": "c93777485a28",
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
-    "skill_publish": "6cafb2114144"
+    "skill_publish": "6cafb2114144",
+    "projects_intro": "cb9da3d93d77"
   },
   "de": {
     "location": "4c57f0c88d98",
@@ -216,7 +217,7 @@
     "what_title_design": "59b035367211",
     "what_preview_design": "c0c1af34139c",
     "what_desc_design": "374e718bb008",
-    "about_p1": "401342e1fb03",
+    "about_p1": "e7960f83e576",
     "about_p2": "febedddbe3e3",
     "about_p3": "d7248d3e2a86",
     "about_p4": "b5d2ecd05e10",
@@ -357,7 +358,8 @@
     "tag_geospatial": "c93777485a28",
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
-    "skill_publish": "6cafb2114144"
+    "skill_publish": "6cafb2114144",
+    "projects_intro": "cb9da3d93d77"
   },
   "es": {
     "location": "4c57f0c88d98",
@@ -396,7 +398,7 @@
     "what_title_design": "59b035367211",
     "what_preview_design": "c0c1af34139c",
     "what_desc_design": "374e718bb008",
-    "about_p1": "401342e1fb03",
+    "about_p1": "e7960f83e576",
     "about_p2": "febedddbe3e3",
     "about_p3": "d7248d3e2a86",
     "about_p4": "b5d2ecd05e10",
@@ -537,7 +539,8 @@
     "tag_geospatial": "c93777485a28",
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
-    "skill_publish": "6cafb2114144"
+    "skill_publish": "6cafb2114144",
+    "projects_intro": "cb9da3d93d77"
   },
   "nl": {
     "location": "4c57f0c88d98",
@@ -576,7 +579,7 @@
     "what_title_design": "59b035367211",
     "what_preview_design": "c0c1af34139c",
     "what_desc_design": "374e718bb008",
-    "about_p1": "401342e1fb03",
+    "about_p1": "e7960f83e576",
     "about_p2": "febedddbe3e3",
     "about_p3": "d7248d3e2a86",
     "about_p4": "b5d2ecd05e10",
@@ -717,6 +720,7 @@
     "tag_geospatial": "c93777485a28",
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
-    "skill_publish": "6cafb2114144"
+    "skill_publish": "6cafb2114144",
+    "projects_intro": "cb9da3d93d77"
   }
 }

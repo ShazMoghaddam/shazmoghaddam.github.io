@@ -7,6 +7,7 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 ## [Unreleased]
 
 ### Added
+- Moghaddam Labs: named in About as the label the commercial products are published under, founded in 2022, and linked in a line under the Projects heading. Translated into all four languages.
 - Projects: PerilMap, the climate risk checker for London homes, with links to the live site and GitHub.
 - What I've Shipped: Bezel Charts now has a View on npm link and an npm tag.
 - Skills: TensorFlow, Next.js, Vercel, geospatial (rasterio and MapLibre), and publishing to npm and PyPI. GCP now names Cloud Run.
