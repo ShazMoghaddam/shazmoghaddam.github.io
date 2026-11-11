@@ -6,6 +6,20 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 
 ## [Unreleased]
 
+### Added
+- Projects: PerilMap, the climate risk checker for London homes, with links to the live site and GitHub.
+- What I've Shipped: Bezel Charts now has a View on npm link and an npm tag.
+- Skills: TensorFlow, Next.js, Vercel, geospatial (rasterio and MapLibre), and publishing to npm and PyPI. GCP now names Cloud Run.
+- Available on: npm and Vercel. Built with: Next.js, rasterio, MapLibre and the Environment Agency as a data source.
+- Stats bar: PerilMap added to the shipping timeline.
+
+### Changed
+- Projects are ordered by how strong they are, not by date: LedgerLet, PerilMap, VoltEdge, VoltScope, Jobs & the Economy, ClinIQ, SalaryAxis, House Prices & the Economy.
+- Bezel Charts: rewritten for sixteen charts, npm and PyPI, data from JavaScript, click events and about 26 kB gzipped.
+- What I've Shipped: World Map removed, leaving the four strongest pieces of open-source work.
+- Downloadable CV replaced with the November 2026 data scientist CV.
+- README: projects in the same order as the site, PerilMap added, Bezel Charts updated, signature footer.
+
 ### Fixed
 - Writing: the lines linking each article card to the "Published on Medium" hub now redraw when a card changes size, so they stay attached to the cards after switching language or when a web font loads late. ([#31](https://github.com/ShazMoghaddam/shazmoghaddam.github.io/pull/31))
 - Writing: lines now stop just short of each card's border, matching the gap at the hub, instead of running slightly into the card. ([#31](https://github.com/ShazMoghaddam/shazmoghaddam.github.io/pull/31))

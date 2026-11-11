@@ -54,22 +54,23 @@ i18n/               # Translation source, build script, and locale files
 
 ## Selected projects
 
-- **LedgerLet**: Making Tax Digital platform for UK landlords: records, CSV bank import and quarterly submissions to HMRC, live demo on HMRC's sandbox (Python, FastAPI, PostgreSQL, SQLAlchemy, React, TypeScript, Auth0)
-- **VoltEdge**: Enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
-- **VoltScope**: Structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
-- **ClinIQ**: B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
-- **SalaryAxis**: UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
+- **[LedgerLet](https://github.com/Moghaddam-Labs/ledgerlet)**: Making Tax Digital platform for UK landlords: records, CSV bank import and quarterly submissions to HMRC, live demo on HMRC's sandbox (Python, FastAPI, PostgreSQL, SQLAlchemy, React, TypeScript, Auth0)
+- **[PerilMap](https://github.com/Moghaddam-Labs/perilmap)**: live climate risk checker for London homes, with flood risk bands, flood zones on a map, and subsidence and heat explainers, built on Environment Agency data turned into 5 m grids and private by design ([live site](https://perilmap.vercel.app)) (Python, FastAPI, rasterio, Next.js, TypeScript, MapLibre, Google Cloud Run, Vercel)
+- **[VoltEdge](https://github.com/Moghaddam-Labs/voltedge)**: enterprise energy intelligence platform with ML anomaly detection, causal AI root-cause analysis, and CSRD-ready ESG reporting (Python, FastAPI, Plotly Dash, scikit-learn, Claude API)
+- **[VoltScope](https://github.com/Moghaddam-Labs/voltscope)**: structured extraction and deterministic validation for UK commercial energy bills, the bill-intelligence module of VoltEdge (Python, FastAPI, Claude API, Pydantic, SQLite)
 - **[Jobs & the Economy](https://github.com/ShazMoghaddam/uk-jobs-economy)**: open UK labour market challenge with a State of UK Jobs report of eight findings that redraws itself after every ONS release, charted with Bezel Charts (Python, pandas, GitHub Actions, ONS and HMRC open data)
+- **[ClinIQ](https://github.com/Moghaddam-Labs/cliniq)**: B2B clinical trial site performance intelligence for mid-market CROs (Python, FastAPI, SQLAlchemy, spaCy, Claude API)
+- **[SalaryAxis](https://github.com/Moghaddam-Labs/salaryaxis)**: UK salary intelligence platform built on ONS open data (Python, Flask, React, pandas)
 - **[House Prices & the Economy](https://github.com/ShazMoghaddam/uk-house-prices-economy)**: open monthly data challenge on how UK house prices respond to economic shocks, built on the HM Land Registry UK House Price Index (Python, pandas, Matplotlib)
 
 ## Open source and design work
 
-- **[Bezel Charts](https://github.com/ShazMoghaddam/bezel-charts)**: ten zero-dependency SVG chart tiles as web components and as a Python package on [PyPI](https://pypi.org/project/bezel-charts/) (`pip install bezel-charts`), from sparklines to a scatter plot with a trend line and Pearson's r, with a Studio that imports CSV, Excel or JSON and exports static SVG for READMEs, about 12 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel-charts/site/))
-- **[World Map](https://github.com/ShazMoghaddam/world-map)**: interactive choropleth of 172 countries across seven data layers, in one dependency-free HTML file ([live demo](https://shazmoghaddam.github.io/world-map))
+- **[Bezel Charts](https://github.com/ShazMoghaddam/bezel-charts)**: sixteen zero-dependency SVG chart tiles as web components on [npm](https://www.npmjs.com/package/bezel-charts) (`npm i bezel-charts`) and as a Python package on [PyPI](https://pypi.org/project/bezel-charts/) (`pip install bezel-charts`), from sparklines to waterfalls, box plots and bars and a line on two axes, with a Studio that imports CSV, Excel or JSON and exports static SVG for READMEs, about 26 kB gzipped for all sixteen ([live Studio](https://shazmoghaddam.github.io/bezel-charts/site/))
 - **[Bezel](https://github.com/ShazMoghaddam/bezel)**: open-source clock, calendar and weather tiles as five zero-dependency web components, with a Studio to design and share them, automatic dark mode and live weather, about 25 KB gzipped ([live Studio](https://shazmoghaddam.github.io/bezel/site/))
 - **[Orbs](https://github.com/ShazMoghaddam/orbs)**: ten morphing dot-formation animations for the web, one file, about 5 KB gzipped, no dependencies ([live demo](https://shazmoghaddam.github.io/orbs/))
 - **[Strata Symbol Kit](https://github.com/ShazMoghaddam/strata-symbols)**: 183 layered-line symbols, letters and numbers, with a browser editor and SVG, PNG and sprite export ([live editor](https://shazmoghaddam.github.io/strata-symbols/))
 - **[ux-boards](https://github.com/ShazMoghaddam/ux-boards)**: turns one YAML file into UX documentation boards, exported as HTML, PDF and PNG ([live examples](https://shazmoghaddam.github.io/ux-boards/))
+- **[World Map](https://github.com/ShazMoghaddam/world-map)**: interactive choropleth of 172 countries across seven data layers, in one dependency-free HTML file ([live demo](https://shazmoghaddam.github.io/world-map))
 - **[KNOK Matrix / Mono](https://github.com/ShazMoghaddam/KNOK-Matrix-Mono-font)**: a geometric SVG typographic system and live digital clock
 - **[Typography Digits](https://github.com/ShazMoghaddam/typography-digits)**: the digits 0 to 9 built from programming and data science vocabulary as generative word clouds
 
@@ -108,3 +109,8 @@ Open to freelance, contract, and full-time opportunities in data science, Python
 ## Licence
 
 Copyright (c) 2026 [Shaz Moghaddam](https://shazmoghaddam.github.io), London. All rights reserved. See [LICENSE](LICENSE). Projects linked from the site live in their own repositories and keep their own licences.
+
+---
+
+Created by **Shaz Moghaddam** · London\
+[Website](https://shazmoghaddam.github.io/) · [LinkedIn](https://www.linkedin.com/in/shazmoghaddam/)
