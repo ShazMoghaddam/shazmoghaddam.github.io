@@ -1082,10 +1082,11 @@ document.addEventListener('DOMContentLoaded', function () {
     ['build','2024-10','Build'], ['build','2024-11','Build'], ['build','2024-12','Build'], ['build','2025-04','Build'],
     ['build','2026-06','Build'], ['build','2026-09','Build'], ['build','2026-09','Build'],
     ['build','2026-10','Jobs & the Economy'], ['build','2026-10','Bezel Charts for Python'],
+    ['build','2026-10','House Prices & the Economy'], ['build','2026-11','AI & the Economy'],
 
     ['pub','2024-03','Article'], ['pub','2024-06','The Art of Becoming'], ['pub','2024-09','The Art of Unlearning'],
     ['pub','2025-01','Building Resilience in the Face of Change'], ['pub','2025-05','The Road Is Always Calling'],
-    ['pub','2025-05','Article'], ['pub','2025-09','One Ear, Two Kids, and Fifty Pints of Grace'],
+    ['pub','2025-05','Article'], ['pub','2025-09','One Ear, Two Kids, and Fifty Pints of Gratitude'],
     ['pub','2025-11','Article'], ['pub','2026-02','Co-Evolving'], ['pub','2026-06','The Weight of Enough'],
 
     ['cert','2023-07','100 Days of Code'], ['cert','2024-01','iOS & Swift Bootcamp'],
