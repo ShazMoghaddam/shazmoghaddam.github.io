@@ -52,7 +52,7 @@
         "@type": "Place",
         "name": "London, United Kingdom"
       },
-      "knowsAbout": ["Python", "SQL", "Data Science", "Machine Learning", "pandas", "scikit-learn", "FastAPI", "PostgreSQL", "React", "TypeScript", "Plotly Dash", "Data Visualization", "Web Components", "AI Integration", "Android Development"],
+      "knowsAbout": ["Python", "SQL", "Data Science", "Machine Learning", "pandas", "scikit-learn", "FastAPI", "PostgreSQL", "React", "TypeScript", "Plotly Dash", "Data Visualization", "Web Components", "Geospatial Data", "Next.js", "AI Integration", "Android Development"],
       "sameAs": [
         "https://github.com/ShazMoghaddam",
         "https://www.linkedin.com/in/shazmoghaddam/",
@@ -303,6 +303,35 @@
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
                         <span class="accordion-num">02</span>
+                        <span class="accordion-title" data-i18n="t_perilmap">PerilMap — Climate Risk for Homes in London</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">FastAPI</span>
+                            <span class="project-tag">NumPy</span>
+                            <span class="project-tag">rasterio</span>
+                            <span class="project-tag">Shapely</span>
+                            <span class="project-tag">Next.js</span>
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">MapLibre</span>
+                            <span class="project-tag">Bezel Charts</span>
+                            <span class="project-tag" data-i18n="tag_geospatial">Geospatial</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Google Cloud Run</span>
+                            <span class="project-tag">Vercel</span>
+                            <span class="project-tag">Playwright</span>
+                        </div>
+                        <p data-i18n="d_perilmap">A live web app that shows how exposed the area around a London home is to climate-related perils, before the insurance quote arrives. Search a postcode and mark the home on the map to get a risk band for flooding from rivers and sea and from surface water, the distance to the nearest zone in each band and the zones drawn on the map, with plain-English explainers for subsidence and summer heat. The Environment Agency's flood data is turned into 5 m grids and checked against London's boundary, so a gap in the data shows as "No data" and can never look like a low risk. Each region and peril is a plug-in that must say what its result means, how sure it is, what to do next and where its data came from, so adding the rest of England means adding data, not rewriting the core. It's private by design: no cookies or tracking, locations kept out of web addresses and logs, and postcode lookups routed through the server so the lookup service never sees who's searching. The FastAPI service runs on Google Cloud Run in London and the Next.js site on Vercel, built to WCAG 2.2 AA, with charts drawn by Bezel Charts and 178 Python and 139 website tests plus Playwright end-to-end tests.</p>
+                        <a href="https://perilmap.vercel.app" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://github.com/Moghaddam-Labs/perilmap" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">03</span>
                         <span class="accordion-title" data-i18n="t_voltedge">VoltEdge — Enterprise Energy Intelligence Platform</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -328,7 +357,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">03</span>
+                        <span class="accordion-num">04</span>
                         <span class="accordion-title" data-i18n="t_voltscope">VoltScope — UK Energy Bill Intelligence &amp; Extraction</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -351,7 +380,29 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">04</span>
+                        <span class="accordion-num">05</span>
+                        <span class="accordion-title" data-i18n="t_jobs">Jobs &amp; the Economy — Open UK Labour Market Challenge</span>
+                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
+                    </button>
+                    <div class="accordion-body"><div class="accordion-body-inner">
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">pandas</span>
+                            <span class="project-tag">Bezel Charts</span>
+                            <span class="project-tag" data-i18n="tag_ons">ONS Open Data</span>
+                            <span class="project-tag">HMRC</span>
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">pytest</span>
+                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
+                        </div>
+                        <p data-i18n="d_jobs">A public data challenge on GitHub about UK jobs, unemployment and pay. One script downloads 33 ONS labour market series and HMRC payroll data, and a State of UK Jobs report of eight findings is generated straight from the data, so every number and sentence stays true as new figures arrive. At launch in October 2026 it showed long-term sickness up 620,000 since Covid to 2.74 million people, youth unemployment at 15.6%, a jobs market cooling from its 2022 record, and survey and payroll figures pointing in opposite directions since late 2024. A weekly GitHub Actions job tests the new data and opens a pull request with refreshed charts after every ONS release. All 15 charts are drawn with Bezel Charts, my own library, and each month brings a new brief with beginner to expert levels.</p>
+                        <a href="https://github.com/ShazMoghaddam/uk-jobs-economy" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div></div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
+                        <span class="accordion-num">06</span>
                         <span class="accordion-title" data-i18n="t_cliniq">ClinIQ — Clinical Trial Site Performance Intelligence</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -375,7 +426,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
+                        <span class="accordion-num">07</span>
                         <span class="accordion-title" data-i18n="t_salaryaxis">SalaryAxis — UK Salary Intelligence Platform</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -398,29 +449,7 @@
 
                 <div class="accordion-item">
                     <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">06</span>
-                        <span class="accordion-title" data-i18n="t_jobs">Jobs &amp; the Economy — Open UK Labour Market Challenge</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">pandas</span>
-                            <span class="project-tag">Bezel Charts</span>
-                            <span class="project-tag" data-i18n="tag_ons">ONS Open Data</span>
-                            <span class="project-tag">HMRC</span>
-                            <span class="project-tag">GitHub Actions</span>
-                            <span class="project-tag">pytest</span>
-                            <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
-                        </div>
-                        <p data-i18n="d_jobs">A public data challenge on GitHub about UK jobs, unemployment and pay. One script downloads 33 ONS labour market series and HMRC payroll data, and a State of UK Jobs report of eight findings is generated straight from the data, so every number and sentence stays true as new figures arrive. At launch in October 2026 it showed long-term sickness up 620,000 since Covid to 2.74 million people, youth unemployment at 15.6%, a jobs market cooling from its 2022 record, and survey and payroll figures pointing in opposite directions since late 2024. A weekly GitHub Actions job tests the new data and opens a pull request with refreshed charts after every ONS release. All 15 charts are drawn with Bezel Charts, my own library, and each month brings a new brief with beginner to expert levels.</p>
-                        <a href="https://github.com/ShazMoghaddam/uk-jobs-economy" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">07</span>
+                        <span class="accordion-num">08</span>
                         <span class="accordion-title" data-i18n="t_houseprices">House Prices &amp; the Economy — Open UK Data Challenge</span>
                         <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
                     </button>
@@ -460,14 +489,17 @@
                             <span class="project-tag">SVG</span>
                             <span class="project-tag">JavaScript</span>
                             <span class="project-tag">Python</span>
+                            <span class="project-tag">npm</span>
                             <span class="project-tag">PyPI</span>
                             <span class="project-tag">Data Visualisation</span>
                             <span class="project-tag" data-i18n="tag_open_source">Open Source</span>
                         </div>
-                        <p data-i18n="d_bezelcharts">Ten zero-dependency chart tiles drawn in pure SVG, a sibling of Bezel: sparklines, lines, bars and grouped bars, rings, donuts, gauges, progress bars, a year-long heatmap and a scatter plot with a least-squares trend line and Pearson's r. Each chart is one HTML tag that fills its container, follows the viewer's light or dark setting, formats numbers for any locale and describes itself to screen readers. A Studio imports CSV, Excel or JSON, or cells pasted from a spreadsheet, picks out labels, series, units and dates, and exports the chart as HTML, a shareable link or a static SVG for READMEs, Notion and slides. The same ten charts are also a Python package on PyPI (pip install bezel-charts) that draws them straight from pandas DataFrames for notebooks, reports and READMEs, tested to match the browser version byte for byte. The web components are about 12 kB gzipped, with unit tests and a Playwright browser test.</p>
+                        <p data-i18n="d_bezelcharts">Sixteen zero-dependency chart tiles drawn in pure SVG, a sibling of Bezel: sparklines, lines with real date axes and log scales, stacked areas, bars, bars and a line on two axes, waterfalls, histograms, box plots, a scatter plot with a least-squares trend line and Pearson's r, rings, donuts, gauges, progress bars, bullet charts and a year-long heatmap. Each chart is one HTML tag that fills its container, follows the viewer's light or dark setting, formats numbers for any locale, works with the keyboard and describes itself to screen readers. Data can be set straight from JavaScript, and clicks on any bar, point or slice fire events for React and Vue. A Studio imports CSV, Excel or JSON, or cells pasted from a spreadsheet, and exports the chart as HTML, a shareable link or a static SVG for READMEs, Notion and slides. It's published on npm (npm i bezel-charts) and as a Python package on PyPI (pip install bezel-charts) that draws the same charts from pandas DataFrames, tested byte for byte against the JavaScript across 257 chart cases in CI. Both always ship the same version, released from a Git tag. About 26 kB gzipped for all sixteen, or 7 to 12 kB for a page that loads just one.</p>
                         <a href="https://github.com/ShazMoghaddam/bezel-charts" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         &nbsp;&nbsp;
                         <a href="https://shazmoghaddam.github.io/bezel-charts/site/" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                        &nbsp;&nbsp;
+                        <a href="https://www.npmjs.com/package/bezel-charts" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_npm">View on npm</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                         &nbsp;&nbsp;
                         <a href="https://pypi.org/project/bezel-charts/" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_pypi">View on PyPI</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
                     </div></div>
@@ -537,27 +569,7 @@
                     </div></div>
                 </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" onclick="toggleAccordion(this)" aria-expanded="false">
-                        <span class="accordion-num">05</span>
-                        <span class="accordion-title" data-i18n="t_worldmap">World Map — Interactive SVG Country Explorer</span>
-                        <span class="accordion-arrow"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg></span>
-                    </button>
-                    <div class="accordion-body"><div class="accordion-body-inner">
-                        <div class="project-tags">
-                            <span class="project-tag">SVG</span>
-                            <span class="project-tag">HTML5</span>
-                            <span class="project-tag">JavaScript</span>
-                            <span class="project-tag">Gumroad</span>
-                        </div>
-                        <p data-i18n="d_worldmap">An interactive choropleth world map covering 172 countries across 7 data layers: population density, GDP per capita, HDI, CO₂ per capita, life expectancy, internet usage and a default view. Features region and political group filters (EU, G20, NATO, BRICS+), CSV and JSON data import, shareable URLs, iframe embedding with a JavaScript API, full keyboard navigation and dark mode, with zero dependencies in one HTML file.</p>
-                        <a href="https://github.com/ShazMoghaddam/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_github">View on GitHub</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                        &nbsp;&nbsp;
-                        <a href="https://shazmoghaddam.github.io/world-map" target="_blank" rel="noopener noreferrer" class="project-link"><span data-i18n="link_demo">Live Demo</span> <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div></div>
-                </div>
-
-                            </div>
+            </div>
         </section>
 
         <!-- Products & Apps -->
@@ -715,8 +727,10 @@
                         <li>NLP &amp; spaCy</li>
                         <li>pandas &amp; NumPy</li>
                         <li>scikit-learn</li>
+                        <li>TensorFlow</li>
                         <li>SciPy</li>
                         <li data-i18n="skill_dataviz">Data Visualisation</li>
+                        <li data-i18n="skill_geo">Geospatial (rasterio, MapLibre)</li>
                     </ul>
                     </div>
                 </div>
@@ -730,6 +744,7 @@
                         <li>FastAPI</li>
                         <li>Plotly Dash</li>
                         <li>React</li>
+                        <li>Next.js</li>
                         <li>Flask</li>
                         <li>SQLAlchemy &amp; Alembic</li>
                         <li>Pydantic</li>
@@ -741,6 +756,7 @@
                         <li>Docker</li>
                         <li>Git &amp; GitHub</li>
                         <li>GitHub Actions (CI/CD)</li>
+                        <li data-i18n="skill_publish">Publishing to npm &amp; PyPI</li>
                         <li>pytest, Vitest &amp; Playwright</li>
                         <li>REST APIs</li>
                         <li>Jupyter</li>
@@ -761,7 +777,8 @@
                     <div class="skills-panel">
                     <ul class="skills-list">
                         <li>AWS</li>
-                        <li>GCP</li>
+                        <li>GCP &amp; Cloud Run</li>
+                        <li>Vercel</li>
                         <li>Railway</li>
                         <li>Render</li>
                         <li>Auth0, OAuth 2.0 &amp; OIDC</li>
@@ -1068,7 +1085,7 @@
                 <a href="https://www.linkedin.com/in/shazmoghaddam/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://instagram.com/shaz.0098" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
-            <a href="assets/certificates/Shaz-Moghaddam-CV.pdf?v=2026-10-31" class="cv-download reveal reveal-delay-3" download>
+            <a href="assets/certificates/Shaz-Moghaddam-CV.pdf?v=2026-11-11" class="cv-download reveal reveal-delay-3" download>
                 <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
                 <span data-i18n="download_cv">Download CV</span>
             </a>
@@ -1091,11 +1108,13 @@
                         <span class="eco-word">GitHub</span>
                         <span class="eco-word">GitHub&nbsp;Pages</span>
                         <span class="eco-word">jsDelivr</span>
+                        <span class="eco-word">npm</span>
                         <span class="eco-word">PyPI</span>
                         <span class="eco-word">Instagram</span>
                         <span class="eco-word">Reddit</span>
                         <span class="eco-word">LinkedIn</span>
                         <span class="eco-word">Render</span>
+                        <span class="eco-word">Vercel</span>
                         <span class="eco-word" aria-hidden="true">Google&nbsp;Play</span>
                         <span class="eco-word" aria-hidden="true">Gumroad</span>
                         <span class="eco-word" aria-hidden="true">Envato</span>
@@ -1105,11 +1124,13 @@
                         <span class="eco-word" aria-hidden="true">GitHub</span>
                         <span class="eco-word" aria-hidden="true">GitHub&nbsp;Pages</span>
                         <span class="eco-word" aria-hidden="true">jsDelivr</span>
+                        <span class="eco-word" aria-hidden="true">npm</span>
                         <span class="eco-word" aria-hidden="true">PyPI</span>
                         <span class="eco-word" aria-hidden="true">Instagram</span>
                         <span class="eco-word" aria-hidden="true">Reddit</span>
                         <span class="eco-word" aria-hidden="true">LinkedIn</span>
                         <span class="eco-word" aria-hidden="true">Render</span>
+                        <span class="eco-word" aria-hidden="true">Vercel</span>
                     </div>
                 </div>
             </div>
@@ -1131,6 +1152,7 @@
                         <span class="eco-word">FastAPI</span>
                         <span class="eco-word">Flask</span>
                         <span class="eco-word">React</span>
+                        <span class="eco-word">Next.js</span>
                         <span class="eco-word">JavaScript</span>
                         <span class="eco-word">TypeScript</span>
                         <span class="eco-word">Web&nbsp;Components</span>
@@ -1151,11 +1173,14 @@
                         <span class="eco-word">Google&nbsp;Cloud</span>
                         <span class="eco-word">fontTools</span>
                         <span class="eco-word">Shapely</span>
+                        <span class="eco-word">rasterio</span>
+                        <span class="eco-word">MapLibre</span>
                         <span class="eco-word">Claude</span>
                         <span class="eco-word eco-sep" aria-hidden="true">|</span>
                         <span class="eco-word">ONS</span>
                         <span class="eco-word">GOV.UK</span>
                         <span class="eco-word">Data.gov</span>
+                        <span class="eco-word">Environment&nbsp;Agency</span>
                         <span class="eco-word" aria-hidden="true">Python</span>
                         <span class="eco-word" aria-hidden="true">pandas</span>
                         <span class="eco-word" aria-hidden="true">Matplotlib</span>
@@ -1169,6 +1194,7 @@
                         <span class="eco-word" aria-hidden="true">FastAPI</span>
                         <span class="eco-word" aria-hidden="true">Flask</span>
                         <span class="eco-word" aria-hidden="true">React</span>
+                        <span class="eco-word" aria-hidden="true">Next.js</span>
                         <span class="eco-word" aria-hidden="true">JavaScript</span>
                         <span class="eco-word" aria-hidden="true">TypeScript</span>
                         <span class="eco-word" aria-hidden="true">Web&nbsp;Components</span>
@@ -1189,11 +1215,14 @@
                         <span class="eco-word" aria-hidden="true">Google&nbsp;Cloud</span>
                         <span class="eco-word" aria-hidden="true">fontTools</span>
                         <span class="eco-word" aria-hidden="true">Shapely</span>
+                        <span class="eco-word" aria-hidden="true">rasterio</span>
+                        <span class="eco-word" aria-hidden="true">MapLibre</span>
                         <span class="eco-word" aria-hidden="true">Claude</span>
                         <span class="eco-word eco-sep" aria-hidden="true">|</span>
                         <span class="eco-word" aria-hidden="true">ONS</span>
                         <span class="eco-word" aria-hidden="true">GOV.UK</span>
                         <span class="eco-word" aria-hidden="true">Data.gov</span>
+                        <span class="eco-word" aria-hidden="true">Environment&nbsp;Agency</span>
                     </div>
                 </div>
             </div>

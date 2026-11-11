@@ -1061,7 +1061,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //        pub = publication, cert = certification
   var SHIPPED = [
     ['plat','2025-08','SalaryAxis'], ['plat','2025-11','ClinIQ'], ['plat','2026-03','VoltEdge'],
-    ['plat','2026-08','VoltScope'], ['plat','2026-10','LedgerLet'],
+    ['plat','2026-08','VoltScope'], ['plat','2026-10','LedgerLet'], ['plat','2026-11','PerilMap'],
 
     ['app','2024-03','Math Adventure'], ['app','2024-05','Bingo Maths'], ['app','2024-09','World Builders'],
     ['app','2025-01','Animated Month Wallpaper'], ['app','2025-02','Animated Weekday Wallpaper'],
