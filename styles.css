@@ -1643,7 +1643,7 @@ footer {
 [data-theme="light"] .typo-digits { display: none; }
 
 /* --digit-scale shrinks every KNOK number in one place */
-.stats-bar { --digit-scale: 0.60; }   /* was 0.71, reduced 15% */
+.stats-bar { --digit-scale: 0.54; }   /* was 0.60, reduced 10% (0.71 before that) */
 .stat-num { height: calc(182px * var(--digit-scale)); }
 .knok-slot {
     width: calc(130px * var(--digit-scale));
@@ -1884,6 +1884,9 @@ footer {
   --sb-pub:   #b3ad9c;   /* publications */
   --sb-cert:  #55524a;   /* certifications */
   --sb-line:  #d2ccba;   /* running total */
+  --sb-hl-app:  var(--c-tangerine);   /* lit colours for Apps and Certifications */
+  --sb-hl-cert: var(--c-crimson);
+  --sb-lift: .3;   /* how much stronger the chart shows while a number is lit */
   --sb-op: .34;
   --sb-blend: screen;
 }
@@ -1893,6 +1896,11 @@ footer {
   --sb-pub:   #2f2f2f;
   --sb-cert:  #969696;
   --sb-line:  #1f1f1f;
+  /* the shared tangerine and crimson are dark for text on light, which reads as brown and
+     burgundy here, so the chart gets brighter ones that still stand out on the light page */
+  --sb-hl-app:  #E65100;
+  --sb-hl-cert: #E0115F;
+  --sb-lift: .6;   /* light mode needs more, or the colours wash out on the pale page */
   --sb-op: .28;
   --sb-blend: multiply;
 }
@@ -1920,7 +1928,7 @@ footer {
 .stat-backdrop .sb-total-dot{ fill:var(--sb-line); }
 
 /* a number is lit: everything fades except what it counts */
-.stats-bar[data-sb] .sb-marks{ opacity:calc(var(--sb-op) + .3); }
+.stats-bar[data-sb] .sb-marks{ opacity:calc(var(--sb-op) + var(--sb-lift)); }
 .stats-bar[data-sb] .sb-m{ opacity:.12; }
 
 .stats-bar[data-sb="proj"] .sb-m:is([data-t="plat"],[data-t="build"],[data-t="app"],[data-t="dig"],[data-t="total"]),
@@ -1930,10 +1938,10 @@ footer {
 .stats-bar[data-sb="cert"] .sb-m[data-t="cert"]{ opacity:1; }
 
 .stats-bar[data-sb] .sb-m:is([data-t="plat"],[data-t="build"]){ fill:var(--c-gold); }
-.stats-bar[data-sb] .sb-m[data-t="app"]{ fill:var(--c-tangerine); }
+.stats-bar[data-sb] .sb-m[data-t="app"]{ fill:var(--sb-hl-app); }
 .stats-bar[data-sb] .sb-m[data-t="dig"]{ fill:var(--c3); }
 .stats-bar[data-sb] .sb-m[data-t="pub"]{ fill:var(--c-blue); }
-.stats-bar[data-sb] .sb-m[data-t="cert"]{ fill:var(--c-crimson); }
+.stats-bar[data-sb] .sb-m[data-t="cert"]{ fill:var(--sb-hl-cert); }
 .stats-bar[data-sb="proj"] .sb-total{ stroke:var(--c-gold); }
 .stats-bar[data-sb="proj"] .sb-total-dot,
 .stats-bar[data-sb="proj"] .sb-endlab{ fill:var(--c-gold); }

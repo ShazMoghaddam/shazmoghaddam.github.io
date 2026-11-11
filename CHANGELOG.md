@@ -14,6 +14,9 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 - Stats bar: PerilMap added to the shipping timeline.
 
 ### Changed
+- Stats bar: the numbers are 10% smaller, giving the chart behind them more room.
+- Stats bar, light mode: Apps and Certifications now light up in a vivid orange and raspberry instead of brown and burgundy, and every highlight shows more strongly against the pale page. Dark mode is unchanged.
+- Stats timeline: House Prices & the Economy (October 2026) and AI & the Economy (November 2026) added.
 - Projects are ordered by how strong they are, not by date: LedgerLet, PerilMap, VoltEdge, VoltScope, Jobs & the Economy, ClinIQ, SalaryAxis, House Prices & the Economy.
 - Bezel Charts: rewritten for sixteen charts, npm and PyPI, data from JavaScript, click events and about 26 kB gzipped.
 - What I've Shipped: World Map removed, leaving the four strongest pieces of open-source work.
