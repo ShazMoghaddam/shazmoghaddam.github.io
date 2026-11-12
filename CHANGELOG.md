@@ -6,6 +6,20 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 
 ## [Unreleased]
 
+### Added
+- Projects: Energy & the Economy, the open data challenge on Europe's energy since 2010, with a State of Europe's Energy report of eleven findings and 25 charts drawn with Bezel Charts. It sits fifth, above Jobs & the Economy.
+- What I've Shipped: Hunchy, a free quiz for any get-together with 1,200+ sourced questions, offline play and Hunch-off, with links to GitHub and the live game.
+- Stats timeline: Hunchy and Energy & the Economy. Digital products now count 26.
+- Never-translate glossary: Energy & the Economy, State of Europe's Energy, Hunchy, Hunch-off, Eurostat, FRED and Our World in Data.
+
+### Changed
+- What I've Shipped is ordered from strongest to lightest: Bezel Charts, Hunchy, Bezel, Strata, Orbs.
+- Every new string is translated into French, German, Spanish and Dutch.
+- README: projects and open-source work in the same order as the site.
+
+### Removed
+- Projects: House Prices & the Economy, replaced by Energy & the Economy. It stays on GitHub and in the stats timeline.
+
 ## [v2026.11] - 2026-11-11
 
 PerilMap joins the projects, Bezel Charts arrives on npm, and Moghaddam Labs is named on the site (#31 to #35).

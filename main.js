@@ -1069,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     ['dig','2025-03','KNOK Matrix / Mono'], ['dig','2025-04','Typography Digits'], ['dig','2025-12','World Map'],
     ['dig','2026-09','Orbs'], ['dig','2026-10','UX Boards'], ['dig','2026-10','Strata Symbol Kit'],
-    ['dig','2026-10','Top Universities 2027'], ['dig','2026-10','Bezel'], ['dig','2026-10','Bezel Charts'],
+    ['dig','2026-10','Top Universities 2027'], ['dig','2026-10','Bezel'], ['dig','2026-10','Bezel Charts'], ['dig','2026-11','Hunchy'],
     ['dig','2022-11','Digital product'], ['dig','2023-05','Digital product'], ['dig','2023-11','Digital product'],
     ['dig','2024-01','Digital product'], ['dig','2024-05','Digital product'], ['dig','2024-10','Digital product'],
     ['dig','2024-11','Digital product'], ['dig','2025-02','Digital product'], ['dig','2025-06','Digital product'],
@@ -1083,6 +1083,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ['build','2026-06','Build'], ['build','2026-09','Build'], ['build','2026-09','Build'],
     ['build','2026-10','Jobs & the Economy'], ['build','2026-10','Bezel Charts for Python'],
     ['build','2026-10','House Prices & the Economy'], ['build','2026-11','AI & the Economy'],
+    ['build','2026-11','Energy & the Economy'],
 
     ['pub','2024-03','Article'], ['pub','2024-06','The Art of Becoming'], ['pub','2024-09','The Art of Unlearning'],
     ['pub','2025-01','Building Resilience in the Face of Change'], ['pub','2025-05','The Road Is Always Calling'],
