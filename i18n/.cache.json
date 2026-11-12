@@ -167,8 +167,6 @@
     "d_bezelcharts": "2f75f5bf98eb",
     "skill_dataviz": "089abbca750a",
     "skill_oss": "4c192c4a84a8",
-    "t_houseprices": "cf0c8f6f146a",
-    "d_houseprices": "a5092189b0b6",
     "t_jobs": "baae3551bc50",
     "d_jobs": "f60f550642e4",
     "link_pypi": "34b43cae80ef",
@@ -178,7 +176,11 @@
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
     "skill_publish": "6cafb2114144",
-    "projects_intro": "cb9da3d93d77"
+    "projects_intro": "cb9da3d93d77",
+    "t_energy": "01fbd06fd6a6",
+    "d_energy": "b6a6c4932ffd",
+    "t_hunchy": "c95f302c495b",
+    "d_hunchy": "947f240cd265"
   },
   "de": {
     "location": "4c57f0c88d98",
@@ -348,8 +350,6 @@
     "d_bezelcharts": "2f75f5bf98eb",
     "skill_dataviz": "089abbca750a",
     "skill_oss": "4c192c4a84a8",
-    "t_houseprices": "cf0c8f6f146a",
-    "d_houseprices": "a5092189b0b6",
     "t_jobs": "baae3551bc50",
     "d_jobs": "f60f550642e4",
     "link_pypi": "34b43cae80ef",
@@ -359,7 +359,11 @@
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
     "skill_publish": "6cafb2114144",
-    "projects_intro": "cb9da3d93d77"
+    "projects_intro": "cb9da3d93d77",
+    "t_energy": "01fbd06fd6a6",
+    "d_energy": "b6a6c4932ffd",
+    "t_hunchy": "c95f302c495b",
+    "d_hunchy": "947f240cd265"
   },
   "es": {
     "location": "4c57f0c88d98",
@@ -529,8 +533,6 @@
     "d_bezelcharts": "2f75f5bf98eb",
     "skill_dataviz": "089abbca750a",
     "skill_oss": "4c192c4a84a8",
-    "t_houseprices": "cf0c8f6f146a",
-    "d_houseprices": "a5092189b0b6",
     "t_jobs": "baae3551bc50",
     "d_jobs": "f60f550642e4",
     "link_pypi": "34b43cae80ef",
@@ -540,7 +542,11 @@
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
     "skill_publish": "6cafb2114144",
-    "projects_intro": "cb9da3d93d77"
+    "projects_intro": "cb9da3d93d77",
+    "t_energy": "01fbd06fd6a6",
+    "d_energy": "b6a6c4932ffd",
+    "t_hunchy": "c95f302c495b",
+    "d_hunchy": "947f240cd265"
   },
   "nl": {
     "location": "4c57f0c88d98",
@@ -710,8 +716,6 @@
     "d_bezelcharts": "2f75f5bf98eb",
     "skill_dataviz": "089abbca750a",
     "skill_oss": "4c192c4a84a8",
-    "t_houseprices": "cf0c8f6f146a",
-    "d_houseprices": "a5092189b0b6",
     "t_jobs": "baae3551bc50",
     "d_jobs": "f60f550642e4",
     "link_pypi": "34b43cae80ef",
@@ -721,6 +725,10 @@
     "link_npm": "b79aac2a580d",
     "skill_geo": "fac589e7bc07",
     "skill_publish": "6cafb2114144",
-    "projects_intro": "cb9da3d93d77"
+    "projects_intro": "cb9da3d93d77",
+    "t_energy": "01fbd06fd6a6",
+    "d_energy": "b6a6c4932ffd",
+    "t_hunchy": "c95f302c495b",
+    "d_hunchy": "947f240cd265"
   }
 }
