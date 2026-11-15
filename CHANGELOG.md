@@ -18,6 +18,7 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 - Every new string is translated into French, German, Spanish and Dutch.
 - README: projects and open-source work in the same order as the site.
 - What I've Shipped: the Orbs description brought up to date with v1.7.0 (twenty shapes, lines and glow, sound, named states, Studio export, desk display, npm with TypeScript, React and Vue), in all five languages. README to match.
+- Get in Touch: the Orbs animation updated from v1.0.3 to v1.7.0 (the minified build), same shapes and click to morph, with the cache-buster bumped so visitors get the new file.
 
 ### Removed
 - Projects: House Prices & the Economy, replaced by Energy & the Economy. It stays on GitHub and in the stats timeline.
