@@ -14,7 +14,7 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 - What I've Shipped: a View on npm link and an npm tag for Orbs, now published as `@shazmoghaddam/orbs`.
 
 ### Changed
-- What I've Shipped is ordered from strongest to lightest: Bezel Charts, Hunchy, Bezel, Strata, Orbs.
+- What I've Shipped is ordered from strongest to lightest: Bezel Charts, Hunchy, Bezel, Orbs, Strata. Orbs moves above Strata now it's on npm with a Studio.
 - Every new string is translated into French, German, Spanish and Dutch.
 - README: projects and open-source work in the same order as the site.
 - What I've Shipped: the Orbs description brought up to date with v1.7.0 (twenty shapes, lines and glow, sound, named states, Studio export, desk display, npm with TypeScript, React and Vue), in all five languages. README to match.
