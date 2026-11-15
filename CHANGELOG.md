@@ -11,11 +11,13 @@ The site uses date versions (`vYYYY.MM`). Changes merged since the last release 
 - What I've Shipped: Hunchy, a free quiz for any get-together with 1,200+ sourced questions, offline play and Hunch-off, with links to GitHub and the live game.
 - Stats timeline: Hunchy and Energy & the Economy. Digital products now count 26.
 - Never-translate glossary: Energy & the Economy, State of Europe's Energy, Hunchy, Hunch-off, Eurostat, FRED and Our World in Data.
+- What I've Shipped: a View on npm link and an npm tag for Orbs, now published as `@shazmoghaddam/orbs`.
 
 ### Changed
 - What I've Shipped is ordered from strongest to lightest: Bezel Charts, Hunchy, Bezel, Strata, Orbs.
 - Every new string is translated into French, German, Spanish and Dutch.
 - README: projects and open-source work in the same order as the site.
+- What I've Shipped: the Orbs description brought up to date with v1.7.0 (twenty shapes, lines and glow, sound, named states, Studio export, desk display, npm with TypeScript, React and Vue), in all five languages. README to match.
 
 ### Removed
 - Projects: House Prices & the Economy, replaced by Energy & the Economy. It stays on GitHub and in the stats timeline.
